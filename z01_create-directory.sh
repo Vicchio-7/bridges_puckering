@@ -79,5 +79,10 @@ elif [ ${status_build} == 0 ] ; then
 
     fi
 
+
+    raw_coords=${p2}/$/puckering/${folder}/z_folder_raw-coordinates
+
+   echo $raw_coords
+
 fi
 
