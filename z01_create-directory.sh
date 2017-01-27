@@ -20,8 +20,8 @@ level_short=$2
 account=ct560hp
 user=vicchio
 
-p1=pylon1/${account}/${user}/
-p2=plyon2/${account}/${user}/
+p1=/pylon1/${account}/${user}/
+p2=/pylon2/${account}/${user}/
 
 ## Main Code ##
 
@@ -43,9 +43,9 @@ if [ ${status_build} == 1 ]; then
 elif [ ${status_build} == 0 ] ; then
     echo 'Ready to rumble!'
 
-    echo $p1
-    echo $p2
+    directory=${p2}/${folder}/${level_short}
 
+    echo $directory
 
 
 fi
