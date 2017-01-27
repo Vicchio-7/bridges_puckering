@@ -20,8 +20,8 @@ level_short=$2
 account=ct560hp
 user=vicchio
 
-p1=/pylon1/${account}/${user}/
-p2=/pylon2/${account}/${user}/
+p1=/pylon1/${account}/${user}
+p2=/pylon2/${account}/${user}
 
 ## Main Code ##
 
@@ -45,7 +45,12 @@ elif [ ${status_build} == 0 ] ; then
 
     directory=${p2}/${folder}/${level_short}
 
-    echo $directory
+    if [ -d ${directory} ] ; then
+		echo
+		echo "This directory already exists for ${level_of_theory_short} in ${folder}..."
+		echo
+	else
+	    mkdir $directory
 
 
 fi
