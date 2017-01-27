@@ -1,15 +1,29 @@
 #!/usr/bin/env bash
-echo
-echo 'This script will create the necessary folder for my jobs!'
-echo
 
 # Created by: Stephen P. Vicchio
 
-# This script creates the correct production for a given level of theory
+# This script creates the correct production for a given level of theory on PSC Bridges.
 
+# --------------------------------------------------------------------------------------
+
+## Input - Command Line ##
+
+# The following information is needed from the command line
 
 molecule_type=$1
 level_short=$2
+
+## Input - Codes ##
+
+# Please update the following input commands depending on the user.
+
+account=ct560hp
+user=vicchio
+
+p1=pylon1/${account}/${user}/
+p2=plyon2/${account}/${user}/
+
+## Main Code ##
 
 if [ "${molecule_type}" == 'oxane' ] ; then
 	folder=1_oxane
@@ -28,5 +42,11 @@ if [ ${status_build} == 1 ]; then
 	exit
 elif [ ${status_build} == 0 ] ; then
     echo 'Ready to rumble!'
+
+    echo $p1
+    echo $p2
+
+
+
 fi
 
