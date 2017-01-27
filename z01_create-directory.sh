@@ -77,6 +77,7 @@ elif [ ${status_build} == 0 ] ; then
 	    mkdir 7_irc_run
 		mkdir 8_irc_localmin
 
+		echo "hi mom"
     fi
 
 
