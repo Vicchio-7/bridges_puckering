@@ -79,10 +79,24 @@ elif [ ${status_build} == 0 ] ; then
 
     fi
 
-
     raw_coords=${p2}/puckering/${folder}/z_folder_raw-coordinates
 
-    # need to copy over the correct coordiantes....
+    coordinate_directory=${directory}/0_initial-coordinates
+
+    if [ -n "$(find ${coordinate_directory} -prune -empty)" ] ; then
+		echo "The directory exists for the initial coordinates,"
+		echo " but they are missing..."
+		echo
+	elif [ -s ${coordinate_directory} ] ; then
+		echo "The xyz coordinates exist!"
+		echo
+
+		cp ${raw_coords}*.xyz ${directory}/0_initial-coordinates/.
+
+		cd ${directory}/0_initial-coordinates/
+		ls *.com > ../y0-input_list.txt
+
+	fi
 
 fi
 
