@@ -91,7 +91,7 @@ elif [ ${status_build} == 0 ] ; then
 		echo "The xyz coordinates exist!"
 		echo
 
-		cp ${raw_coords}*.xyz ${directory}/0_initial-coordinates/.
+		cp ${raw_coords}*.com ${directory}/0_initial-coordinates/.
 
 		cd ${directory}/0_initial-coordinates/
 		ls *.com > ../y0-input_list.txt
