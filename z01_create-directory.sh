@@ -84,12 +84,6 @@ elif [ ${status_build} == 0 ] ; then
     coordinate_directory=${directory}/0_initial-coordinates
 
     if [ -n "$(find ${coordinate_directory} -prune -empty)" ] ; then
-		echo "The directory exists for the initial coordinates,"
-		echo " but they are missing..."
-		echo
-	elif [ -s ${coordinate_directory} ] ; then
-		echo "The xyz coordinates exist!"
-		echo
 
 		cp ${raw_coords}*.com ${directory}/0_initial-coordinates/.
 
