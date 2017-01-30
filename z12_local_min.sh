@@ -68,7 +68,7 @@ if [ ${status_build} == 1 ] ; then
 	exit
 elif [ ${status_build} == 0 ] ; then
 
-    level_theory=$(./z02_level_replace_script.sh ${molecule_type} ${level_short})
+    level_theory=$(z02_level_replace_script.sh ${molecule_type} ${level_short})
 
     echo ${level_theory}
 
