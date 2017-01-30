@@ -70,8 +70,6 @@ elif [ ${status_build} == 0 ] ; then
 
     level_theory=$(z02_level_replace_script.sh ${molecule_type} ${level_short})
 
-    echo ${level_theory}
-
     directory=${p2}/puckering/${folder}/${level_short}
 
     dir_job=${directory}/${folder_type}
