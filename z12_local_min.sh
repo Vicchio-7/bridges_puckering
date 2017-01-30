@@ -16,6 +16,11 @@ molecule_type=$1
 job_type=$2
 level_short=$3
 
+## Input - Gaussian Run Information ##
+# The following information determines the numbers of cores and memory the jobs will require.
+cores_per_node=1
+memory_job=15
+total_memory=$(echo ${cores_per_node} ${memory_job} | awk '{ print $1*$2 }' )
 
 ## Input - Codes ##
 # Please update the following input commands depending on the user.
@@ -70,21 +75,21 @@ elif [ ${status_build} == 0 ] ; then
 
             file=${file_unedit%.com}
 
-            echo ${file}
+            tpl_file=${tpl}/${tpl_folder}/run_oxane_optall-to-localmin.tpl
 
-#        ######## The section below updates the Gaussian Input File
-#
-#            sed -e "s/\$memory/${total_memory}/g" $tpl/${template_file_oxane} > temp1.com
-#            sed -e "s/\$num_procs/${cores_per_node}/g" temp1.com >> temp2.com
-#            sed -e "s/\$folder_old/${1}-freeze_${3}/g" temp2.com >> temp3.com
-#            sed -e "s/\$old_check/${1}-${file}-freeze_${3}.chk/g" temp3.com >> temp4.com
-#            sed -e "s/\$chkfile/${molecule}-${file}-freeze_${short_level_of_theory}-${test_type}_${short_level_of_theory}.chk/g" temp4.com >> temp5.com
-#            sed -e "s/\$folder/${molecule}-${test_type}_${3}/g" temp5.com > temp6.com
-#            sed -e "s/level_of_theory/${level_of_theory}/g" temp6.com >> temp7.com
-#
-#            mv temp7.com ${file}.com
-#
-#            rm temp*.com
+        ######## The section below updates the Gaussian Input File
+
+            sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > temp1.com
+            sed -e "s/\$num_procs/${cores_per_node}/g" temp1.com >> temp2.com
+            sed -e "s/\$folder_old/${1}-freeze_${3}/g" temp2.com >> temp3.com
+            sed -e "s/\$old_check/${1}-${file}-freeze_${3}.chk/g" temp3.com >> temp4.com
+            sed -e "s/\$chkfile/${molecule}-${file}-freeze_${short_level_of_theory}-${test_type}_${short_level_of_theory}.chk/g" temp4.com >> temp5.com
+            sed -e "s/\$folder/${molecule}-${test_type}_${3}/g" temp5.com > temp6.com
+            sed -e "s/level_of_theory/${level_of_theory}/g" temp6.com >> temp7.com
+
+            mv temp7.com ${file}.com
+
+            rm temp*.com
 #
 #        ######## The section below creates the PBS file for submission on flux
 #
