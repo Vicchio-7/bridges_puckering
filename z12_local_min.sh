@@ -31,11 +31,10 @@ user=vicchio
 ## Additional Required Information ##
 # Additional information such as folder location that is required for the code to run properly.
 
-tpl=${p2}/y_template_files
-tpl_file=run_oxane_optall-to-localmin.tpl
 p1=/pylon1/${account}/${user}
 p2=/pylon2/${account}/${user}
 folder_type=4_opt_localmin
+tpl=${p2}/y_template_files
 
 # --------------------------------------------------------------------------------------
 
