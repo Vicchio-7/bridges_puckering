@@ -20,6 +20,9 @@ level_short=$3
 # The following information determines the numbers of cores and memory the jobs will require.
 cores_per_node=1
 memory_job=15
+hours=2 #1, 2 ,3 ..... 10, 11, 12....
+minutes=45 # number between 0 and 59
+
 total_memory=$(echo ${cores_per_node} ${memory_job} | awk '{ print $1*$2 }' )
 
 ## Input - Codes ##
@@ -97,8 +100,10 @@ elif [ ${status_build} == 0 ] ; then
             sed -e "s/\$molecule/${molecule_type}/g" temp3.txt >> temp4.txt
             sed -e "s/\$test/${job_type}/g" temp4.txt >> temp5.txt
             sed -e "s/\$level/${level_short}/g" temp5.txt >> temp6.txt
+            sed -e "s/\$hours//g" temp6.txt >> temp7.txt
+            sed -e "s/\$minutes//g" temp7.txt >> temp8.txt
 
-            mv temp6.txt slurm-${file}.job
+            mv temp8.txt slurm-${file}.job
             rm temp*.txt
 
         done
