@@ -94,9 +94,9 @@ elif [ ${status_build} == 0 ] ; then
             sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
             sed -e "s/conform/${file}/g" temp1.txt >> temp2.txt
             sed -e "s/gauss-log/${1}-${file}-freeze_${3}-${2}_${3}/g" temp2.txt >> temp3.txt
-            sed -e "s/$molecule/${molecule_type}/g" temp3.txt >> temp4.txt
-            sed -e "s/$test/${job_type}/g" temp4.txt >> temp5.txt
-            sed -e "s/$level/${level_short}/g" temp5.txt >> temp6.txt
+            sed -e "s/\$molecule/${molecule_type}/g" temp3.txt >> temp4.txt
+            sed -e "s/\$test/${job_type}/g" temp4.txt >> temp5.txt
+            sed -e "s/\$level/${level_short}/g" temp5.txt >> temp6.txt
 
             mv temp6.txt slurm-${file}.job
             rm temp*.txt
