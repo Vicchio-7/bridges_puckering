@@ -99,5 +99,5 @@ elif [ ${status_build} == 0 ] ; then
 #
 #            rm temp*.txt
         done
-
+    fi
 fi
