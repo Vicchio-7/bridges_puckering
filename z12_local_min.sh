@@ -121,7 +121,7 @@ elif [ ${status_build} == 0 ] ; then
 	        file=${file_unedit%.xyz}
 
         ######## The section below updates the Gaussian Input File
-            head -n 5 ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-localmin.tpl > temp1.temp
+            head -n 4 ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-localmin.tpl > temp1.temp
             echo >> temp1.temp
             echo "From ${file_unedit}" >> temp1.temp
             echo >> temp1.temp
