@@ -70,6 +70,15 @@ elif [ ${status_build} == 0 ] ; then
 
     level_theory=$(z02_level_replace_script.sh ${molecule_type} ${level_short})
 
+    if [ ${level_short} == 'ERROR' ] ; then
+        echo ''
+        echo 'The level of theory being studied is not found in z02_level_replace_script.sh'
+        echo ''
+        echo 'Please add the correct level of theory before restarting'
+        echo ''
+        break
+    fi
+
     directory=${p2}/puckering/${folder}/${level_short}
 
     dir_job=${directory}/${folder_type}

@@ -45,9 +45,11 @@ elif [ ${status_build} == 0 ] ; then
         echo 'am1'
 
     elif [ ${level_short} == 'b3lyp' ] ; then
-
         echo 'b3lyp\/6-31+G(d,p)'
-
+    elif [ ${level_short} == 'pm3' ] ; then
+        echo 'pm3'
+    else
+        echo "ERROR"
     fi
 
 fi
