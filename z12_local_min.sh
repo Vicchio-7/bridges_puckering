@@ -100,8 +100,8 @@ elif [ ${status_build} == 0 ] ; then
             sed -e "s/\$molecule/${molecule_type}/g" temp3.txt >> temp4.txt
             sed -e "s/\$test/${job_type}/g" temp4.txt >> temp5.txt
             sed -e "s/\$level/${level_short}/g" temp5.txt >> temp6.txt
-            sed -e "s/\$hours//g" temp6.txt >> temp7.txt
-            sed -e "s/\$minutes//g" temp7.txt >> temp8.txt
+            sed -e "s/\$hours/${hours}/g" temp6.txt >> temp7.txt
+            sed -e "s/\$minutes/${minutes}/g" temp7.txt >> temp8.txt
 
             mv temp8.txt slurm-${file}.job
             rm temp*.txt
