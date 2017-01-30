@@ -122,8 +122,7 @@ elif [ ${status_build} == 0 ] ; then
             echo >> temp1.temp
             tail -n 5 ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-localmin.tpl >> temp1.temp
 
-            sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > temp1.temp
-            sed -e "s/\$num_procs/${cores_per_node}/g" temp1.temp >> temp2.temp
+            sed -e "s/\$memory/${total_memory}/g" temp1.temp >> temp1.temp
             sed -e "s/\$num_procs/${cores_per_node}/g" temp1.temp >> temp2.temp
             sed -e "s/\$folder_1/${folder}/g" temp2.temp >> temp3.temp
             sed -e "s/\$folder_old/${molecule_type}-freeze_${level_short}/g" temp3.temp >> temp4.temp
