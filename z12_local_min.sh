@@ -34,7 +34,7 @@ user=vicchio
 p1=/pylon1/${account}/${user}
 p2=/pylon2/${account}/${user}
 folder_type=4_opt_localmin
-tpl=${p2}/y_template_files
+tpl=${p2}/puckering/y_tpl
 
 # --------------------------------------------------------------------------------------
 
