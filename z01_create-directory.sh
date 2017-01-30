@@ -57,7 +57,7 @@ elif [ ${status_build} == 0 ] ; then
 
     if [ -d ${directory} ] ; then
 		echo
-		echo "This directory already exists for ${level_of_theory_short} in ${folder}..."
+		echo "This directory already exists for ${level_short} in ${folder}..."
 		echo
 	else
 	    echo

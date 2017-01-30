@@ -119,7 +119,7 @@ elif [ ${status_build} == 0 ] ; then
             echo "0  1" >> temp1.temp
             cat ../0_initial-coordinates/${file_unedit} | sed '1,2d' >> temp1.temp
             echo >> temp1.temp
-            tail -n 5 ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-localmin.tpl >> temmp1.temp
+            tail -n 5 ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-localmin.tpl >> temp1.temp
 
         done
     fi

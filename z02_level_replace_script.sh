@@ -44,7 +44,9 @@ elif [ ${status_build} == 0 ] ; then
 
         echo 'hi'
 
-        #TODO: need to figure out how the script can output a variable so that another script can read said variable
+    elif [ ${level_short} == 'b3lyp' ] ; then
+
+        echo 'b3lyp\/6-31+G(d,p)'
 
     fi
 
