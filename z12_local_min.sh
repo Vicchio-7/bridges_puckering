@@ -76,6 +76,10 @@ elif [ ${status_build} == 0 ] ; then
 
     dir_job=${directory}/${folder_type}
 
+    if [ ! -d ${p1}/${molecule_type}-optall_${level_short} ]; then
+        mkdir ${p1}/${molecule_type}-optall_${level_short}
+    fi
+
     if [ ${molecule_type} == "oxane" ] ; then
 
         for file_unedit in $( <$input_list); do
@@ -115,8 +119,6 @@ elif [ ${status_build} == 0 ] ; then
     else
 	    for file_unedit in $( <$input_list); do
 	        file=${file_unedit%.xyz}
-
-            echo ${file}
 
         ######## The section below updates the Gaussian Input File
             head -n 5 ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-localmin.tpl > temp1.temp
