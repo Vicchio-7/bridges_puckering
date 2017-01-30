@@ -131,8 +131,9 @@ elif [ ${status_build} == 0 ] ; then
             sed -e "s/\$folder_1/${folder}/g" temp2.temp >> temp3.temp
             sed -e "s/\$folder_new/${molecule_type}-optall_${level_short}/g" temp3.temp >> temp6.temp
             sed -e "s/\$chkfile/${file}-freeze_${level_short}-${job_type}_${level_short}.chk/g" temp6.temp >> temp7.temp
+            sed -e "s/\level_of_theory/${level_theory}/g" temp7.temp >> temp8.temp
 
-            mv temp7.temp ${file}.com
+            mv temp8.temp ${file}.com
             rm *.temp
 
         ######## The section below creates the Slurm file for submission on Bridges

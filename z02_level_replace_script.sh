@@ -42,7 +42,7 @@ elif [ ${status_build} == 0 ] ; then
 
     if [ ${level_short} == 'am1' ] ; then
 
-        echo 'hi'
+        echo 'am1'
 
     elif [ ${level_short} == 'b3lyp' ] ; then
 
