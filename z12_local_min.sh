@@ -55,7 +55,7 @@ fi
 
 ## Main Code ##
 
-if [ ${status_build} == 1 ]; then
+if [ ${status_build} == 1 ] ; then
 	exit
 elif [ ${status_build} == 0 ] ; then
 
@@ -63,7 +63,7 @@ elif [ ${status_build} == 0 ] ; then
 
     dir_job=${directory}/${folder_type}
 
-    if [ ${molecule} == "oxane" ] ; then
+    if [ ${molecule_type} == "oxane" ] ; then
 
         for file_unedit in $( <$input_list); do
 
