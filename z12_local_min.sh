@@ -85,7 +85,7 @@ elif [ ${status_build} == 0 ] ; then
             sed -e "s/\$old_check/${molecule_type}-${file}-freeze_${job_type}.chk/g" temp4.temp >> temp5.temp
             sed -e "s/\$folder_new/${molecule_type}-optall_${job_type}/g" temp5.temp >> temp6.temp
             sed -e "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}-${job_type}_${level_short}/g" temp6.temp >> temp7.temp
-            /g"
+
 
 
 #            sed -e "s/\$folder_old/${1}-freeze_${3}/g" temp2.com >> temp3.com
