@@ -78,17 +78,21 @@ elif [ ${status_build} == 0 ] ; then
 
         ######## The section below updates the Gaussian Input File
 
-            sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > temp1.com
-            sed -e "s/\$num_procs/${cores_per_node}/g" temp1.com >> temp2.com
-            sed -e "s/\$folder_old/${1}-freeze_${3}/g" temp2.com >> temp3.com
-            sed -e "s/\$old_check/${1}-${file}-freeze_${3}.chk/g" temp3.com >> temp4.com
-            sed -e "s/\$chkfile/${molecule}-${file}-freeze_${short_level_of_theory}-${test_type}_${short_level_of_theory}.chk/g" temp4.com >> temp5.com
-            sed -e "s/\$folder/${molecule}-${test_type}_${3}/g" temp5.com > temp6.com
-            sed -e "s/level_of_theory/${level_of_theory}/g" temp6.com >> temp7.com
+            sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > temp1.tempp
+            sed -e "s/\$num_procs/${cores_per_node}/g" temp1.com >> temp2.temp
+            sed -e "s/\$folder/${folder}/g" temp2.temp >> temp3.temp
+            sed -e "s/\$folder_old/${molecule_type}-freeze_${job_type}/g" temp3.temp >> temp4.temp
+            sed -e "s/\$old_check/${molecule_type}-${file}-freeze_${job_type}.chk/g" temp4.temp >> temp5.temp
 
-            mv temp7.com ${file}.com
-
-            rm temp*.com
+#            sed -e "s/\$folder_old/${1}-freeze_${3}/g" temp2.com >> temp3.com
+#            sed -e "s/\$old_check/${1}-${file}-freeze_${3}.chk/g" temp3.com >> temp4.com
+#            sed -e "s/\$chkfile/${molecule}-${file}-freeze_${short_level_of_theory}-${test_type}_${short_level_of_theory}.chk/g" temp4.com >> temp5.com
+#            sed -e "s/\$folder/${molecule}-${test_type}_${3}/g" temp5.com > temp6.com
+#            sed -e "s/level_of_theory/${level_of_theory}/g" temp6.com >> temp7.com
+#
+#            mv temp7.com ${file}.com
+#
+#            rm temp*.com
 #
 #        ######## The section below creates the PBS file for submission on flux
 #
