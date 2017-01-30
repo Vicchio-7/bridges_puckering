@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3d111d83-4a55-4981-bdc5-7b04daefecb7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z01_create-directory.sh" afterPath="$PROJECT_DIR$/z01_create-directory.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z02_level_replace_script.sh" afterPath="$PROJECT_DIR$/z02_level_replace_script.sh" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z12_local_min.sh" afterPath="$PROJECT_DIR$/z12_local_min.sh" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -75,8 +73,8 @@
       <file leaf-file-name="z12_local_min.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/z12_local_min.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="114" column="21" lean-forward="true" selection-start-line="114" selection-start-column="21" selection-end-line="114" selection-end-column="21" />
+            <state relative-caret-position="795">
+              <caret line="53" column="35" lean-forward="false" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -104,8 +102,8 @@
         <option value="$PROJECT_DIR$/z03_local_min.sh" />
         <option value="$PROJECT_DIR$/z11_freeze_jobs.sh" />
         <option value="$PROJECT_DIR$/z01_create-directory.sh" />
-        <option value="$PROJECT_DIR$/z12_local_min.sh" />
         <option value="$PROJECT_DIR$/z02_level_replace_script.sh" />
+        <option value="$PROJECT_DIR$/z12_local_min.sh" />
       </list>
     </option>
   </component>
@@ -650,12 +648,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1485539894836</updated>
-      <workItem from="1485539896362" duration="14717000" />
+      <workItem from="1485539896362" duration="14811000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14717000" />
+    <option name="totallyTimeSpent" value="14811000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -767,8 +765,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/z12_local_min.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="114" column="21" lean-forward="true" selection-start-line="114" selection-start-column="21" selection-end-line="114" selection-end-column="21" />
+        <state relative-caret-position="795">
+          <caret line="53" column="35" lean-forward="false" selection-start-line="53" selection-start-column="35" selection-end-line="53" selection-end-column="35" />
           <folding />
         </state>
       </provider>
