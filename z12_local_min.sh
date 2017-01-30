@@ -130,7 +130,7 @@ elif [ ${status_build} == 0 ] ; then
             sed -e "s/\$num_procs/${cores_per_node}/g" temp8.temp >> temp2.temp
             sed -e "s/\$folder_1/${folder}/g" temp2.temp >> temp3.temp
             sed -e "s/\$folder_new/${molecule_type}-optall_${level_short}/g" temp3.temp >> temp6.temp
-            sed -e "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}-${job_type}_${level_short}.chk/g" temp6.temp >> temp7.temp
+            sed -e "s/\$chkfile/${file}-freeze_${level_short}-${job_type}_${level_short}.chk/g" temp6.temp >> temp7.temp
 
             mv temp7.temp ${file}.com
             rm *.temp
@@ -139,7 +139,7 @@ elif [ ${status_build} == 0 ] ; then
 
             sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
             sed -e "s/conform/${file}/g" temp1.txt >> temp2.txt
-            sed -e "s/gauss-log/${1}-${file}-freeze_${3}-${2}_${3}/g" temp2.txt >> temp3.txt
+            sed -e "s/gauss-log/${file}-freeze_${3}-${2}_${3}/g" temp2.txt >> temp3.txt
             sed -e "s/\$molecule/${molecule_type}/g" temp3.txt >> temp4.txt
             sed -e "s/\$test/${job_type}/g" temp4.txt >> temp5.txt
             sed -e "s/\$level/${level_short}/g" temp5.txt >> temp6.txt
