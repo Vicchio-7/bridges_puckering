@@ -28,6 +28,7 @@ tpl=${p2}/y_template_files
 tpl_file=run_oxane_optall-to-localmin.tpl
 p1=/pylon1/${account}/${user}
 p2=/pylon2/${account}/${user}
+folder_type=4_opt_localmin
 
 # --------------------------------------------------------------------------------------
 
@@ -58,11 +59,12 @@ elif [ ${status_build} == 0 ] ; then
 
     directory=${p2}/puckering/${folder}/${level_short}
 
-    dir_2_freeze=${directory}/2_freeze
+    dir_job=${directory}/${folder_type}
 
-    cd ${dir_2_freeze}
+    cd ${dir_job}
+
+    echo ${dir_job}
 
 
-    echo "Stuff needs to be done here"
 
 fi
