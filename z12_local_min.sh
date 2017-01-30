@@ -81,38 +81,26 @@ elif [ ${status_build} == 0 ] ; then
             sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > temp1.temp
             sed -e "s/\$num_procs/${cores_per_node}/g" temp1.temp >> temp2.temp
             sed -e "s/\$folder_1/${folder}/g" temp2.temp >> temp3.temp
-            sed -e "s/\$folder_old/${molecule_type}-freeze_${job_type}/g" temp3.temp >> temp4.temp
+            sed -e "s/\$folder_old/${molecule_type}-freeze_${level_short}/g" temp3.temp >> temp4.temp
             sed -e "s/\$old_check/${molecule_type}-${file}-freeze_${level_short}.chk/g" temp4.temp >> temp5.temp
-            sed -e "s/\$folder_new/${molecule_type}-optall_${job_type}/g" temp5.temp >> temp6.temp
+            sed -e "s/\$folder_new/${molecule_type}-optall_${level_short}/g" temp5.temp >> temp6.temp
             sed -e "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}-${job_type}_${level_short}.chk/g" temp6.temp >> temp7.temp
 
             mv temp7.temp ${file}.com
-
             rm *.temp
 
-#            sed -e "s/\$folder_old/${1}-freeze_${3}/g" temp2.com >> temp3.com
-#            sed -e "s/\$old_check/${1}-${file}-freeze_${3}.chk/g" temp3.com >> temp4.com
-#            sed -e "s/\$chkfile/${molecule}-${file}-freeze_${short_level_of_theory}-${test_type}_${short_level_of_theory}.chk/g" temp4.com >> temp5.com
-#            sed -e "s/\$folder/${molecule}-${test_type}_${3}/g" temp5.com > temp6.com
-#            sed -e "s/level_of_theory/${level_of_theory}/g" temp6.com >> temp7.com
-#
-#            mv temp7.com ${file}.com
-#
-#            rm temp*.com
-#
-#        ######## The section below creates the PBS file for submission on flux
-#
-#            sed -e "s/molecule/${molecule}/g" $tpl/gaussian-PBS-tpl.txt > temp1.txt
-#            sed -e "s/study/${2}/g" temp1.txt >> temp2.txt
-#            sed -e "s/level_of_theory_short/${short_level_of_theory}/g" temp2.txt >> temp3.txt
-#            sed -e "s/conform/${file}/g" temp3.txt >> temp4.txt
-#            sed -e "s/gauss-log/${1}-${file}-freeze_${3}-${2}_${3}/g" temp4.txt >> temp5.txt
-#            sed -e "s/\$num_proc/${cores_per_node}/g" temp5.txt >> temp6.txt
-#            sed -e "s/\$pmemory/${memory_job}/g" temp6.txt >> temp7.txt
-#
-#            mv temp7.txt PBS-${2}-${file}.txt
-#
-#            rm temp*.txt
+        ######## The section below creates the Slurm file for submission on Bridges
+
+            sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
+            sed -e "s/conform/${file}/g" temp1.txt >> temp2.txt
+            sed -e "s/gauss-log/${1}-${file}-freeze_${3}-${2}_${3}/g" temp2.txt >> temp3.txt
+            sed -e "s/$molecule/${molecule_type}/g" temp3.txt >> temp4.txt
+            sed -e "s/$test/${job_type}/g" temp4.txt >> temp5.txt
+            sed -e "s/$level/${level_short}/g" temp5.txt >> temp6.txt
+
+            mv temp6.txt slurm-${file}.job
+            rm temp*.txt
+
         done
     fi
 fi
