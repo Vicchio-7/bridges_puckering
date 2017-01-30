@@ -13,7 +13,9 @@
 # The following information is needed from the command line
 
 molecule_type=$1
-level_short=$2
+job_type=$2
+level_short=$3
+
 
 ## Input - Codes ##
 # Please update the following input commands depending on the user.
@@ -63,6 +65,7 @@ elif [ ${status_build} == 0 ] ; then
 
     cd ${dir_job}
 
+    echo ${directory}
     echo ${dir_job}
 
 
