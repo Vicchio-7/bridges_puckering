@@ -105,6 +105,21 @@ elif [ ${status_build} == 0 ] ; then
 
             mv temp8.txt slurm-${file}.job
             rm temp*.txt
+        done
+
+    else
+	    for file_unedit in $( <$input_list); do
+	        file=${file_unedit%.xyz}
+
+        ######## The section below updates the Gaussian Input File
+            head -n 5 ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-localmin.tpl > temp1.temp
+            echo >> temp1.temp
+            echo "From ${file_unedit}" >> temp1.temp
+            echo >> temp1.temp
+            echo "0  1" >> temp1.temp
+            cat ../0_initial-coordinates/${file_unedit} | sed '1,2d' >> temp1.temp
+            echo >> temp1.temp
+            tail -n 5 ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-localmin.tpl >> temmp1.temp
 
         done
     fi

@@ -33,9 +33,11 @@ p2=/pylon2/${account}/${user}
 if [ "${molecule_type}" == 'oxane' ] ; then
 	folder=1_oxane
 	status_build=0
+	ext=.com
 elif [ "${molecule_type}" == 'bxyl' ] ;  then
 	folder=2_bxyl
 	status_build=0
+	ext=.xyz
 else
 	echo
 	echo "The molecule type is not found in this script"
@@ -84,7 +86,7 @@ elif [ ${status_build} == 0 ] ; then
 
     if [ -n "$(find ${coordinate_directory} -prune -empty)" ] ; then
 
-		cp ${raw_coords}/*.com ${directory}/0_initial-coordinates/.
+		cp ${raw_coords}/ext ${directory}/0_initial-coordinates/.
 
 		cd ${directory}/0_initial-coordinates/
 		ls *.com > ../y0-input_list.txt
