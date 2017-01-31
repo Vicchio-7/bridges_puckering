@@ -104,7 +104,7 @@ elif [ ${status_build} == 0 ] ; then
             sed -e "s/\$memory/${total_memory}/g" temp1.temp >> temp2.temp
             sed -e "s/\$num_procs/${cores_per_node}/g" temp2.temp >> temp3.temp
             sed -e "s/\$folder_1/${folder}/g" temp3.temp >> temp4.temp
-            sed -e "s/\$folder_new/${molecule_type}-optall_${level_short}/g"  temp4.temp >> temp5.temp
+            sed -e "s/\$folder_new/${molecule_type}-freeze_${level_short}/g"  temp4.temp >> temp5.temp
             sed -e "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}.chk/g"  temp5.temp >> temp6.temp
             sed -e "s/\level_of_theory/${level_theory}/g" temp6.temp >> temp7.temp
 
