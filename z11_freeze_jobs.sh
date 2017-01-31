@@ -91,6 +91,8 @@ elif [ ${status_build} == 0 ] ; then
             sed -e "s/\$folder_new/${molecule_type}-optall_${level_short}/g" temp3.temp >> temp4.temp
             sed -e "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}.chk/g" temp4.temp >> temp5.temp
 
+            tail -n 20 ../0_initial-coordinates/${file}.com >> temp5.temp
+
             mv temp5.temp ${file}.com
             rm *.temp
 
