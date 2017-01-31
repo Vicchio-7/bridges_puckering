@@ -111,6 +111,20 @@ elif [ ${status_build} == 0 ] ; then
             rm *.temp
 
 
+            sed -i '$s/$/\n/' ${file}.com
+
+            sed -i '$s/$/\nD   8    1    9    13 F/' ${file}.com
+            sed -i '$s/$/\nD   1    9   13    17 F/' ${file}.com
+            sed -i '$s/$/\nD   9   13   17     5 F/' ${file}.com
+            sed -i '$s/$/\nD  13   17    5     8 F/' ${file}.com
+            sed -i '$s/$/\nD  17    5    8     1 F/' ${file}.com
+            sed -i '$s/$/\nD   5    8    1     9 F/' ${file}.com
+
+
+            sed -i '$s/$/\n/' ${file}.com
+            sed -i '$s/$/\n/' ${file}.com
+
+
         ######## The section below creates the Slurm file for submission on Bridges
 
             sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
