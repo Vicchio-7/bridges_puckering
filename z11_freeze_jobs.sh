@@ -56,13 +56,58 @@ if [ ${status_build} == 1 ]; then
 	exit
 elif [ ${status_build} == 0 ] ; then
 
+    level_theory=$(z02_level_replace_script.sh ${molecule_type} ${level_short})
+
+    if [ ${level_short} == 'ERROR' ] ; then
+        echo ''
+        echo 'The level of theory being studied is not found in z02_level_replace_script.sh'
+        echo ''
+        echo 'Please add the correct level of theory before restarting'
+        echo ''
+        break
+    fi
+
     directory=${p2}/puckering/${folder}/${level_short}
 
-    dir_2_freeze=${directory}/2_freeze
+    dir_job=${directory}/${folder_type}
 
-    cd ${dir_2_freeze}
+    if [ ! -d ${p1}/puckering/${folder}/${molecule_type}-optall_${level_short} ]; then
+        mkdir ${p1}/puckering/${folder}/${molecule_type}-optall_${level_short}
+    fi
+
+    if [ ${molecule_type} == "oxane" ] ; then
+
+        for file_unedit in $( <$input_list); do
+
+            file=${file_unedit%.com}
+
+            tpl_file=${tpl}/${tpl_folder}/run_oxane_freeze.tpl
+
+        ######## The section below updates the Gaussian Input File
+
+            sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > temp1.temp
+            sed -e "s/\$num_procs/${cores_per_node}/g" temp1.temp >> temp2.temp
+            sed -e "s/\$folder_1/${folder}/g" temp2.temp >> temp3.temp
+            sed -e "s/\$folder_new/${molecule_type}-optall_${level_short}/g" temp3.temp >> temp4.temp
+            sed -e "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}.chk/g" temp4.temp >> temp5.temp
+
+            mv temp5.temp ${file}.com
+            rm *.temp
 
 
-    echo "Stuff needs to be done here"
+        ######## The section below creates the Slurm file for submission on Bridges
 
+            sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
+            sed -e "s/conform/${file}/g" temp1.txt >> temp2.txt
+            sed -e "s/gauss-log/${1}-${file}-freeze_${3}/g" temp2.txt >> temp3.txt
+            sed -e "s/\$molecule/${molecule_type}/g" temp3.txt >> temp4.txt
+            sed -e "s/\$test/${job_type}/g" temp4.txt >> temp5.txt
+            sed -e "s/\$level/${level_short}/g" temp5.txt >> temp6.txt
+            sed -e "s/\$hours/${hours}/g" temp6.txt >> temp7.txt
+            sed -e "s/\$minutes/${minutes}/g" temp7.txt >> temp8.txt
+
+            mv temp8.txt slurm-${file}.job
+            rm temp*.txt
+        done
+    fi
 fi
