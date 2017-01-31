@@ -110,17 +110,13 @@ elif [ ${status_build} == 0 ] ; then
             mv temp7.temp ${file}.com
             rm *.temp
 
-
-            sed -i '$s/$/\n/' ${file}.com
-
+            sed -i '$d' ${file}.com
             sed -i '$s/$/\nD   8    1    9    13 F/' ${file}.com
             sed -i '$s/$/\nD   1    9   13    17 F/' ${file}.com
             sed -i '$s/$/\nD   9   13   17     5 F/' ${file}.com
             sed -i '$s/$/\nD  13   17    5     8 F/' ${file}.com
             sed -i '$s/$/\nD  17    5    8     1 F/' ${file}.com
             sed -i '$s/$/\nD   5    8    1     9 F/' ${file}.com
-
-
             sed -i '$s/$/\n/' ${file}.com
             sed -i '$s/$/\n/' ${file}.com
 
