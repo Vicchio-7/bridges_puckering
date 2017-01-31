@@ -111,12 +111,12 @@ elif [ ${status_build} == 0 ] ; then
             rm *.temp
 
             sed -i '$d' ${file}.com
-            sed -i '$s/$/\nD   8    1    9    13 F/' ${file}.com
-            sed -i '$s/$/\nD   1    9   13    17 F/' ${file}.com
-            sed -i '$s/$/\nD   9   13   17     5 F/' ${file}.com
-            sed -i '$s/$/\nD  13   17    5     8 F/' ${file}.com
-            sed -i '$s/$/\nD  17    5    8     1 F/' ${file}.com
-            sed -i '$s/$/\nD   5    8    1     9 F/' ${file}.com
+            sed -i '$s/$/\nD   1    2    3    4 F/' ${file}.com
+            sed -i '$s/$/\nD   2    3    4    5 F/' ${file}.com
+            sed -i '$s/$/\nD   3    4    5    6 F/' ${file}.com
+            sed -i '$s/$/\nD   4    5    6    1 F/' ${file}.com
+            sed -i '$s/$/\nD   5    6    1    2 F/' ${file}.com
+            sed -i '$s/$/\nD   6    1    2    3 F/' ${file}.com
             sed -i '$s/$/\n/' ${file}.com
             sed -i '$s/$/\n/' ${file}.com
 
