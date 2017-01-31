@@ -25,10 +25,10 @@ user=vicchio
 ## Additional Required Information ##
 # Additional information such as folder location that is required for the code to run properly.
 
-tpl=${p2}/y_tpl
-tpl_file=
 p1=/pylon1/${account}/${user}
 p2=/pylon2/${account}/${user}
+folder_type=2_freeze
+tpl=${p2}/puckering/y_tpl
 
 # --------------------------------------------------------------------------------------
 
