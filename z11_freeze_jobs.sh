@@ -14,7 +14,8 @@
 # The following information is needed from the command line
 
 molecule_type=$1
-level_short=$2
+job_type=$2
+level_short=$3
 
 ## Input - Gaussian Run Information ##
 # The following information determines the numbers of cores and memory the jobs will require.
@@ -104,8 +105,9 @@ elif [ ${status_build} == 0 ] ; then
             sed -e "s/\$folder_1/${folder}/g" temp3.temp >> temp4.temp
             sed -e "s/\$folder_new/${molecule_type}-optall_${level_short}/g"  temp4.temp >> temp5.temp
             sed -e "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}.chk/g"  temp5.temp >> temp6.temp
+            sed -e "s/\level_of_theory/${level_theory}/g" temp6.temp >> temp7.temp
 
-            mv temp6.temp ${file}.com
+            mv temp7.temp ${file}.com
             rm *.temp
 
 
