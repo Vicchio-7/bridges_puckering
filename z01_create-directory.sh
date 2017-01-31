@@ -71,7 +71,7 @@ elif [ ${status_build} == 0 ] ; then
 	    mkdir 0_initial-coordinates
 	    mkdir 1_sample-files
 	    mkdir 2_freeze
-	    mkdir 3_relax-freeze_run
+	    mkdir 3_blank
 	    mkdir 4_opt_localmin
 	    mkdir 5_opt_TS
 	    mkdir 6_norm_analysis
