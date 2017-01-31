@@ -43,6 +43,7 @@ tpl=${p2}/puckering/y_tpl
 # --------------------------------------------------------------------------------------
 
 ## Setup Check ##
+
 if [ "${molecule_type}" == 'oxane' ] ; then
 	folder=1_oxane
 	tpl_folder=1_oxane_tpl
