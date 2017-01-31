@@ -37,10 +37,12 @@ if [ "${molecule_type}" == 'oxane' ] ; then
 	folder=1_oxane
 	tpl_folder=1_oxane_tpl
 	status_build=0
+	input_list=../y0-input_list.txt
 elif [ "${molecule_type}" == 'bxyl' ] ;  then
 	folder=2_bxyl
 	tpl_folder=2_bxyl_tpl
 	status_build=0
+	input_list=../y0-input_list.txt
 else
 	echo
 	echo "The molecule type is not found in this script"
