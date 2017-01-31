@@ -88,19 +88,15 @@ elif [ ${status_build} == 0 ] ; then
         ######## The section below updates the Gaussian Input File
 
             head -n 4 ${tpl_file} >> temp1.temp
-            tail -n 21 ../0_initial-coordinates/${file}.com >> temp1.temp
+            tail -n 22 ../0_initial-coordinates/${file}.com >> temp1.temp
 
+            sed -e "s/\$memory/${total_memory}/g" temp1.temp >> temp2.temp
+            sed -e "s/\$num_procs/${cores_per_node}/g" temp2.temp >> temp3.temp
+            sed -e "s/\$folder_1/${folder}/g" temp3.temp >> temp4.temp
+            sed -e "s/\$folder_new/${molecule_type}-optall_${level_short}/g"  temp4.temp >> temp5.temp
+            sed -e "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}.chk/g"  temp5.temp >> temp6.temp
 
-
-#            sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > temp1.temp
-#            sed -e "s/\$num_procs/${cores_per_node}/g" temp1.temp >> temp2.temp
-#            sed -e "s/\$folder_1/${folder}/g" temp2.temp >> temp3.temp
-#            sed -e "s/\$folder_new/${molecule_type}-optall_${level_short}/g" temp3.temp >> temp4.temp
-#            sed -e "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}.chk/g" temp4.temp >> temp5.temp
-#
-#            tail -n 20 ../0_initial-coordinates/${file}.com >> temp5.temp
-
-            mv temp1.temp ${file}.com
+            mv temp6.temp ${file}.com
             rm *.temp
 
 
