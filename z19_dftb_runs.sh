@@ -38,6 +38,7 @@ p1=/pylon1/${account}/${user}
 p2=/pylon2/${account}/${user}
 tpl=${p2}/puckering/y_tpl/3_dftb_tpl
 dftb_files=${p2}/puckering/x_dftb_files
+dftb_ending=${dftb_files}/list_dftb_files.txt
 
 # --------------------------------------------------------------------------------------
 
@@ -88,6 +89,7 @@ elif [ "${molecule_type}" == 'bxyl' ] ;  then
     echo
     echo "Need to add bxyl information to scripts...." #####################################################
     echo
+    status_build=1
 else
 	echo
 	echo "The molecule type is not found in this script"
@@ -147,7 +149,6 @@ elif [ ${status_build} == 0 ] ; then
             sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp
 
             mv temp1.temp ${file}.com
-            rm *.temp
 
             sed -i '$d' ${file}.com
             sed -i '$s/$/\nD   1    2    3    4 F/' ${file}.com
@@ -157,8 +158,11 @@ elif [ ${status_build} == 0 ] ; then
             sed -i '$s/$/\nD   5    6    1    2 F/' ${file}.com
             sed -i '$s/$/\nD   6    1    2    3 F/' ${file}.com
             sed -i '$s/$/\n/' ${file}.com
-            sed -i '$s/$/\n/' ${file}.com
 
+            cat ${dftb_ending} >> ${file}.com
+
+            sed -i '$s/$/\n/' ${file}.com
+            sed -i '$s/$/\n/' ${file}.com
 
 
 
