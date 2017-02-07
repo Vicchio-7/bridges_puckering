@@ -48,6 +48,8 @@ elif [ ${status_build} == 0 ] ; then
         echo 'b3lyp\/6-31+G(d,p)'
     elif [ ${level_short} == 'pm3' ] ; then
         echo 'pm3'
+    elif [ ${level_short} == 'pm3' ] ; then
+        echo 'dftb'
     else
         echo "ERROR"
     fi
