@@ -36,7 +36,6 @@ user=vicchio
 
 p1=/pylon1/${account}/${user}
 p2=/pylon2/${account}/${user}
-folder_type=4_opt_localmin
 tpl=${p2}/puckering/y_tpl/3_dftb_tpl
 dftb_files=${p2}/puckering/x_dftb_files
 
@@ -69,6 +68,7 @@ if [ "${molecule_type}" == 'oxane' ] ; then
 
     if [ "${job_type}" == 'freeze' ] ; then
         template=run_oxane_freeze.tpl
+        folder_type=2_freeze
     elif [ "${job_type}" == 'optall' ] ; then
         template=run_oxane_optall-to-localmin.tpl
     elif [ "${job_type}" == 'TS' ] ; then
