@@ -133,9 +133,8 @@ elif [ ${status_build} == 0 ] ; then
             echo ${tpl_file}
 
        if [ "${job_type}" == 'freeze' ] ; then
-            template=run_oxane_freeze.tpl
-            folder_type=2_freeze
 
+            tpl_file=${tpl}/${template}
 
         ######## The section below updates the Gaussian Input File
 
