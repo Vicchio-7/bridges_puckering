@@ -139,7 +139,7 @@ elif [ ${status_build} == 0 ] ; then
             echo >> temp1.temp
             tail -n 5 ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-localmin.tpl >> temp1.temp
 
-            sed -i "s/\$memory/${total_memory}/g" temp1.temp > temp1.temp
+            sed -i "s/\$memory/${total_memory}/g" temp1.temp
 #            sed -e "s/\$num_procs/${cores_per_node}/g" temp1.temp > temp1.temp
 #            sed -e "s/\$folder_1/${folder}/g" temp1.temp > temp1.temp
 #            sed -e "s/\$folder_new/${molecule_type}-optall_${level_short}/g" temp1.temp > temp1.temp
@@ -152,7 +152,7 @@ elif [ ${status_build} == 0 ] ; then
         ######## The section below creates the Slurm file for submission on Bridges
 
             sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
-            sed -i "s/conform/${file}/g" temp1.txt > temp1.txt
+            sed -i "s/conform/${file}/g" temp1.txt
 #            sed -e "s/gauss-log/${file}-freeze_${3}-${2}_${3}/g" temp1.txt > temp1.txt
 #            sed -e "s/\$molecule/${molecule_type}/g" temp1.txt > temp1.txt
 #            sed -e "s/\$test/${job_type}/g" temp1.txt > temp1.txt
