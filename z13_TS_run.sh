@@ -19,7 +19,7 @@ level_short=$3
 ## Input - Gaussian Run Information ##
 # The following information determines the numbers of cores and memory the jobs will require.
 cores_per_node=1
-memory_job=15
+memory_job=3800
 hours=0 #1, 2 ,3 ..... 10, 11, 12....
 minutes=45 # number between 0 and 59
 
