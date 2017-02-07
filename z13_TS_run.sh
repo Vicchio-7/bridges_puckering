@@ -20,7 +20,7 @@ level_short=$3
 # The following information determines the numbers of cores and memory the jobs will require.
 cores_per_node=1
 memory_job=15
-hours=2 #1, 2 ,3 ..... 10, 11, 12....
+hours=0 #1, 2 ,3 ..... 10, 11, 12....
 minutes=45 # number between 0 and 59
 
 total_memory=$(echo ${cores_per_node} ${memory_job} | awk '{ print $1*$2 }' )
@@ -128,38 +128,36 @@ elif [ ${status_build} == 0 ] ; then
 	        file=${file_unedit%.xyz}
 
         ######## The section below updates the Gaussian Input File
-            head -n 4 ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-TS.tpl > temp1.temp ######################
+            head -n 4 ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-TS.tpl > temp1.temp
             echo >> temp1.temp
             echo "From ${file_unedit}" >> temp1.temp
             echo >> temp1.temp
             echo "0  1" >> temp1.temp
             cat ../0_initial-coordinates/${file_unedit} | sed '1,2d' >> temp1.temp
             echo >> temp1.temp
-            tail -n 5 ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-TS.tpl >> temp1.temp ##########################
+            tail -n 5 ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-TS.tpl >> temp1.temp
 
-            sed -e "s/\$memory/${total_memory}/g" temp1.temp >> temp8.temp
-            sed -e "s/\$num_procs/${cores_per_node}/g" temp8.temp >> temp2.temp
-            sed -e "s/\$folder_1/${folder}/g" temp2.temp >> temp3.temp
-            sed -e "s/\$folder_new/${molecule_type}-ts_${level_short}/g" temp3.temp >> temp6.temp
-            sed -e "s/\$chkfile/${file}-freeze_${level_short}-${job_type}_${level_short}.chk/g" temp6.temp >> temp7.temp
-            sed -e "s/\level_of_theory/${level_theory}/g" temp7.temp >> temp9.temp
+            sed -i "s/\$memory/${total_memory}/g" temp1.temp
+            sed -i "s/\$num_procs/${cores_per_node}/g" temp1.temp
+            sed -i "s/\$folder_1/${folder}/g" temp1.temp
+            sed -i "s/\$folder_new/${molecule_type}-optall_${level_short}/g" temp1.temp
+            sed -i "s/\$chkfile/${file}-freeze_${level_short}-${job_type}_${level_short}.chk/g" temp1.temp
+            sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp
 
-            mv temp9.temp ${file}.com
-            rm *.temp
+            mv temp1.temp ${file}.com
 
         ######## The section below creates the Slurm file for submission on Bridges
-
             sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
-            sed -e "s/conform/${file}/g" temp1.txt >> temp2.txt
-            sed -e "s/gauss-log/${file}-freeze_${3}-${2}_${3}/g" temp2.txt >> temp3.txt
-            sed -e "s/\$molecule/${molecule_type}/g" temp3.txt >> temp4.txt
-            sed -e "s/\$test/${job_type}/g" temp4.txt >> temp5.txt
-            sed -e "s/\$level/${level_short}/g" temp5.txt >> temp6.txt
-            sed -e "s/\$hours/${hours}/g" temp6.txt >> temp7.txt
-            sed -e "s/\$minutes/${minutes}/g" temp7.txt >> temp8.txt
+            sed -i "s/conform/${file}/g" temp1.txt
+            sed -i "s/gauss-log/${file}-freeze_${3}-${2}_${3}/g" temp1.txt
+            sed -i "s/\$molecule/${molecule_type}/g" temp1.txt
+            sed -i "s/\$test/${job_type}/g" temp1.txt
+            sed -i "s/\$level/${level_short}/g" temp1.txt
+            sed -i "s/\$hours/${hours}/g" temp1.txt
+            sed -i "s/\$minutes/${minutes}/g" temp1.txt
 
-            mv temp8.txt slurm-${file}.job
-            rm temp*.txt
+            mv temp1.txt slurm-${file}.job
+
         done
     fi
 fi
