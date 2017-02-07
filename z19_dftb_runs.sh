@@ -43,13 +43,18 @@ dftb_files=${p2}/puckering/x_dftb_files
 # --------------------------------------------------------------------------------------
 
 ## Setup Check ##
+
 if [ "${molecule_type}" == 'oxane' ] ; then
 	folder=1_oxane
+	tpl_folder=1_oxane_tpl
 	status_build=0
+	input_list=../y0-input_list.txt
 	ext=.com
 elif [ "${molecule_type}" == 'bxyl' ] ;  then
 	folder=2_bxyl
+	tpl_folder=2_bxyl_tpl
 	status_build=0
+	input_list=../y0-input_list.txt
 	ext=.xyz
 else
 	echo
@@ -62,20 +67,39 @@ fi
 
 ## Special DFTB Identification Step ##
 
-if [ "${job_type}" == 'freeze' ] ; then
-    echo ${job_type}
-elif [ "${job_type}" == 'optall' ] ; then
-    echo ${job_type}
-elif [ "${job_type}" == 'TS' ] ; then
-    echo ${job_type}
-elif [ "${job_type}" == 'irc' ] ; then
-    echo ${job_type}
-elif [ "${job_type}" == 'lmirc' ] ; then
-    echo ${job_type}
+if [ "${molecule_type}" == 'oxane' ] ; then
+
+    if [ "${job_type}" == 'freeze' ] ; then
+        template=run_oxane_freeze.tpl
+    elif [ "${job_type}" == 'optall' ] ; then
+        template=run_oxane_optall-to-localmin.tpl
+    elif [ "${job_type}" == 'TS' ] ; then
+        template=run_oxane_optall-to-TS.tpl
+    elif [ "${job_type}" == 'irc' ] ; then
+        echo "Currently missing!" #####################################################
+    elif [ "${job_type}" == 'lmirc' ] ; then
+        echo "Currently missing!" #####################################################
+    else
+        echo ""
+        echo "The type of job you are attemping to run is not recognized."
+        echo ""
+        echo "Running your job will fail."
+    fi
+
+    echo ""
+    echo "Running a: " ${job_type}
+    echo ""
+
+elif [ "${molecule_type}" == 'bxyl' ] ;  then
+    echo
+    echo "Need to add bxyl information to scripts...." #####################################################
+    echo
 else
-    echo ""
-    echo "The type of job you are attemping to run is not recognized."
-    echo ""
-    echo "Running your job will fail."
+	echo
+	echo "The molecule type is not found in this script"
+	echo
+	status_build=1
 fi
 
+echo ${template}
+echo ${dftb_files}
