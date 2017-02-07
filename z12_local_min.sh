@@ -140,11 +140,11 @@ elif [ ${status_build} == 0 ] ; then
             tail -n 5 ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-localmin.tpl >> temp1.temp
 
             sed -i "s/\$memory/${total_memory}/g" temp1.temp
-#            sed -e "s/\$num_procs/${cores_per_node}/g" temp1.temp > temp1.temp
-#            sed -e "s/\$folder_1/${folder}/g" temp1.temp > temp1.temp
-#            sed -e "s/\$folder_new/${molecule_type}-optall_${level_short}/g" temp1.temp > temp1.temp
-#            sed -e "s/\$chkfile/${file}-freeze_${level_short}-${job_type}_${level_short}.chk/g" temp1.temp > temp1.temp
-#            sed -e "s/\level_of_theory/${level_theory}/g" temp1.temp > temp1.temp
+            sed -i "s/\$num_procs/${cores_per_node}/g" temp1.temp
+            sed -i "s/\$folder_1/${folder}/g" temp1.temp
+            sed -i "s/\$folder_new/${molecule_type}-optall_${level_short}/g" temp1.temp
+            sed -i "s/\$chkfile/${file}-freeze_${level_short}-${job_type}_${level_short}.chk/g" temp1.temp
+            sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp
 
             mv temp1.temp ${file}.com
 
@@ -153,12 +153,12 @@ elif [ ${status_build} == 0 ] ; then
 
             sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
             sed -i "s/conform/${file}/g" temp1.txt
-#            sed -e "s/gauss-log/${file}-freeze_${3}-${2}_${3}/g" temp1.txt > temp1.txt
-#            sed -e "s/\$molecule/${molecule_type}/g" temp1.txt > temp1.txt
-#            sed -e "s/\$test/${job_type}/g" temp1.txt > temp1.txt
-#            sed -e "s/\$level/${level_short}/g" temp1.txt > temp1.txt
-#            sed -e "s/\$hours/${hours}/g" temp1.txt > temp1.txt
-#            sed -e "s/\$minutes/${minutes}/g" temp1.txt > temp1.txt
+            sed -i "s/gauss-log/${file}-freeze_${3}-${2}_${3}/g" temp1.txt > temp1.txt
+            sed -i "s/\$molecule/${molecule_type}/g" temp1.txt > temp1.txt
+            sed -i "s/\$test/${job_type}/g" temp1.txt > temp1.txt
+            sed -i "s/\$level/${level_short}/g" temp1.txt > temp1.txt
+            sed -i "s/\$hours/${hours}/g" temp1.txt > temp1.txt
+            sed -i "s/\$minutes/${minutes}/g" temp1.txt > temp1.txt
 
             mv temp1.txt slurm-${file}.job
 
