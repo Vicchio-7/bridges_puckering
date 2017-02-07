@@ -124,7 +124,7 @@ elif [ ${status_build} == 0 ] ; then
 
     if [ ${molecule_type} == "oxane" ] ; then
 
-        for file_unedit in $( <$input_list); do
+       for file_unedit in $( <$input_list); do
 
             file=${file_unedit%.com}
 
@@ -132,7 +132,47 @@ elif [ ${status_build} == 0 ] ; then
 
             echo ${tpl_file}
 
-        if
+       if [ "${job_type}" == 'freeze' ] ; then
+            template=run_oxane_freeze.tpl
+            folder_type=2_freeze
+
+
+        ######## The section below updates the Gaussian Input File
+
+            head -n 4 ${tpl_file} >> temp1.temp
+            tail -n 22 ../0_initial-coordinates/${file}.com >> temp1.temp
+
+#            sed -e "s/\$memory/${total_memory}/g" temp1.temp >> temp2.temp
+#            sed -e "s/\$num_procs/${cores_per_node}/g" temp2.temp >> temp3.temp
+#            sed -e "s/\$folder_1/${folder}/g" temp3.temp >> temp4.temp
+#            sed -e "s/\$folder_new/${molecule_type}-freeze_${level_short}/g"  temp4.temp >> temp5.temp
+#            sed -e "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}.chk/g"  temp5.temp >> temp6.temp
+#            sed -e "s/\level_of_theory/${level_theory}/g" temp6.temp >> temp7.temp
+#
+#            mv temp7.temp ${file}.com
+#            rm *.temp
+#
+#            sed -i '$d' ${file}.com
+#            sed -i '$s/$/\nD   1    2    3    4 F/' ${file}.com
+#            sed -i '$s/$/\nD   2    3    4    5 F/' ${file}.com
+#            sed -i '$s/$/\nD   3    4    5    6 F/' ${file}.com
+#            sed -i '$s/$/\nD   4    5    6    1 F/' ${file}.com
+#            sed -i '$s/$/\nD   5    6    1    2 F/' ${file}.com
+#            sed -i '$s/$/\nD   6    1    2    3 F/' ${file}.com
+#            sed -i '$s/$/\n/' ${file}.com
+#            sed -i '$s/$/\n/' ${file}.com
+#
+
+            mv temp1.temp ${file}.com
+
+
+
+       else
+            echo ""
+            echo "The type of job you are attemping to run is not recognized."
+            echo ""
+            echo "Running your job will fail."
+        fi
 
 #        ######## The section below updates the Gaussian Input File
 #
