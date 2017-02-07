@@ -130,8 +130,6 @@ elif [ ${status_build} == 0 ] ; then
 
             tpl_file=${tpl}/${template}
 
-            echo ${tpl_file}
-
        if [ "${job_type}" == 'freeze' ] ; then
 
             tpl_file=${tpl}/${template}
@@ -147,22 +145,20 @@ elif [ ${status_build} == 0 ] ; then
             sed -i "s/\$folder_new/${molecule_type}-freeze_${level_short}/g"  temp1.temp
             sed -i "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}.chk/g"  temp1.temp
             sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp
-#
-#            mv temp7.temp ${file}.com
-#            rm *.temp
-#
-#            sed -i '$d' ${file}.com
-#            sed -i '$s/$/\nD   1    2    3    4 F/' ${file}.com
-#            sed -i '$s/$/\nD   2    3    4    5 F/' ${file}.com
-#            sed -i '$s/$/\nD   3    4    5    6 F/' ${file}.com
-#            sed -i '$s/$/\nD   4    5    6    1 F/' ${file}.com
-#            sed -i '$s/$/\nD   5    6    1    2 F/' ${file}.com
-#            sed -i '$s/$/\nD   6    1    2    3 F/' ${file}.com
-#            sed -i '$s/$/\n/' ${file}.com
-#            sed -i '$s/$/\n/' ${file}.com
-#
 
             mv temp1.temp ${file}.com
+            rm *.temp
+
+            sed -i '$d' ${file}.com
+            sed -i '$s/$/\nD   1    2    3    4 F/' ${file}.com
+            sed -i '$s/$/\nD   2    3    4    5 F/' ${file}.com
+            sed -i '$s/$/\nD   3    4    5    6 F/' ${file}.com
+            sed -i '$s/$/\nD   4    5    6    1 F/' ${file}.com
+            sed -i '$s/$/\nD   5    6    1    2 F/' ${file}.com
+            sed -i '$s/$/\nD   6    1    2    3 F/' ${file}.com
+            sed -i '$s/$/\n/' ${file}.com
+            sed -i '$s/$/\n/' ${file}.com
+
 
 
 
