@@ -118,8 +118,8 @@ elif [ ${status_build} == 0 ] ; then
 
     dir_job=${directory}/${folder_type}
 
-    if [ ! -d ${p1}/puckering/${folder}/${molecule_type}-optall_${level_short} ]; then
-        mkdir ${p1}/puckering/${folder}/${molecule_type}-optall_${level_short}
+    if [ ! -d ${p1}/puckering/${folder}/${molecule_type}-${job_type}_${level_short} ]; then
+        mkdir ${p1}/puckering/${folder}/${molecule_type}-${job_type}_${level_short}
     fi
 
     if [ ${molecule_type} == "oxane" ] ; then
@@ -131,6 +131,8 @@ elif [ ${status_build} == 0 ] ; then
             tpl_file=${tpl}/${template}
 
             echo ${tpl_file}
+
+        if
 
 #        ######## The section below updates the Gaussian Input File
 #
