@@ -130,6 +130,8 @@ elif [ ${status_build} == 0 ] ; then
 
             tpl_file=${tpl}/${template}
 
+            echo ${tpl_file}
+
 #        ######## The section below updates the Gaussian Input File
 #
 #            head -n 4 ${tpl_file} >> temp1.temp
