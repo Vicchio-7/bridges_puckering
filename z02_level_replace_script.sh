@@ -50,6 +50,8 @@ elif [ ${status_build} == 0 ] ; then
         echo 'pm3'
     elif [ ${level_short} == 'dftb' ] ; then
         echo 'dftb'
+    elif [ ${level_short} == 'APFD' ] ; then
+        echo 'APFD\/6-31+G(d,p)'
     else
         echo "# # # ERROR # # #"
     fi

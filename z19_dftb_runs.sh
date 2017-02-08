@@ -165,53 +165,27 @@ elif [ ${status_build} == 0 ] ; then
             sed -i '$s/$/\n/' ${file}.com
 
 
-
        else
             echo ""
             echo "The type of job you are attemping to run is not recognized."
             echo ""
             echo "Running your job will fail."
-        fi
+       fi
 
-#        ######## The section below updates the Gaussian Input File
-#
-#            head -n 4 ${tpl_file} >> temp1.temp
-#            tail -n 22 ../0_initial-coordinates/${file}.com >> temp1.temp
-#
-#            sed -e "s/\$memory/${total_memory}/g" temp1.temp >> temp2.temp
-#            sed -e "s/\$num_procs/${cores_per_node}/g" temp2.temp >> temp3.temp
-#            sed -e "s/\$folder_1/${folder}/g" temp3.temp >> temp4.temp
-#            sed -e "s/\$folder_new/${molecule_type}-freeze_${level_short}/g"  temp4.temp >> temp5.temp
-#            sed -e "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}.chk/g"  temp5.temp >> temp6.temp
-#            sed -e "s/\level_of_theory/${level_theory}/g" temp6.temp >> temp7.temp
-#
-#            mv temp7.temp ${file}.com
-#            rm *.temp
-#
-#            sed -i '$d' ${file}.com
-#            sed -i '$s/$/\nD   1    2    3    4 F/' ${file}.com
-#            sed -i '$s/$/\nD   2    3    4    5 F/' ${file}.com
-#            sed -i '$s/$/\nD   3    4    5    6 F/' ${file}.com
-#            sed -i '$s/$/\nD   4    5    6    1 F/' ${file}.com
-#            sed -i '$s/$/\nD   5    6    1    2 F/' ${file}.com
-#            sed -i '$s/$/\nD   6    1    2    3 F/' ${file}.com
-#            sed -i '$s/$/\n/' ${file}.com
-#            sed -i '$s/$/\n/' ${file}.com
-#
-#
-#        ######## The section below creates the Slurm file for submission on Bridges
-#
-#            sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
-#            sed -e "s/conform/${file}/g" temp1.txt >> temp2.txt
-#            sed -e "s/gauss-log/${1}-${file}-freeze_${3}/g" temp2.txt >> temp3.txt
-#            sed -e "s/\$molecule/${molecule_type}/g" temp3.txt >> temp4.txt
-#            sed -e "s/\$test/${job_type}/g" temp4.txt >> temp5.txt
-#            sed -e "s/\$level/${level_short}/g" temp5.txt >> temp6.txt
-#            sed -e "s/\$hours/${hours}/g" temp6.txt >> temp7.txt
-#            sed -e "s/\$minutes/${minutes}/g" temp7.txt >> temp8.txt
-#
-#            mv temp8.txt slurm-${file}.job
-#            rm temp*.txt
+
+        ######## The section below creates the Slurm file for submission on Bridges
+
+            sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
+            sed -e "s/conform/${file}/g" temp1.txt >> temp2.txt
+            sed -e "s/gauss-log/${1}-${file}-freeze_${3}/g" temp2.txt >> temp3.txt
+            sed -e "s/\$molecule/${molecule_type}/g" temp3.txt >> temp4.txt
+            sed -e "s/\$test/${job_type}/g" temp4.txt >> temp5.txt
+            sed -e "s/\$level/${level_short}/g" temp5.txt >> temp6.txt
+            sed -e "s/\$hours/${hours}/g" temp6.txt >> temp7.txt
+            sed -e "s/\$minutes/${minutes}/g" temp7.txt >> temp8.txt
+
+            mv temp8.txt slurm-${file}.job
+            rm temp*.txt
         done
     fi
 fi
