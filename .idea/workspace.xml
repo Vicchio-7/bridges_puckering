@@ -42,8 +42,8 @@
       <file leaf-file-name="z11_freeze_jobs.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/z11_freeze_jobs.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="515">
-              <caret line="106" column="62" lean-forward="false" selection-start-line="106" selection-start-column="62" selection-end-line="106" selection-end-column="62" />
+            <state relative-caret-position="71">
+              <caret line="73" column="43" lean-forward="true" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -674,12 +674,12 @@
       <updated>1485539894836</updated>
       <workItem from="1485539896362" duration="19226000" />
       <workItem from="1485823811289" duration="10238000" />
-      <workItem from="1486431592389" duration="9271000" />
+      <workItem from="1486431592389" duration="9381000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38735000" />
+    <option name="totallyTimeSpent" value="38845000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -935,8 +935,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/z11_freeze_jobs.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="106" column="62" lean-forward="false" selection-start-line="106" selection-start-column="62" selection-end-line="106" selection-end-column="62" />
+        <state relative-caret-position="71">
+          <caret line="73" column="43" lean-forward="true" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
           <folding />
         </state>
       </provider>
