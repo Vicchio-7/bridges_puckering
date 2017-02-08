@@ -163,7 +163,7 @@ elif [ ${status_build} == 0 ] ; then
             sed -i '$s/$/\n/' ${file}.com
 
 
-       elif [ "${job_type}" == 'freeze' ] ; then
+       elif [ "${job_type}" == 'optall' ] ; then
 
             tpl_file=${tpl}/${template}
 
