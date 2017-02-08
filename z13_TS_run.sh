@@ -92,7 +92,7 @@ elif [ ${status_build} == 0 ] ; then
 
             file=${file_unedit%.com}
 
-            tpl_file=${tpl}/${tpl_folder}/run_oxane_optall-to-localmin.tpl ###################################
+            tpl_file=${tpl}/${tpl_folder}/run_oxane_optall-to-TS.tpl
 
         ######## The section below updates the Gaussian Input File
 
