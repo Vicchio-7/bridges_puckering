@@ -20,7 +20,7 @@ level_short=$3
 ## Input - Gaussian Run Information ##
 # The following information determines the numbers of cores and memory the jobs will require.
 cores_per_node=1
-memory_job=15
+memory_job=3800
 hours=2 #1, 2 ,3 ..... 10, 11, 12....
 minutes=45 # number between 0 and 59
 
@@ -123,7 +123,7 @@ elif [ ${status_build} == 0 ] ; then
 
         ######## The section below creates the Slurm file for submission on Bridges
 
-            sed -i "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
+            sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
             sed -i "s/conform/${file}/g" temp1.txt
             sed -i "s/gauss-log/${1}-${file}-freeze_${3}/g" temp1.txt
             sed -i "s/\$molecule/${molecule_type}/g" temp1.txt
