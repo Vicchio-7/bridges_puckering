@@ -78,6 +78,7 @@ elif [ ${status_build} == 0 ] ; then
 	    mkdir 7_irc_run
 		mkdir 8_irc_localmin
 		mkdir 9_all_lm_logs
+		mkdir 10_ts_viz_logs
 
     fi
 

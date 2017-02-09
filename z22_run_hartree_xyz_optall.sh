@@ -33,7 +33,7 @@ p1=/pylon1/${account}/${user}
 p2=/pylon2/${account}/${user}
 folder_type=4_opt_localmin
 tpl=${p2}/puckering/y_tpl
-results_location=${p2}/puckering/z_results/
+results_location=${p2}/puckering/z_results
 
 failure=out-failure-${1}-${2}-${3}.status
 
