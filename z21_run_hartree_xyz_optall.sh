@@ -35,6 +35,8 @@ folder_type=4_opt_localmin
 tpl=${p2}/puckering/y_tpl
 results_location=
 
+failure=out-failure-${1}-${2}-${3}.status
+
 # --------------------------------------------------------------------------------------
 
 ## Setup Check ##
