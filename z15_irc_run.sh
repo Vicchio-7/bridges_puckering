@@ -110,14 +110,13 @@ elif [ ${status_build} == 0 ] ; then
                 new_check_file=${new_filenamef}_${3}.chk
 
                 sed -e "s/\$memory/${total_memory}/g" ${tpl}/${tpl_folder}/run_irc_forward.tpl > temp1.com
-                sed -i "s/\$num_procs/${cores_per_node}/g" temp1.com
-                sed -i "s/\$folder_old/${1}-TS_${3}/g" temp1.com
-                sed -i "s/\$old_check/${file_org}.chk/g" temp1.com
-                sed -i "s/\$chkfile/${new_check_file}/g" temp1.com
-                sed -i "s/\$folder/${molecule}-${test_type}_${3}-forward/g" temp1.com
-                sed -i "s/level_of_theory/${level_of_theory}/g" temp1.com
+                sed -i "s/\$num_procs/${cores_per_node}/g" temp1.temp
+                sed -i "s/\$folder_1/${folder}/g" temp1.temp
+                sed -i "s/\$folder_new/${irc_forward}/g" temp1.temp
+                sed -i "s/\$chkfile/${file}-freeze_${level_short}-${job_type}_${level_short}.chk/g" temp1.temp
+                sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp
 
-                mv temp1.com ${new_filenamef}.com
+            mv temp1.temp ${file}.com
 
                 ######## The section below creates the Slurm file for submission on Bridges
                 sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
