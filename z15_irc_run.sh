@@ -109,7 +109,7 @@ elif [ ${status_build} == 0 ] ; then
                 old_check_file=${file_org}.chk
                 new_check_file=${new_filenamef}_${3}.chk
 
-                sed -e "s/\$memory/${total_memory}/g" ${tpl}/${tpl_folder}/run_irc_forward.tpl > temp1.com
+                sed -e "s/\$memory/${total_memory}/g" ${tpl}/${tpl_folder}/run_irc_forward.tpl > temp1.temp
                 sed -i "s/\$num_procs/${cores_per_node}/g" temp1.temp
                 sed -i "s/\$folder_1/${folder}/g" temp1.temp
                 sed -i "s/\$folder_new/${irc_forward}/g" temp1.temp
