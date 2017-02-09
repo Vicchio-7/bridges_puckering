@@ -81,11 +81,15 @@ elif [ ${status_build} == 0 ] ; then
         fi
 
     fi
+
+    if [ ! -d ${results_location}/${folder}/${level_short}/ ]; then
+        mkdir ${results_location}/${folder}/${level_short}/
+    fi
+
+    cp z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv
+    cp z_clusted_sorted-${job_type}-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/z_clusted_sorted-${job_type}-${molecule_type}-${level_short}.csv
+
+    cp *.log ../9_all_lm_logs/.
+
 fi
 
-if [ ! -d ${results_location}/${folder}/${level_short}/ ]; then
-    mkdir ${results_location}/${folder}/${level_short}/
-fi
-
-cp z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv
-cp z_clusted_sorted-${job_type}-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/z_clusted_sorted-${job_type}-${molecule_type}-${level_short}.csv
