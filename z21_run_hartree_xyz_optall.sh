@@ -74,7 +74,7 @@ elif [ ${status_build} == 0 ] ; then
 
         if [[ ${molecule_type} == 'oxane' ]]; then
             hartree cpsnap -d $PWD > z_hartree-unsorted-${job_type}-${molecule}-${level_short}.csv
-            z05_grab_xyz_coords ${molecule}
+            z05_grab_xyz_coords.sh  ${molecule}
             xyz_cluster -s z_hartree-unsorted-${job_type}-${molecule}-${level_short}.csv -t ${tol}
         elif [[ ${molecule_type} == 'bxyl' ]]; then
             echo 'hi mom'
