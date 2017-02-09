@@ -80,22 +80,22 @@ elif [ ${status_build} == 0 ] ; then
             echo 'hi mom'
         fi
 
-#    fi
-#
-#    if [ ! -d ${results_location}/${folder}/${level_short}/ ]; then
-#        mkdir ${results_location}/${folder}/${level_short}/
-#    fi
-#
-#    echo
-#    echo "Copying files over to:" ${results_location}/${folder}/${level_short}
-#    echo
-#
-#    cp z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv
-#    cp z_cluster_sorted-${job_type}-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/z_cluster_sorted-${job_type}-${molecule_type}-${level_short}.csv
-#
-#    echo "Copied all log files to 10_ts_viz_logs"
-#    echo
-#
-#    cp *.log ../10_ts_viz_logs/.
+    fi
+
+    if [ ! -d ${results_location}/${folder}/${level_short}/ ]; then
+        mkdir ${results_location}/${folder}/${level_short}/
+    fi
+
+    echo
+    echo "Copying files over to:" ${results_location}/${folder}/${level_short}
+    echo
+
+    cp z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv
+    cp z_cluster_sorted-${job_type}-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/z_cluster_sorted-${job_type}-${molecule_type}-${level_short}.csv
+
+    echo "Copied all log files to 10_ts_viz_logs"
+    echo
+
+    cp *.log ../10_ts_viz_logs/.
 
 fi
