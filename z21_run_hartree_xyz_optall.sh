@@ -87,7 +87,7 @@ elif [ ${status_build} == 0 ] ; then
     fi
 
     cp z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv
-    cp z_clusted_sorted-${job_type}-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/z_clusted_sorted-${job_type}-${molecule_type}-${level_short}.csv
+    cp z_cluster_sorted-${job_type}-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/z_cluster_sorted-${job_type}-${molecule_type}-${level_short}.csv
 
     cp *.log ../9_all_lm_logs/.
 
