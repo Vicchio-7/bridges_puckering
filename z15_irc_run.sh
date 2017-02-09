@@ -89,7 +89,7 @@ elif [ ${status_build} == 0 ] ; then
         mkdir ${irc_backward}
     fi
 
-    if [ ${molecule} == "oxane" ] ; then
+    if [ ${molecule_type} == "oxane" ] ; then
 
     ts_hartree_file=${p2}/z_results/${folder}/${level_short}/z_cluster_sorted-TS-${molecule_type}-${level_short}.csv
     input_list=$( column -t -s ',' ${ts_hartree_file} | awk '{print $1}' )
