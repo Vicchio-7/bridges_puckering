@@ -112,6 +112,7 @@ elif [ ${status_build} == 0 ] ; then
                 sed -e "s/\$memory/${total_memory}/g" ${tpl}/${tpl_folder}/run_irc_forward.tpl > temp1.temp
                 sed -i "s/\$num_procs/${cores_per_node}/g" temp1.temp
                 sed -i "s/\$folder_1/${folder}/g" temp1.temp
+                sed -i "s/\$folder_old/${molecule_type}-TS_${level_short}/g" temp1.temp
                 sed -i "s/\$folder_new/${1}-${2}_${3}-forward/g" temp1.temp
                 sed -i "s/\$old_check/${file_org}.chk/g" temp1.temp
                 sed -i "s/\$chkfile/${new_check_file}/g" temp1.temp
@@ -121,8 +122,8 @@ elif [ ${status_build} == 0 ] ; then
 
                 ######## The section below creates the Slurm file for submission on Bridges
                 sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
-                sed -i "s/conform/${file}/g" temp1.txt
-                sed -i "s/gauss-log/${file}-freeze_${3}-${2}_${3}/g" temp1.txt
+                sed -i "s/conform/${file_org}/g" temp1.txt
+                sed -i "s/gauss-log/${new_filenamef}/g" temp1.txt
                 sed -i "s/\$molecule/${molecule_type}/g" temp1.txt
                 sed -i "s/\$test/${job_type}/g" temp1.txt
                 sed -i "s/\$level/${level_short}/g" temp1.txt
