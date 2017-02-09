@@ -33,7 +33,7 @@ p1=/pylon1/${account}/${user}
 p2=/pylon2/${account}/${user}
 folder_type=4_opt_localmin
 tpl=${p2}/puckering/y_tpl
-results_location=
+results_location=${p2}/puckering/z_results/
 
 failure=out-failure-${1}-${2}-${3}.status
 
@@ -72,12 +72,20 @@ elif [ ${status_build} == 0 ] ; then
         echo
 
         if [[ ${molecule_type} == 'oxane' ]]; then
-            hartree cpsnap -d $PWD > z_hartree-unsorted-${job_type}-${molecule}-${level_short}.csv
+            hartree cpsnap -d $PWD > z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv
             z05_grab_xyz_coords.sh ${molecule_type}
-            xyz_cluster -s z_hartree-unsorted-${job_type}-${molecule}-${level_short}.csv -t ${tol}
+            xyz_cluster -s z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv -t ${tol}
+            mv z_clusted_z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv z_clusted_sorted-${job_type}-${molecule_type}-${level_short}.csv
         elif [[ ${molecule_type} == 'bxyl' ]]; then
             echo 'hi mom'
         fi
 
     fi
 fi
+
+if [ ! -d ${results_location}/${folder}/${level_short}/ ]; then
+    mkdir ${results_location}/${folder}/${level_short}/
+fi
+
+cp z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv
+cp z_clusted_sorted-${job_type}-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/z_clusted_sorted-${job_type}-${molecule_type}-${level_short}.csv
