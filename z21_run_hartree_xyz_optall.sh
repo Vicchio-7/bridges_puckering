@@ -82,12 +82,20 @@ elif [ ${status_build} == 0 ] ; then
 
     fi
 
+
+
     if [ ! -d ${results_location}/${folder}/${level_short}/ ]; then
         mkdir ${results_location}/${folder}/${level_short}/
     fi
 
+    echo "Copying files over to:" ${results_location}/${folder}/${level_short}
+    echo
+
     cp z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv
     cp z_cluster_sorted-${job_type}-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/z_cluster_sorted-${job_type}-${molecule_type}-${level_short}.csv
+
+    echo "Copied all log files to 9_al_lm_logs"
+    echo
 
     cp *.log ../9_all_lm_logs/.
 
