@@ -41,17 +41,23 @@ if [ ${status_build} == 1 ]; then
 elif [ ${status_build} == 0 ] ; then
 
     if [ ${level_short} == 'am1' ] ; then
-
         echo 'am1'
-
-    elif [ ${level_short} == 'b3lyp' ] ; then
-        echo 'b3lyp\/6-31+G(d,p)'
     elif [ ${level_short} == 'pm3' ] ; then
         echo 'pm3'
+    elif [ ${level_short} == 'pm3mm' ] ; then
+        echo 'pm3mm'
+    elif [ ${level_short} == 'pm6' ] ; then
+        echo 'pm6'
     elif [ ${level_short} == 'dftb' ] ; then
         echo 'dftb'
+    elif [ ${level_short} == 'b3lyp' ] ; then
+        echo 'b3lyp\/6-31+G(d,p)'
     elif [ ${level_short} == 'APFD' ] ; then
         echo 'APFD\/6-31+G(d,p)'
+    elif [ ${level_short} == 'pbe' ] ; then
+        echo 'pbepbe\/6-31+G(d,p)'
+    elif [ ${level_short} == 'bmk' ] ; then
+        echo 'bmk\/6-31+G(d,p)'
     else
         echo "# # # ERROR # # #"
     fi
