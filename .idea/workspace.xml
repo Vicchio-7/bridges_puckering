@@ -59,17 +59,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="z13_TS_run.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="z13_TS_run.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/z13_TS_run.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="143" column="39" lean-forward="false" selection-start-line="143" selection-start-column="39" selection-end-line="143" selection-end-column="39" />
+            <state relative-caret-position="517">
+              <caret line="142" column="54" lean-forward="false" selection-start-line="142" selection-start-column="54" selection-end-line="142" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="z12_local_min.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="z12_local_min.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/z12_local_min.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="366">
@@ -668,12 +668,12 @@
       <updated>1485539894836</updated>
       <workItem from="1485539896362" duration="19226000" />
       <workItem from="1485823811289" duration="10238000" />
-      <workItem from="1486431592389" duration="24773000" />
+      <workItem from="1486431592389" duration="25071000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54237000" />
+    <option name="totallyTimeSpent" value="54535000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -943,18 +943,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/z12_local_min.sh">
+    <entry file="file://$PROJECT_DIR$/z13_TS_run.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="145" column="39" lean-forward="false" selection-start-line="145" selection-start-column="39" selection-end-line="145" selection-end-column="39" />
+        <state relative-caret-position="517">
+          <caret line="142" column="54" lean-forward="false" selection-start-line="142" selection-start-column="54" selection-end-line="142" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/z13_TS_run.sh">
+    <entry file="file://$PROJECT_DIR$/z12_local_min.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="143" column="39" lean-forward="false" selection-start-line="143" selection-start-column="39" selection-end-line="143" selection-end-column="39" />
+        <state relative-caret-position="366">
+          <caret line="145" column="39" lean-forward="false" selection-start-line="145" selection-start-column="39" selection-end-line="145" selection-end-column="39" />
           <folding />
         </state>
       </provider>
