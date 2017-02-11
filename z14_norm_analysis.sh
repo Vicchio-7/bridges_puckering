@@ -92,7 +92,7 @@ elif [ ${status_build} == 0 ] ; then
 
     echo ${input_list}
 
-    for file_unedit in ${input_list}; do
+    for file in ${input_list}; do
 #
         file1=${file%.log\"}
         file_org=${file1##\"}
