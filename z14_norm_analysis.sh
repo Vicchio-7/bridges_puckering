@@ -93,34 +93,36 @@ elif [ ${status_build} == 0 ] ; then
         file1=${file%.log\"}
         file_org=${file1##\"}
 
-        tpl_file=${tpl}/${tpl_folder}/run_norm.tpl
+       if [ "${file_org}" != "File" ]; then
 
-        ######## The section below updates the Gaussian Input File
+            tpl_file=${tpl}/${tpl_folder}/run_norm.tpl
 
-        sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > temp1.temp
-        sed -i "s/\$num_procs/${cores_per_node}/g" temp1.temp
-        sed -i "s/\$folder_1/${folder}/g" temp1.temp
-        sed -i "s/\$folder_old/${molecule_type}-TS_${level_short}/g" temp1.temp
-        sed -i "s/\$folder_new/${molecule_type}-norm_${level_short}/g" temp1.temp
-        sed -i "s/\$chkfile/${file_org}-norm_${3}.chk/g" temp1.temp
-        sed -i "s/\$old_check/${file_org}.chk/g" temp1.temp
-        sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp
+            ######## The section below updates the Gaussian Input File
 
-        mv temp1.temp ${file_org}-norm_${3}.com
+            sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > temp1.temp
+            sed -i "s/\$num_procs/${cores_per_node}/g" temp1.temp
+            sed -i "s/\$folder_1/${folder}/g" temp1.temp
+            sed -i "s/\$folder_old/${molecule_type}-TS_${level_short}/g" temp1.temp
+            sed -i "s/\$folder_new/${molecule_type}-norm_${level_short}/g" temp1.temp
+            sed -i "s/\$chkfile/${file_org}-norm_${3}.chk/g" temp1.temp
+            sed -i "s/\$old_check/${file_org}.chk/g" temp1.temp
+            sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp
+
+            mv temp1.temp ${file_org}-norm_${3}.com
 
 
-        ######## The section below creates the Slurm file for submission on Bridges
+            ######## The section below creates the Slurm file for submission on Bridges
 
-        sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
-        sed -i "s/conform/${file_org}-norm_${3}/g" temp1.txt
-        sed -i "s/gauss-log/${file_org}-norm_${3}/g" temp1.txt
-        sed -i "s/\$molecule/${molecule_type}/g" temp1.txt
-        sed -i "s/\$test/${job_type}/g" temp1.txt
-        sed -i "s/\$level/${level_short}/g" temp1.txt
-        sed -i "s/\$hours/${hours}/g" temp1.txt
-        sed -i "s/\$minutes/${minutes}/g" temp1.txt
+            sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
+            sed -i "s/conform/${file_org}-norm_${3}/g" temp1.txt
+            sed -i "s/gauss-log/${file_org}-norm_${3}/g" temp1.txt
+            sed -i "s/\$molecule/${molecule_type}/g" temp1.txt
+            sed -i "s/\$test/${job_type}/g" temp1.txt
+            sed -i "s/\$level/${level_short}/g" temp1.txt
+            sed -i "s/\$hours/${hours}/g" temp1.txt
+            sed -i "s/\$minutes/${minutes}/g" temp1.txt
 
-        mv temp1.txt slurm-${file_org}-norm_${3}.job
-
+            mv temp1.txt slurm-${file_org}-norm_${3}.job
+        fi
     done
 fi
