@@ -92,10 +92,12 @@ elif [ ${status_build} == 0 ] ; then
 
     echo ${input_list}
 
-    for file_unedit in $( <${input_list}); do
+    for file_unedit in ${input_list}; do
 #
-            file=${file_unedit%.log}
+        file1=${file%.log\"}
+        file_org=${file1##\"}
 
+        echo ${file_org}
 #            tpl_file=${tpl}/${tpl_folder}/run_norm.tpl
 #
 #        ######## The section below updates the Gaussian Input File
