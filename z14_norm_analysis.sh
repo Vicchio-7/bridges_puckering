@@ -101,7 +101,7 @@ elif [ ${status_build} == 0 ] ; then
 
         ######## The section below updates the Gaussian Input File
 
-        sed -i "s/\$memory/${total_memory}/g" temp1.temp
+        sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > temp1.temp
         sed -i "s/\$num_procs/${cores_per_node}/g" temp1.temp
         sed -i "s/\$folder_1/${folder}/g" temp1.temp
         sed -i "s/\$folder_new/${molecule_type}-TS_${level_short}/g" temp1.temp
