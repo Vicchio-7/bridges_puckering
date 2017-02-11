@@ -90,6 +90,8 @@ elif [ ${status_build} == 0 ] ; then
         mkdir ${p1}/puckering/${folder}/${molecule_type}-norm_${level_short}
     fi
 
+    echo ${input_list}
+
 #    for file_unedit in $( <$input_list); do
 #
 #            file=${file_unedit%.log}
