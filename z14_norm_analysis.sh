@@ -82,8 +82,6 @@ elif [ ${status_build} == 0 ] ; then
 
     ts_hartree_file=../5_opt_TS/z_hartree-unsorted-TS-${molecule_type}-${level_short}.csv
 
-    echo ${ts_hartree_file}
-
     input_list=$( column -t -s ',' ${ts_hartree_file} | awk '{print $1}' )
 
     if [ ! -d ${p1}/puckering/${folder}/${molecule_type}-norm_${level_short} ]; then
@@ -101,13 +99,14 @@ elif [ ${status_build} == 0 ] ; then
 
         sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > temp1.temp
         sed -i "s/\$num_procs/${cores_per_node}/g" temp1.temp
-#        sed -i "s/\$folder_1/${folder}/g" temp1.temp
-#        sed -i "s/\$folder_new/${molecule_type}-TS_${level_short}/g" temp1.temp
-#        sed -i "s/\$chkfile/${file_org}-norm_${3}.chk/g" temp1.temp
-#        sed -i "s/\$old_check/${file_org}.chk/g" temp1.temp
-#        sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp > ${file_org}.com
-#
-#        rm temp1.temp
+        sed -i "s/\$folder_1/${folder}/g" temp1.temp
+        sed -i "s/\$folder_new/${molecule_type}-TS_${level_short}/g" temp1.temp
+        sed -i "s/\$chkfile/${file_org}-norm_${3}.chk/g" temp1.temp
+        sed -i "s/\$old_check/${file_org}.chk/g" temp1.temp
+        sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp > ${file_org}.com
+
+        mv temp1.temp ${file_org}.com
+
 
         ######## The section below creates the Slurm file for submission on Bridges
 
