@@ -92,10 +92,10 @@ elif [ ${status_build} == 0 ] ; then
 
     echo ${input_list}
 
-#    for file_unedit in $( <$input_list); do
+    for file_unedit in $( <$input_list); do
 #
-#            file=${file_unedit%.log}
-#
+            file=${file_unedit%.log}
+
 #            tpl_file=${tpl}/${tpl_folder}/run_norm.tpl
 #
 #        ######## The section below updates the Gaussian Input File
@@ -125,5 +125,5 @@ elif [ ${status_build} == 0 ] ; then
 ##
 ##            mv temp8.txt slurm-${file}.job
 ##            rm temp*.txt
-#    done
+    done
 fi
