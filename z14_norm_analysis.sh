@@ -90,48 +90,38 @@ elif [ ${status_build} == 0 ] ; then
         mkdir ${p1}/puckering/${folder}/${molecule_type}-norm_${level_short}
     fi
 
-    for file_unedit in $( <$input_list); do
-
-            file=${file_unedit%.log}
-
-            tpl_file=${tpl}/${tpl_folder}/run_norm.tpl
-
-        ######## The section below updates the Gaussian Input File
-
-#            sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > temp1.temp
-#            sed -e "s/\$num_procs/${cores_per_node}/g" temp1.temp >> temp2.temp
-#            sed -e "s/\$folder_1/${folder}/g" temp2.temp >> temp3.temp
-#            sed -e "s/\$folder_old/${molecule_type}-freeze_${level_short}/g" temp3.temp >> temp4.temp
-#            sed -e "s/\$old_check/${molecule_type}-${file}-freeze_${level_short}.chk/g" temp4.temp >> temp5.temp
-#            sed -e "s/\$folder_new/${molecule_type}-TS_${level_short}/g" temp5.temp >> temp6.temp
-#            sed -e "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}-${job_type}_${level_short}.chk/g" temp6.temp >> temp7.temp
-#            sed -e "s/\level_of_theory/${level_theory}/g" temp7.temp >> temp8.temp
+#    for file_unedit in $( <$input_list); do
 #
-#            mv temp8.temp ${file}.com
-#            rm *.temp
-
-        ######## The section below creates the Slurm file for submission on Bridges
-
-#            sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
-#            sed -e "s/conform/${file}/g" temp1.txt >> temp2.txt
-#            sed -e "s/gauss-log/${1}-${file}-freeze_${3}-${2}_${3}/g" temp2.txt >> temp3.txt
-#            sed -e "s/\$molecule/${molecule_type}/g" temp3.txt >> temp4.txt
-#            sed -e "s/\$test/${job_type}/g" temp4.txt >> temp5.txt
-#            sed -e "s/\$level/${level_short}/g" temp5.txt >> temp6.txt
-#            sed -e "s/\$hours/${hours}/g" temp6.txt >> temp7.txt
-#            sed -e "s/\$minutes/${minutes}/g" temp7.txt >> temp8.txt
+#            file=${file_unedit%.log}
 #
-#            mv temp8.txt slurm-${file}.job
-#            rm temp*.txt
-        done
-
-
-
-
-
-
-
-
-
-
+#            tpl_file=${tpl}/${tpl_folder}/run_norm.tpl
+#
+#        ######## The section below updates the Gaussian Input File
+#
+##            sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > temp1.temp
+##            sed -e "s/\$num_procs/${cores_per_node}/g" temp1.temp >> temp2.temp
+##            sed -e "s/\$folder_1/${folder}/g" temp2.temp >> temp3.temp
+##            sed -e "s/\$folder_old/${molecule_type}-freeze_${level_short}/g" temp3.temp >> temp4.temp
+##            sed -e "s/\$old_check/${molecule_type}-${file}-freeze_${level_short}.chk/g" temp4.temp >> temp5.temp
+##            sed -e "s/\$folder_new/${molecule_type}-TS_${level_short}/g" temp5.temp >> temp6.temp
+##            sed -e "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}-${job_type}_${level_short}.chk/g" temp6.temp >> temp7.temp
+##            sed -e "s/\level_of_theory/${level_theory}/g" temp7.temp >> temp8.temp
+##
+##            mv temp8.temp ${file}.com
+##            rm *.temp
+#
+#        ######## The section below creates the Slurm file for submission on Bridges
+#
+##            sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
+##            sed -e "s/conform/${file}/g" temp1.txt >> temp2.txt
+##            sed -e "s/gauss-log/${1}-${file}-freeze_${3}-${2}_${3}/g" temp2.txt >> temp3.txt
+##            sed -e "s/\$molecule/${molecule_type}/g" temp3.txt >> temp4.txt
+##            sed -e "s/\$test/${job_type}/g" temp4.txt >> temp5.txt
+##            sed -e "s/\$level/${level_short}/g" temp5.txt >> temp6.txt
+##            sed -e "s/\$hours/${hours}/g" temp6.txt >> temp7.txt
+##            sed -e "s/\$minutes/${minutes}/g" temp7.txt >> temp8.txt
+##
+##            mv temp8.txt slurm-${file}.job
+##            rm temp*.txt
+#    done
 fi
