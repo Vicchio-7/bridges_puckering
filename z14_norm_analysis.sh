@@ -101,12 +101,13 @@ elif [ ${status_build} == 0 ] ; then
 
         sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > temp1.temp
         sed -i "s/\$num_procs/${cores_per_node}/g" temp1.temp
-        sed -i "s/\$folder_1/${folder}/g" temp1.temp
-        sed -i "s/\$folder_new/${molecule_type}-TS_${level_short}/g" temp1.temp
-        sed -i "s/\$chkfile/${file_org}.chk/g" temp1.temp
-        sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp > ${file_org}.com
-
-        rm temp1.temp
+#        sed -i "s/\$folder_1/${folder}/g" temp1.temp
+#        sed -i "s/\$folder_new/${molecule_type}-TS_${level_short}/g" temp1.temp
+#        sed -i "s/\$chkfile/${file_org}-norm_${3}.chk/g" temp1.temp
+#        sed -i "s/\$old_check/${file_org}.chk/g" temp1.temp
+#        sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp > ${file_org}.com
+#
+#        rm temp1.temp
 
         ######## The section below creates the Slurm file for submission on Bridges
 
@@ -119,7 +120,7 @@ elif [ ${status_build} == 0 ] ; then
         sed -i "s/\$hours/${hours}/g" temp1.txt
         sed -i "s/\$minutes/${minutes}/g" temp1.txt
 
-        mv temp1.txt slurm-${file}.job
+        mv temp1.txt slurm-${file_org}.job
 
     done
 fi
