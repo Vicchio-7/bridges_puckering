@@ -79,7 +79,11 @@ elif [ ${status_build} == 0 ] ; then
     fi
 
     # Finding the hartree file to perform norm analysis on
+
     ts_hartree_file=../5_opt_TS/z_hartree-unsorted-TS-${molecule_type}-${level_short}.csv
+
+    echo ${ts_hartree_file}
+
     input_list=$( column -t -s ',' ${ts_hartree_file} | awk '{print $1}' )
 
     if [ ! -d ${p1}/puckering/${folder}/${molecule_type}-norm_${level_short} ]; then
