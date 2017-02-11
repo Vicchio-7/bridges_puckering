@@ -106,13 +106,13 @@ elif [ ${status_build} == 0 ] ; then
         sed -i "s/\$old_check/${file_org}.chk/g" temp1.temp
         sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp
 
-        mv temp1.temp ${file_org}.com
+        mv temp1.temp ${file_org}-norm_${3}.com
 
 
         ######## The section below creates the Slurm file for submission on Bridges
 
         sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
-        sed -i "s/conform/${file_org}/g" temp1.txt
+        sed -i "s/conform/${file_org}-norm${3}/g" temp1.txt
         sed -i "s/gauss-log/${file_org}-norm_${3}/g" temp1.txt
         sed -i "s/\$molecule/${molecule_type}/g" temp1.txt
         sed -i "s/\$test/${job_type}/g" temp1.txt
@@ -120,7 +120,7 @@ elif [ ${status_build} == 0 ] ; then
         sed -i "s/\$hours/${hours}/g" temp1.txt
         sed -i "s/\$minutes/${minutes}/g" temp1.txt
 
-        mv temp1.txt slurm-${file_org}.job
+        mv temp1.txt slurm-${file_org}-norm_${3}.job
 
     done
 fi
