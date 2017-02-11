@@ -90,8 +90,6 @@ elif [ ${status_build} == 0 ] ; then
         mkdir ${p1}/puckering/${folder}/${molecule_type}-norm_${level_short}
     fi
 
-    echo ${input_list}
-
     for file in ${input_list}; do
 
         file1=${file%.log\"}
@@ -108,22 +106,20 @@ elif [ ${status_build} == 0 ] ; then
         sed -i "s/\$chkfile/${file_org}.chk/g" temp1.temp
         sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp
 
-##
-##            mv temp8.temp ${file}.com
-##            rm *.temp
-#
-#        ######## The section below creates the Slurm file for submission on Bridges
-#
-##            sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
-##            sed -e "s/conform/${file}/g" temp1.txt >> temp2.txt
-##            sed -e "s/gauss-log/${1}-${file}-freeze_${3}-${2}_${3}/g" temp2.txt >> temp3.txt
-##            sed -e "s/\$molecule/${molecule_type}/g" temp3.txt >> temp4.txt
-##            sed -e "s/\$test/${job_type}/g" temp4.txt >> temp5.txt
-##            sed -e "s/\$level/${level_short}/g" temp5.txt >> temp6.txt
-##            sed -e "s/\$hours/${hours}/g" temp6.txt >> temp7.txt
-##            sed -e "s/\$minutes/${minutes}/g" temp7.txt >> temp8.txt
-##
-##            mv temp8.txt slurm-${file}.job
-##            rm temp*.txt
+        mv temp1.temp > ${file_org}.com
+
+        ######## The section below creates the Slurm file for submission on Bridges
+
+        sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
+        sed -i "s/conform/${file_org}/g" temp1.txt
+        sed -i "s/gauss-log/${file_org}-norm_${3}/g" temp1.txt
+        sed -i "s/\$molecule/${molecule_type}/g" temp1.txt
+        sed -i "s/\$test/${job_type}/g" temp1.txt
+        sed -i "s/\$level/${level_short}/g" temp1.txt
+        sed -i "s/\$hours/${hours}/g" temp1.txt
+        sed -i "s/\$minutes/${minutes}/g" temp1.txt
+
+        mv temp1.txt slurm-${file}.job
+
     done
 fi
