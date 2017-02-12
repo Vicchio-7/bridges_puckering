@@ -78,12 +78,28 @@ elif [ ${status_build} == 0 ] ; then
 
     norm_analysis -s z_list_norm_files.txt -r ${ring_atoms}
 
+
+
     mv z_norm-analysis_TS_exo_puckers_z_list_norm_files.txt z_norm-analysis_TS-${level_short}_exo_puckers.txt
     mv z_norm-analysis_TS_ring_puckers_z_list_norm_files.txt z_norm-analysis_TS-${level_short}_ring_puckers.txt
 
     cp z_norm-analysis_TS-${level_short}_exo_puckers.txt ${results_location}/${folder}/${level_short}/.
     cp z_norm-analysis_TS-${level_short}_ring_puckers.txt ${results_location}/${folder}/${level_short}/.
 
+
+    irc_file_list=${p2}/puckering/z_results/${folder}/${level_short}/z_norm-analysis_TS-${level_short}_ring_puckers.txt
+    input_list=$( column -t -s ' ' ${irc_file_list} | awk '{print $1}' )
+
+    for file in ${input_list}; do
+
+        file1=${file%.log}
+        file_2=${file1##\"}
+        file_move_log=${file_2%-norm_${level_short}}
+
+        ls ../5_opt_TS/${file_move_log}.loh
+
+
+    done
     fi
 fi
 
