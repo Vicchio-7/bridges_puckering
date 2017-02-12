@@ -90,16 +90,21 @@ elif [ ${status_build} == 0 ] ; then
     irc_file_list=${p2}/puckering/z_results/${folder}/${level_short}/z_norm-analysis_TS-${level_short}_ring_puckers.txt
     input_list=$( column -t -s ' ' ${irc_file_list} | awk '{print $1}' )
 
+    mkdir ../5_opt_TS/ring_puckering_logs
+
     for file in ${input_list}; do
 
         file1=${file%.log}
         file_2=${file1##\"}
         file_move_log=${file_2%-norm_${level_short}}
 
-        ls ../5_opt_TS/${file_move_log}.loh
-
+        cp ../5_opt_TS/${file_move_log}.log C.
 
     done
+
+    hartree cpsnap -d ../5_opt_TS/ring_puckering_logs/ > ../5_opt_TS/ring_puckering_logs/z_hartree_ring_pucker-unsorted-TS-${level_short}.csv
+
+
     fi
 fi
 
