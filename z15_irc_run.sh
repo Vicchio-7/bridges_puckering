@@ -110,20 +110,16 @@ elif [ ${status_build} == 0 ] ; then
         if [ ${molecule_type} == "oxane" ] ; then
             old_check_file=${file_org}
         else
-            old_check_file=${file_org%-norm_${level_short}}
-            echo ${old_check_file}
+            old_check_file=${file_org%-norm_${level_short}}.chk
         fi
 
             if [ "${file_org}" != "File" ]; then
 
                 echo ${file_org}
-                old_check_file=${file_org%-norm_${level_short}}
-                echo '2nd' ${old_check_file}
 
                 ##### IRC - Forward Direction! #####
 
                 new_filenamef=${file_org}-ircf
-                old_check_file=${file_org}.chk
                 new_check_file=${new_filenamef}_${3}.chk
 
                 sed -e "s/\$memory/${total_memory}/g" ${tpl}/${tpl_folder}/run_irc_forward.tpl > temp1.temp
@@ -131,7 +127,6 @@ elif [ ${status_build} == 0 ] ; then
                 sed -i "s/\$folder_1/${folder}/g" temp1.temp
                 sed -i "s/\$folder_old/${molecule_type}-TS_${level_short}/g" temp1.temp
                 sed -i "s/\$folder_new/${1}-${2}_${3}-forward/g" temp1.temp
-
                 sed -i "s/\$old_check/${old_check_file}/g" temp1.temp
                 sed -i "s/\$chkfile/${new_check_file}/g" temp1.temp
                 sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp
