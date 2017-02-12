@@ -98,7 +98,7 @@ elif [ ${status_build} == 0 ] ; then
         file_2=${file1##\"}
         file_move_log=${file_2%-norm_${level_short}}
 
-        cp ../5_opt_TS/${file_move_log}.log C.
+        cp ../5_opt_TS/${file_move_log}.log ../5_opt_TS/ring_puckering_logs/.
 
     done
 
