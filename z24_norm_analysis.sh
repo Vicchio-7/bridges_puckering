@@ -106,14 +106,23 @@ elif [ ${status_build} == 0 ] ; then
 
     done
 
-    hartree cpsnap -d ${new_dir}/. > ${new_dir}/../z_hartree_ring_pucker-unsorted-TS-${level_short}.csv
+
+    echo
+    echo 'Now running xyz_cluster!'
+    echo
+
+    hartree cpsnap -d ${new_dir}/. > ${new_dir}/z_hartree_ring_pucker-unsorted-TS-${level_short}.csv
 
     cd ${new_dir}
 
     z05_grab_xyz_coords.sh ${molecule_type}
-    xyz_cluster -s z_hartree_ring_pucker-unsorted-TS-${level_short}.csv -t ${tol}
+    xyz_cluster -s ${new_dir}/z_hartree_ring_pucker-unsorted-TS-${level_short}.csv -t ${tol}
 
     mv z_cluster_z_hartree_ring_pucker-unsorted-TS-${level_short}.csv z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv
+
+    cp z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv ../.
+    cp z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/.
+    cp z_norm-analysis_TS-${level_short}_ring_puckers.txt ${results_location}/${folder}/${level_short}/.
 
     fi
 fi
