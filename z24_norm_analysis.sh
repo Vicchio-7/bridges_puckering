@@ -118,3 +118,4 @@ elif [ ${status_build} == 0 ] ; then
     fi
 fi
 
+echo
