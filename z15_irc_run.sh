@@ -95,8 +95,7 @@ elif [ ${status_build} == 0 ] ; then
         input_list=$( column -t -s ',' ${irc_file_list} | awk '{print $1}' )
 
     else
-        echo 'hi i made it here'
-        echo ${p2}/puckering/z_results/${folder}/${level_short}/z_norm-analysis_TS-${level_short}_ring_puckers.txt
+
         irc_file_list=${p2}/puckering/z_results/${folder}/${level_short}/z_norm-analysis_TS-${level_short}_ring_puckers.txt
         input_list=$( column -t -s ' ' ${irc_file_list} | awk '{print $1}' )
 
@@ -104,6 +103,8 @@ elif [ ${status_build} == 0 ] ; then
 
 
     for file in ${input_list}; do
+
+        echo ${file%.log}
 
         file1=${file%.log\"}
         file_org=${file1##\"}
