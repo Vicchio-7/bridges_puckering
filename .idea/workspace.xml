@@ -92,8 +92,8 @@
       <file leaf-file-name="z24_norm_analysis.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/z24_norm_analysis.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="659">
-              <caret line="118" column="19" lean-forward="true" selection-start-line="118" selection-start-column="19" selection-end-line="118" selection-end-column="19" />
+            <state relative-caret-position="584">
+              <caret line="113" column="89" lean-forward="false" selection-start-line="113" selection-start-column="89" selection-end-line="113" selection-end-column="89" />
               <folding />
             </state>
           </provider>
@@ -724,12 +724,12 @@
       <updated>1485539894836</updated>
       <workItem from="1485539896362" duration="19226000" />
       <workItem from="1485823811289" duration="10238000" />
-      <workItem from="1486431592389" duration="51105000" />
+      <workItem from="1486431592389" duration="51295000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="80569000" />
+    <option name="totallyTimeSpent" value="80759000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1041,8 +1041,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/z24_norm_analysis.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="118" column="19" lean-forward="true" selection-start-line="118" selection-start-column="19" selection-end-line="118" selection-end-column="19" />
+        <state relative-caret-position="584">
+          <caret line="113" column="89" lean-forward="false" selection-start-line="113" selection-start-column="89" selection-end-line="113" selection-end-column="89" />
           <folding />
         </state>
       </provider>
