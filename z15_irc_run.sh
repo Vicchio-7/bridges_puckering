@@ -148,7 +148,6 @@ elif [ ${status_build} == 0 ] ; then
                 ##### IRC - Reverse Direction! #####
 
                 new_filenamer=${file_org}-ircr
-                old_check_file=${file_org}.chk
                 new_check_file=${new_filenamer}_${3}.chk
 
                 sed -e "s/\$memory/${total_memory}/g" ${tpl}/${tpl_folder}/run_irc_reverse.tpl > temp1.temp
