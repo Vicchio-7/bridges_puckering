@@ -91,8 +91,16 @@ elif [ ${status_build} == 0 ] ; then
 
     if [ ${molecule_type} == "oxane" ] ; then
 
-    ts_hartree_file=${p2}/puckering/z_results/${folder}/${level_short}/z_cluster_sorted-TS-${molecule_type}-${level_short}.csv
-    input_list=$( column -t -s ',' ${ts_hartree_file} | awk '{print $1}' )
+        irc_file_list=${p2}/puckering/z_results/${folder}/${level_short}/z_cluster_sorted-TS-${molecule_type}-${level_short}.csv
+        input_list=$( column -t -s ',' ${ts_hartree_file} | awk '{print $1}' )
+
+    else
+
+        input_list=$( column -t -s ' ' z_norm-analysis_TS_ring_puckers | awk '{print $1}' )
+
+    fi
+
+
 
     for file in ${input_list}; do
 
@@ -163,5 +171,4 @@ elif [ ${status_build} == 0 ] ; then
 
              fi
          done
-    fi
 fi
