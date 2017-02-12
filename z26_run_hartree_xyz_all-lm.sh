@@ -2,7 +2,7 @@
 
 # Created by: Stephen P. Vicchio
 
-# This scripts run hartree for the lmirc jobs
+# This script performs the local min optimization for the
 #
 # The code is divided into a few section; if you are not Stephen Vicchio, please be sure
 # to change the '## Input - Command Line ##' options (first section below).
@@ -15,6 +15,7 @@
 molecule_type=$1
 job_type=$2
 level_short=$3
+
 
 ## Input - xyz_cluster ##
 # If you need to change the tolerance, please check the ## Setup Check ## section
@@ -33,6 +34,7 @@ p2=/pylon2/${account}/${user}
 folder_type=4_opt_localmin
 tpl=${p2}/puckering/y_tpl
 results_location=${p2}/puckering/z_results
+
 failure=out-failure-${1}-${2}-${3}.status
 
 # --------------------------------------------------------------------------------------
@@ -61,7 +63,7 @@ if [ ${status_build} == 1 ]; then
 	exit
 elif [ ${status_build} == 0 ] ; then
 
-    z04_check_normal_termination.sh ${molecule_type} lmirc ${level_short}
+    z04_check_normal_termination.sh ${molecule_type} optall ${level_short}
 
     if [ ! -f ${failure} ]; then
         echo "No Files failed! Performing hartree and xyz_cluster"
@@ -71,8 +73,14 @@ elif [ ${status_build} == 0 ] ; then
 
         if [[ ${molecule_type} == 'oxane' ]]; then
             hartree cpsnap -d $PWD > z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv
+            z05_grab_xyz_coords.sh ${molecule_type}
+            xyz_cluster -s z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv -t ${tol}
+            mv z_cluster_z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv z_single_cluster-sorted-${job_type}-${molecule_type}-${level_short}.csv
         else
-            hartree cpsnap -d $PWD > z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv
+            hartree cpsnap -d $PWD > z_hartree-allunsorted-${job_type}-${molecule_type}-${level_short}.csv
+            z05_grab_xyz_coords.sh ${molecule_type}
+            xyz_cluster -s z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv -t ${tol}
+            mv z_cluster_z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv z_cluster-sorted-${job_type}-${molecule_type}-${level_short}.csv
         fi
 
     fi
@@ -85,11 +93,8 @@ elif [ ${status_build} == 0 ] ; then
     echo "Copying files over to:" ${results_location}/${folder}/${level_short}
     echo
 
-    cp z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv
+    cp z_hartree-allunsorted-${job_type}-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/z_hartree-allunsorted-${job_type}-${molecule_type}-${level_short}.csv
+    cp z_cluster-sorted-${job_type}-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/z_cluster-sorted-${job_type}-${molecule_type}-${level_short}.csv
 
-    echo "Copied all log files to 9_al_lm_logs"
-    echo
-
-    cp *.log ../9_all_lm_logs/.
 
 fi
