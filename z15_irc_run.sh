@@ -104,9 +104,7 @@ elif [ ${status_build} == 0 ] ; then
 
     for file in ${input_list}; do
 
-        echo ${file%.log}
-
-        file1=${file%.log\"}
+        file1=${file%.log}
         file_org=${file1##\"}
 
             if [ "${file_org}" != "File" ]; then
