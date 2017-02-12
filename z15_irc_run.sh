@@ -106,12 +106,12 @@ elif [ ${status_build} == 0 ] ; then
 
         file1=${file%.log}
         file_org=${file1##\"}
-        old_check_file=${file_org%-norm_am1}
 
         if [ ${molecule_type} == "oxane" ] ; then
             old_check_file=${file_org}
         else
             old_check_file=${file_org%-norm_${level_short}}
+            echo ${old_check_file}
         fi
 
             if [ "${file_org}" != "File" ]; then
