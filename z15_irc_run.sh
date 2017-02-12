@@ -111,12 +111,14 @@ elif [ ${status_build} == 0 ] ; then
             old_check_file=${file_org}
         else
             old_check_file=${file_org%-norm_${level_short}}
+            echo ${old_check_file}
         fi
 
             if [ "${file_org}" != "File" ]; then
 
                 echo ${file_org}
                 old_check_file=${file_org%-norm_${level_short}}
+                echo '2nd' ${old_check_file}
 
                 ##### IRC - Forward Direction! #####
 
