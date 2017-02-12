@@ -106,6 +106,9 @@ elif [ ${status_build} == 0 ] ; then
 
         file1=${file%.log}
         file_org=${file1##\"}
+        old_check_file=${file_org%-norm_am1}
+
+        echo ${old_check_file}
 
             if [ "${file_org}" != "File" ]; then
 
