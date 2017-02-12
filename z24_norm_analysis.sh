@@ -90,7 +90,7 @@ elif [ ${status_build} == 0 ] ; then
     irc_file_list=${p2}/puckering/z_results/${folder}/${level_short}/z_norm-analysis_TS-${level_short}_ring_puckers.txt
     input_list=$( column -t -s ' ' ${irc_file_list} | awk '{print $1}' )
 
-    new_dir=${p2}/puckering/${folder}/5_opt_TS/z_ring_puckering_logs
+    new_dir=${p2}/puckering/${folder}/${level_short}/5_opt_TS/z_ring_puckering_logs
 
     if [ ! -d ${new_dir} ]; then
         mkdir ${new_dir}
