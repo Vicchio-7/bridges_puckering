@@ -26,6 +26,10 @@ elif [ "${molecule_type}" == 'bxyl' ] ;  then
 	status_build=0
 	num_atoms=20
 	buffer_lines=4
+elif [ "${molecule_type}" == 'bglc' ] ;  then
+	status_build=0
+	num_atoms=24
+	buffer_lines=4
 else
 	echo
 	echo "The molecule type is not found in this script"
