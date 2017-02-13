@@ -91,7 +91,7 @@ elif [ ${status_build} == 0 ] ; then
 
     if [ ${molecule_type} == "oxane" ] ; then
 
-        irc_file_list=${p2}/puckering/z_results/${folder}/${level_short}/z_cluster_sorted-TS-${molecule_type}-${level_short}.csv
+        irc_file_list=${p2}/puckering/z_results/${folder}/${level_short}/z_cluster-sorted-TS-${molecule_type}-${level_short}.csv
         input_list=$( column -t -s ',' ${irc_file_list} | awk '{print $1}' )
 
     else
