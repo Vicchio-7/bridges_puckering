@@ -110,7 +110,8 @@ elif [ ${status_build} == 0 ] ; then
     for file in ${input_list}; do
 
         file1=${file%.log\"}
-        file_org=${file1##\"}
+        file2=${file1%.log}
+        file_org=${file2##\"}
 
         if [ ${molecule_type} == "oxane" ] ; then
             old_check_file=${file_org}
