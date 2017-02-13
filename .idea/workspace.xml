@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3d111d83-4a55-4981-bdc5-7b04daefecb7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z05_grab_xyz_coords.sh" afterPath="$PROJECT_DIR$/z05_grab_xyz_coords.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z24_norm_analysis.sh" afterPath="$PROJECT_DIR$/z24_norm_analysis.sh" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -100,7 +100,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="z24_norm_analysis.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="z24_norm_analysis.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/z24_norm_analysis.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="362">
@@ -110,7 +110,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="z05_grab_xyz_coords.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="z05_grab_xyz_coords.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/z05_grab_xyz_coords.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
@@ -177,8 +177,8 @@
         <option value="$PROJECT_DIR$/z13_TS_run.sh" />
         <option value="$PROJECT_DIR$/z23_run_hartree_xyz_TS.sh" />
         <option value="$PROJECT_DIR$/z22_run_hartree_xyz_optall.sh" />
-        <option value="$PROJECT_DIR$/z24_norm_analysis.sh" />
         <option value="$PROJECT_DIR$/z05_grab_xyz_coords.sh" />
+        <option value="$PROJECT_DIR$/z24_norm_analysis.sh" />
       </list>
     </option>
   </component>
@@ -735,12 +735,12 @@
       <workItem from="1485539896362" duration="19226000" />
       <workItem from="1485823811289" duration="10238000" />
       <workItem from="1486431592389" duration="53257000" />
-      <workItem from="1486996099978" duration="2751000" />
+      <workItem from="1486996099978" duration="2852000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85472000" />
+    <option name="totallyTimeSpent" value="85573000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1105,18 +1105,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/z24_norm_analysis.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="52" column="30" lean-forward="false" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/z05_grab_xyz_coords.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
           <caret line="30" column="16" lean-forward="false" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/z24_norm_analysis.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="52" column="30" lean-forward="false" selection-start-line="52" selection-start-column="30" selection-end-line="52" selection-end-column="30" />
           <folding />
         </state>
       </provider>
