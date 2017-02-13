@@ -46,6 +46,10 @@ elif [ "${molecule_type}" == 'bxyl' ] ;  then
 	folder=2_bxyl
 	tol=0.1
 	status_build=0
+elif [ "${molecule_type}" == 'bglc' ] ;  then
+	folder=3_betagluc
+	tol=0.1
+	status_build=0
 else
 	echo
 	echo "The molecule type is not found in this script"
