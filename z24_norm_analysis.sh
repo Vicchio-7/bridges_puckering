@@ -50,7 +50,7 @@ elif [ "${molecule_type}" == 'bxyl' ] ;  then
 	status_build=0
 elif [ "${molecule_type}" == 'bglc' ] ;  then
 	folder=3_betagluc
-	ring_atoms='1,5,8,9,13,17'
+	ring_atoms='1,5,7,8,12,16'
 	tol=0.1
 	status_build=0
 else
