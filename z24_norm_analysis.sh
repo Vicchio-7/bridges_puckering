@@ -89,6 +89,7 @@ elif [ ${status_build} == 0 ] ; then
     cp z_norm-analysis_TS-${level_short}_exo_puckers.txt ${results_location}/${folder}/${level_short}/.
     cp z_norm-analysis_TS-${level_short}_ring_puckers.txt ${results_location}/${folder}/${level_short}/.
 
+# TODO: change around what is done here... run hartree now just for the log structures that are actually puckers
 
     irc_file_list=${p2}/puckering/z_results/${folder}/${level_short}/z_norm-analysis_TS-${level_short}_ring_puckers.txt
     input_list=$( column -t -s ' ' ${irc_file_list} | awk '{print $1}' )
@@ -119,7 +120,7 @@ elif [ ${status_build} == 0 ] ; then
     cd ${new_dir}
 
     z05_grab_xyz_coords.sh ${molecule_type}
-    xyz_cluster -s ${new_dir}/z_hartree_ring_pucker-unsorted-TS-${level_short}.csv -t ${tol}
+    xyz_cluster -s ${new_dir}/z_hartree_ring_pucker-unsorted-TS-${level_short}.csv -t ${tol} -r ${ring_atoms}
 
     mv z_cluster_z_hartree_ring_pucker-unsorted-TS-${level_short}.csv z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv
 

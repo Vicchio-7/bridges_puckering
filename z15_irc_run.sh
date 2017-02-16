@@ -101,7 +101,8 @@ elif [ ${status_build} == 0 ] ; then
 
     else
 
-        irc_file_list=${p2}/puckering/z_results/${folder}/${level_short}/z_norm-analysis_TS-${level_short}_ring_puckers.txt
+        #irc_file_list=${p2}/puckering/z_results/${folder}/${level_short}/z_norm-analysis_TS-${level_short}_ring_puckers.txt
+        irc_file_list=${p2}/puckering/z_results/${folder}/${level_short}/z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv
         input_list=$( column -t -s ' ' ${irc_file_list} | awk '{print $1}' )
 
     fi
