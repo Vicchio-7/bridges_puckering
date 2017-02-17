@@ -47,6 +47,7 @@ if [ "${molecule_type}" == 'oxane' ] ; then
 elif [ "${molecule_type}" == 'bxyl' ] ;  then
 	folder=2_bxyl
 	tol=0.05
+	ring_atoms='1,5,8,9,13,17'
 	status_build=0
 else
 	echo
@@ -82,7 +83,7 @@ elif [ ${status_build} == 0 ] ; then
             echo ''
             echo "The tolerance for you job is: ${tol}"
             echo ''
-            xyz_cluster -s z_hartree-allunsorted-${job_type}-${molecule_type}-${level_short}.csv -t ${tol}
+            xyz_cluster -s z_hartree-allunsorted-${job_type}-${molecule_type}-${level_short}.csv -t ${tol} -r ${ring_atoms}
             mv z_cluster_z_hartree-allunsorted-${job_type}-${molecule_type}-${level_short}.csv z_cluster-sorted-${job_type}-${molecule_type}-${level_short}.csv
         fi
 
