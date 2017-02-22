@@ -79,11 +79,10 @@ elif [ ${status_build} == 0 ] ; then
             mv z_cluster_z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv z_single_cluster-sorted-${job_type}-${molecule_type}-${level_short}.csv
         else
             hartree cpsnap -d $PWD > z_hartree-allunsorted-${job_type}-${molecule_type}-${level_short}.csv
-            z05_grab_xyz_coords.sh ${molecule_type}
             echo ''
             echo "The tolerance for you job is: ${tol}"
             echo ''
-            xyz_cluster -s z_hartree-allunsorted-${job_type}-${molecule_type}-${level_short}.csv -t ${tol} -r ${ring_atoms}
+            dipole_cluster -s z_hartree-allunsorted-${job_type}-${molecule_type}-${level_short}.csv -t ${tol} -
             mv z_cluster_z_hartree-allunsorted-${job_type}-${molecule_type}-${level_short}.csv z_cluster-sorted-${job_type}-${molecule_type}-${level_short}.csv
         fi
 

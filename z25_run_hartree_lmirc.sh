@@ -44,7 +44,7 @@ if [ "${molecule_type}" == 'oxane' ] ; then
 	status_build=0
 elif [ "${molecule_type}" == 'bxyl' ] ;  then
 	folder=2_bxyl
-	tol=0.1
+	tol=0.05
 	status_build=0
 else
 	echo
