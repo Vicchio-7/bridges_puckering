@@ -111,11 +111,10 @@ elif [ ${status_build} == 0 ] ; then
     echo 'Now running xyz_cluster!'
     echo
 
-    hartree cpsnap -d ${new_dir} > ${new_dir}/z_hartree_ring_pucker-unsorted-TS-${level_short}.csv
+    hartree cpsnap -d ${new_dir} > ${new_dir}/z_hartree_ring_pucker-unsorted-TS-${molecule_type}-${level_short}.csv
 
     cd ${new_dir}
 
-    z05_grab_xyz_coords.sh ${molecule_type}
     dipole_cluster -s ${new_dir}/z_hartree_ring_pucker-unsorted-TS-${level_short}.csv -t ${tol}
 
     mv z_cluster_z_hartree_ring_pucker-unsorted-TS-${level_short}.csv z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv
