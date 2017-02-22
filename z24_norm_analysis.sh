@@ -119,8 +119,8 @@ elif [ ${status_build} == 0 ] ; then
 
     mv z_hartree_ring_pucker-unsorted-TS-${molecule_type}-${level_short}.csv z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv
 
-#    cp z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv ../.
-#    cp z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/.
+    cp z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv ../.
+    cp z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/.
 #    cp ${new_dir}/z_hartree_ring_pucker-unsorted-TS-${molecule_type}-${level_short}.csv ${results_location}/${folder}/${level_short}/.
 
     fi
