@@ -115,7 +115,7 @@ elif [ ${status_build} == 0 ] ; then
 
     cd ${new_dir}
 
-#    dipole_cluster -s ${new_dir}/z_hartree_ring_pucker-unsorted-TS-${molecule_type}-${level_short}.csv -t ${tol}
+    dipole_cluster -s ${new_dir}/z_hartree_ring_pucker-unsorted-TS-${molecule_type}-${level_short}.csv -t ${tol}
 #
 #    mv z_hartree_ring_pucker-unsorted-TS-${molecule_type}-${level_short}.csv z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv
 #
