@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3d111d83-4a55-4981-bdc5-7b04daefecb7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z22_run_hartree_xyz_optall.sh" afterPath="$PROJECT_DIR$/z22_run_hartree_xyz_optall.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z25_run_hartree_lmirc.sh" afterPath="$PROJECT_DIR$/z25_run_hartree_lmirc.sh" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,11 +31,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="z22_run_hartree_xyz_optall.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="z25_run_hartree_lmirc.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/z25_run_hartree_lmirc.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="387">
+              <caret line="66" column="56" lean-forward="false" selection-start-line="66" selection-start-column="56" selection-end-line="66" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="z22_run_hartree_xyz_optall.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/z22_run_hartree_xyz_optall.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="53" column="12" lean-forward="false" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
+            <state relative-caret-position="690">
+              <caret line="83" column="12" lean-forward="true" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -62,14 +74,14 @@
       <file leaf-file-name="z26_run_hartree_xyz_all-lm.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/z26_run_hartree_xyz_all-lm.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+            <state relative-caret-position="702">
+              <caret line="86" column="10" lean-forward="true" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="z15_irc_run.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="z15_irc_run.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/z15_irc_run.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
@@ -141,14 +153,15 @@
         <option value="$PROJECT_DIR$/z01_create-directory.sh" />
         <option value="$PROJECT_DIR$/z05_grab_xyz_coords.sh" />
         <option value="$PROJECT_DIR$/z14_norm_analysis.sh" />
-        <option value="$PROJECT_DIR$/z26_run_hartree_xyz_all-lm.sh" />
         <option value="$PROJECT_DIR$/z02_level_replace_script.sh" />
         <option value="$PROJECT_DIR$/z13_TS_run.sh" />
         <option value="$PROJECT_DIR$/z15_irc_run.sh" />
         <option value="$PROJECT_DIR$/z12_local_min.sh" />
         <option value="$PROJECT_DIR$/z23_run_hartree_xyz_TS.sh" />
-        <option value="$PROJECT_DIR$/z22_run_hartree_xyz_optall.sh" />
         <option value="$PROJECT_DIR$/z24_norm_analysis.sh" />
+        <option value="$PROJECT_DIR$/z26_run_hartree_xyz_all-lm.sh" />
+        <option value="$PROJECT_DIR$/z25_run_hartree_lmirc.sh" />
+        <option value="$PROJECT_DIR$/z22_run_hartree_xyz_optall.sh" />
       </list>
     </option>
   </component>
@@ -708,12 +721,12 @@
       <workItem from="1485539896362" duration="19226000" />
       <workItem from="1485823811289" duration="10238000" />
       <workItem from="1486431592389" duration="53257000" />
-      <workItem from="1486996099978" duration="40467000" />
+      <workItem from="1486996099978" duration="40914000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123188000" />
+    <option name="totallyTimeSpent" value="123635000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1006,14 +1019,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/z25_run_hartree_lmirc.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1257">
-          <caret line="94" column="0" lean-forward="false" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/z05_grab_xyz_coords.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -1046,22 +1051,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/z26_run_hartree_xyz_all-lm.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z22_run_hartree_xyz_optall.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="53" column="12" lean-forward="false" selection-start-line="53" selection-start-column="12" selection-end-line="53" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/z23_run_hartree_xyz_TS.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="71">
@@ -1090,6 +1079,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="106" column="105" lean-forward="false" selection-start-line="106" selection-start-column="73" selection-end-line="106" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/z26_run_hartree_xyz_all-lm.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="86" column="10" lean-forward="true" selection-start-line="86" selection-start-column="10" selection-end-line="86" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/z25_run_hartree_lmirc.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="66" column="56" lean-forward="false" selection-start-line="66" selection-start-column="56" selection-end-line="66" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/z22_run_hartree_xyz_optall.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="83" column="12" lean-forward="true" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="12" />
           <folding />
         </state>
       </provider>

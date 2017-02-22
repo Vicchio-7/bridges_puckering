@@ -71,7 +71,7 @@ elif [ ${status_build} == 0 ] ; then
     z04_check_normal_termination.sh ${molecule_type} optall ${level_short}
 
     if [ ! -f ${failure} ]; then
-        echo "No Files failed! Performing hartree and xyz_cluster"
+        echo "No Files failed! Performing hartree and clustering"
         echo
         echo "Please wait a few minutes...."
         echo

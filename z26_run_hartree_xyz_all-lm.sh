@@ -82,7 +82,7 @@ elif [ ${status_build} == 0 ] ; then
             echo ''
             echo "The tolerance for you job is: ${tol}"
             echo ''
-            dipole_cluster -s z_hartree-allunsorted-${job_type}-${molecule_type}-${level_short}.csv -t ${tol} -
+            dipole_cluster -s z_hartree-allunsorted-${job_type}-${molecule_type}-${level_short}.csv -t ${tol}
             mv z_cluster_z_hartree-allunsorted-${job_type}-${molecule_type}-${level_short}.csv z_cluster-sorted-${job_type}-${molecule_type}-${level_short}.csv
         fi
 
