@@ -44,12 +44,12 @@ if [ "${molecule_type}" == 'oxane' ] ; then
 	status_build=0
 elif [ "${molecule_type}" == 'bxyl' ] ;  then
 	folder=2_bxyl
-	tol=0.1
+	tol=0.05
 	ring_atoms='1,5,8,9,13,17'
 	status_build=0
 elif [ "${molecule_type}" == 'bglc' ] ;  then
 	folder=3_betagluc
-	tol=0.1
+	tol=0.05
 	status_build=0
 else
 	echo
@@ -81,8 +81,7 @@ elif [ ${status_build} == 0 ] ; then
             mv z_cluster_z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv z_cluster-sorted-${job_type}-${molecule_type}-${level_short}.csv
         else
             hartree cpsnap -d $PWD > z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv
-            z05_grab_xyz_coords.sh ${molecule_type}
-            xyz_cluster -s z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv -t ${tol} -r ${ring_atoms}
+            dipole_cluster -s z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv -t ${tol}
             mv z_cluster_z_hartree-unsorted-${job_type}-${molecule_type}-${level_short}.csv z_cluster-sorted-normlessTS-${molecule_type}-${level_short}.csv
         fi
 

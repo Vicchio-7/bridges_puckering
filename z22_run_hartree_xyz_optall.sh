@@ -46,12 +46,12 @@ if [ "${molecule_type}" == 'oxane' ] ; then
 	status_build=0
 elif [ "${molecule_type}" == 'bxyl' ] ;  then
 	folder=2_bxyl
-	tol=0.1
+	tol=0.05
 	ring_atoms='1,5,8,9,13,17'
 	status_build=0
 elif [ "${molecule_type}" == 'bglc' ] ;  then
 	folder=3_betagluc
-	tol=0.1
+	tol=0.05
 	status_build=0
 else
 	echo
