@@ -40,11 +40,10 @@ failure=out-failure-${1}-${2}-${3}.status
 ## Setup Check ##
 if [ "${molecule_type}" == 'oxane' ] ; then
 	folder=1_oxane
-    tol=0.1
 	status_build=0
 elif [ "${molecule_type}" == 'bxyl' ] ;  then
 	folder=2_bxyl
-	tol=0.05
+	ring_atoms='7,4,16,12,8,0'
 	status_build=0
 else
 	echo

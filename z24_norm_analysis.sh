@@ -43,8 +43,8 @@ if [ "${molecule_type}" == 'oxane' ] ; then
     echo 'Why are you doing this?'
 elif [ "${molecule_type}" == 'bxyl' ] ;  then
 	folder=2_bxyl
-	ring_atoms='1,5,8,9,13,17'
-	tol=0.05
+    tol=0.01
+	ring_atoms='7,4,16,12,8,0'
 	status_build=0
 elif [ "${molecule_type}" == 'bglc' ] ;  then
 	folder=3_betagluc
@@ -115,8 +115,7 @@ elif [ ${status_build} == 0 ] ; then
 
     cd ${new_dir}
 
-    dipole_cluster -s ${new_dir}/z_hartree_ring_pucker-unsorted-TS-${molecule_type}-${level_short}.csv -t ${tol}
-
+    xyz_cluster -s ${new_dir}/z_hartree_ring_pucker-unsorted-TS-${molecule_type}-${level_short}.csv -t ${tol} -r ${ring_atoms}
 
     mv z_cluster_z_hartree_ring_pucker-unsorted-TS-${molecule_type}-${level_short}.csv z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv
 
