@@ -115,6 +115,7 @@ elif [ ${status_build} == 0 ] ; then
 
     cd ${new_dir}
 
+    z05_grab_xyz_coords.sh ${molecule_type}
     xyz_cluster -s ${new_dir}/z_hartree_ring_pucker-unsorted-TS-${molecule_type}-${level_short}.csv -t ${tol} -r ${ring_atoms}
 
     mv z_cluster_z_hartree_ring_pucker-unsorted-TS-${molecule_type}-${level_short}.csv z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv
