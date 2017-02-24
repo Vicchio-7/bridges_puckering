@@ -44,7 +44,7 @@ if [ "${molecule_type}" == 'oxane' ] ; then
 elif [ "${molecule_type}" == 'bxyl' ] ;  then
 	folder=2_bxyl
     tol=0.01
-	ring_atoms='7,4,16,12,8,0'
+	ring_atoms='0,4,7,8,12,16'
 	status_build=0
 elif [ "${molecule_type}" == 'bglc' ] ;  then
 	folder=3_betagluc
