@@ -79,7 +79,12 @@ elif [ ${status_build} == 0 ] ; then
 
     ls *norm.txt > z_list_norm_files.txt
 
-    norm_analysis -s z_list_norm_files.txt -r ${ring_atoms} -m ${molecule_type} -t ${tolerance}
+    if [ ! -n ${tolerance} ]; then
+        echo "Not running with the default tolerance... runnig with ${tolerance}"
+        echo ''
+        norm_analysis -s z_list_norm_files.txt -r ${ring_atoms} -m ${molecule_type} -t ${tolerance}
+    else
+        norm_analysis -s z_list_norm_files.txt -r ${ring_atoms} -m ${molecule_type}
 
     mv z_norm-analysis_TS_exo_puckers_z_list_norm_files.txt z_norm-analysis_TS-${level_short}_exo_puckers.txt
     mv z_norm-analysis_TS_ring_puckers_z_list_norm_files.txt z_norm-analysis_TS-${level_short}_ring_puckers.txt
@@ -102,11 +107,7 @@ elif [ ${status_build} == 0 ] ; then
         file_2=${file1##\"}
         file_move_log=${file_2%-norm_${level_short}}
 
-        echo ${file1}
-        echo ${file_2}
-        echo ${file_move_log}
-
-        #cp ../5_opt_TS/${file_move_log}.log ${new_dir}/.
+        cp ../5_opt_TS/${file_move_log}.log ${new_dir}/.
 
     done
 
