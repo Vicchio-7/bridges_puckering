@@ -102,6 +102,8 @@ elif [ ${status_build} == 0 ] ; then
         file_2=${file1##\"}
         file_move_log=${file_2%-norm_${level_short}}
 
+        echo ${file1}
+        echo ${file_2}
         echo ${file_move_log}
 
         #cp ../5_opt_TS/${file_move_log}.log ${new_dir}/.
