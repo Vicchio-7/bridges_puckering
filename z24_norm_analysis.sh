@@ -79,7 +79,7 @@ elif [ ${status_build} == 0 ] ; then
 
     ls *norm.txt > z_list_norm_files.txt
 
-    if [ ! -n ${tolerance} ]; then
+    if [  -n ${tolerance} ]; then
         echo "Not running with the default tolerance... runnig with ${tolerance}"
         echo ''
         norm_analysis -s z_list_norm_files.txt -r ${ring_atoms} -m ${molecule_type} -t ${tolerance}
