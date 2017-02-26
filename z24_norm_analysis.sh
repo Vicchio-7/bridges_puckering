@@ -85,6 +85,7 @@ elif [ ${status_build} == 0 ] ; then
         norm_analysis -s z_list_norm_files.txt -r ${ring_atoms} -m ${molecule_type} -t ${tolerance}
     else
         norm_analysis -s z_list_norm_files.txt -r ${ring_atoms} -m ${molecule_type}
+    fi
 
     mv z_norm-analysis_TS_exo_puckers_z_list_norm_files.txt z_norm-analysis_TS-${level_short}_exo_puckers.txt
     mv z_norm-analysis_TS_ring_puckers_z_list_norm_files.txt z_norm-analysis_TS-${level_short}_ring_puckers.txt
