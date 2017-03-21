@@ -182,7 +182,9 @@ elif [ ${status_build} == 0 ] ; then
 
             sed -i '$d' ${file}.com
 
-            sed -i "6r ${dftb_ending}/\n" ${file}.com
+            sed -i "6r ${dftb_ending}" ${file}.com
+
+            sed -i '7i \n' ${file}.com
 
             cat ${dftb_ending} >> ${file}.com
 
