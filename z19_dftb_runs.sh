@@ -184,7 +184,9 @@ elif [ ${status_build} == 0 ] ; then
 
             sed -i "6r ${dftb_ending}" ${file}.com
 
-            sed -i '16i/$/\n' ${file}.com
+            sed -i '16i/\n' ${file}.com
+
+            #sed -i '16i/$/\n' ${file}.com
 
             cat ${dftb_ending} >> ${file}.com
 
