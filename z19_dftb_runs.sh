@@ -160,6 +160,8 @@ elif [ ${status_build} == 0 ] ; then
             cat ${dftb_ending} >> ${file}.com
 
             sed -i '$s/$/\n/' ${file}.com
+
+
             sed -i '$s/$/\n/' ${file}.com
 
 
