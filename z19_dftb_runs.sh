@@ -181,12 +181,8 @@ elif [ ${status_build} == 0 ] ; then
             mv temp1.temp ${file}.com
 
             sed -i '$d' ${file}.com
-
             sed -i "6r ${dftb_ending}" ${file}.com
-
             sed -i '15s/$/\n/' ${file}.com
-
-            #sed -i '16i/$/\n' ${file}.com
 
             cat ${dftb_ending} >> ${file}.com
 
@@ -197,6 +193,10 @@ elif [ ${status_build} == 0 ] ; then
        elif [ "${job_type}" == 'TS' ] ; then
 
             tpl_file=${tpl}/${template}
+
+        ######## The section below updates the Gaussian Input File
+
+                        tpl_file=${tpl}/${template}
 
         ######## The section below updates the Gaussian Input File
 
@@ -212,11 +212,14 @@ elif [ ${status_build} == 0 ] ; then
             mv temp1.temp ${file}.com
 
             sed -i '$d' ${file}.com
+            sed -i "6r ${dftb_ending}" ${file}.com
+            sed -i '15s/$/\n/' ${file}.com
 
             cat ${dftb_ending} >> ${file}.com
 
             sed -i '$s/$/\n/' ${file}.com
             sed -i '$s/$/\n/' ${file}.com
+
 
        else
             echo ""
