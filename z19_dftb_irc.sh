@@ -167,6 +167,7 @@ elif [ ${status_build} == 0 ] ; then
                 sed -i "s/\$chkfile/${new_check_file}/g" temp1.temp
                 sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp
 
+                sed -i '$d' temp1.temp
                 cat ${dftb_ending} >> temp1.temp
 
                 mv temp1.temp ${new_filenamef}.com
