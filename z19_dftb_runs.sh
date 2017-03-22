@@ -282,6 +282,6 @@ elif [ ${status_build} == 0 ] ; then
             sed -i "s/\$folder_new/${molecule_type}-freeze_${level_short}/g"  ${file}.com
             sed -i "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}.chk/g"  ${file}.com
             sed -i "s/\level_of_theory/${level_theory}/g" ${file}.com
-
+        fi
     fi
 fi
