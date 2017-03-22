@@ -274,21 +274,21 @@ elif [ ${status_build} == 0 ] ; then
 
                 head -n 5 ${tpl_file} > temp1.temp
 
-                echo '${file_unedit}' >> temp1.temp
+                echo "${file_unedit}" >> temp1.temp
                 echo '' >> temp1.temp
                 echo '0   1' >> temp1.temp
-                sed -n '3,16482p' ../0_initial-coordinates/${file}.xyz >> temp1.temp
+                sed -n '3,100p' ../0_initial-coordinates/${file}.xyz >> temp1.temp
 
                 mv temp1.temp ${file}.com
 
                 sed -i '$s/$/\n/' ${file}.com
 
-                sed -i '$s/$/\nD   1    2    3    4 F/' ${file}.com
-                sed -i '$s/$/\nD   2    3    4    5 F/' ${file}.com
-                sed -i '$s/$/\nD   3    4    5    6 F/' ${file}.com
-                sed -i '$s/$/\nD   4    5    6    1 F/' ${file}.com
-                sed -i '$s/$/\nD   5    6    1    2 F/' ${file}.com
-                sed -i '$s/$/\nD   6    1    2    3 F/' ${file}.com
+                sed -i '$s/$/\nD   1    8    5    17 F/' ${file}.com
+                sed -i '$s/$/\nD   8    5   17    13 F/' ${file}.com
+                sed -i '$s/$/\nD   5   17   13     9 F/' ${file}.com
+                sed -i '$s/$/\nD  17   13    9     1 F/' ${file}.com
+                sed -i '$s/$/\nD  13    9    1     8 F/' ${file}.com
+                sed -i '$s/$/\nD   9    1    8     5 F/' ${file}.com
 
                 sed -i '$s/$/\n/' ${file}.com
 
