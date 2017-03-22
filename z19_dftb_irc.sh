@@ -173,6 +173,9 @@ elif [ ${status_build} == 0 ] ; then
                 sed -i "10r ${dftb_ending}" temp1.temp
                 sed -i "6r ${dftb_ending}" temp1.temp
 
+                sed -i '$s/$/\n/' temp1.temp
+                sed -i '$s/$/\n/' temp1.temp
+
                 mv temp1.temp ${new_filenamef}.com
 
             ######## The section below creates the Slurm file for submission on Bridges
@@ -206,6 +209,9 @@ elif [ ${status_build} == 0 ] ; then
 
                 sed -i "10r ${dftb_ending}" temp1.temp
                 sed -i "6r ${dftb_ending}" temp1.temp
+
+                sed -i '$s/$/\n/' temp1.temp
+                sed -i '$s/$/\n/' temp1.temp
 
                 mv temp1.temp ${new_filenamer}.com
 
