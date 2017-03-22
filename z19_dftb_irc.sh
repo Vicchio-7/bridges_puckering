@@ -279,6 +279,13 @@ elif [ ${status_build} == 2 ] ; then
             sed -i "s/\$old_check/${file_org}.chk/g" temp1.temp
             sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp
 
+            sed -i '$d' temp1.temp
+
+            cat ${dftb_ending} >> temp1.temp
+
+            sed -i '$s/$/\n/' temp1.temp
+            sed -i '$s/$/\n/' temp1.temp
+
             mv temp1.temp ${file_org}-norm_${3}.com
 
 
