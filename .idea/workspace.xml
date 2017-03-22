@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3d111d83-4a55-4981-bdc5-7b04daefecb7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z22_run_hartree_xyz_optall.sh" afterPath="$PROJECT_DIR$/z22_run_hartree_xyz_optall.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z23_run_hartree_xyz_TS.sh" afterPath="$PROJECT_DIR$/z23_run_hartree_xyz_TS.sh" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,10 +29,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="z19_dftb_runs.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="z19_dftb_runs.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/z19_dftb_runs.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1118">
+            <state relative-caret-position="533">
               <caret line="89" column="9" lean-forward="false" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
               <folding />
             </state>
@@ -51,10 +49,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="z23_run_hartree_xyz_TS.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="z23_run_hartree_xyz_TS.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/z23_run_hartree_xyz_TS.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
+            <state relative-caret-position="210">
               <caret line="42" column="10" lean-forward="false" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
               <folding />
             </state>
@@ -682,12 +680,12 @@
       <workItem from="1489619231583" duration="464000" />
       <workItem from="1489640265846" duration="898000" />
       <workItem from="1490110326890" duration="3828000" />
-      <workItem from="1490142646594" duration="1937000" />
+      <workItem from="1490142646594" duration="2123000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153402000" />
+    <option name="totallyTimeSpent" value="153588000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1102,14 +1100,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/z19_dftb_runs.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1118">
-          <caret line="89" column="9" lean-forward="false" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/z22_run_hartree_xyz_optall.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
@@ -1120,8 +1110,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/z23_run_hartree_xyz_TS.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
+        <state relative-caret-position="210">
           <caret line="42" column="10" lean-forward="false" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/z19_dftb_runs.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="89" column="9" lean-forward="false" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
           <folding />
         </state>
       </provider>
