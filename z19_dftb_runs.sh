@@ -272,7 +272,7 @@ elif [ ${status_build} == 0 ] ; then
 
             ######## The section below updates the Gaussian Input File
 
-                head -n 4 ${tpl_file} >> temp1.temp
+                head -n 5 ${tpl_file} >> temp1.temp
 
                 sed -n '3,16482p' ../0_initial-coordinates/${file}.xyz >> temp1.temp
 
@@ -288,11 +288,11 @@ elif [ ${status_build} == 0 ] ; then
 
                 sed -i '$s/$/\n/' ${file}.com
 
-                sed -i "32r ${dftb_ending}" ${file}.com
+                cat ${dftb_ending} >> ${file}.com
 
                 tail -n 6 ${tpl_file} >> ${file}.com
 
-                sed -i "46r ${dftb_ending}" ${file}.com
+                cat ${dftb_ending} >> ${file}.com
 
                 sed -i '$s/$/\n/' ${file}.com
                 sed -i '$s/$/\n/' ${file}.com
