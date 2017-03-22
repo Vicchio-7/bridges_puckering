@@ -260,71 +260,115 @@ elif [ ${status_build} == 0 ] ; then
             sed -i "s/\$minutes/${minutes}/g" temp1.txt
             mv temp1.txt slurm-${file}.job
        done
-    else
 
-        if [ "${job_type}" == 'freeze' ] ; then
+    else ###############################################################################################################
 
-            tpl_file=${tpl}/${template}
-
-            for file_unedit in $( <$input_list); do
+         for file_unedit in $( <$input_list); do
 
                 file=${file_unedit%.xyz}
 
+            if [ "${job_type}" == 'freeze' ] ; then
+
+                tpl_file=${tpl}/${template}
+
+                ######## The section below updates the Gaussian Input File
+
+                    head -n 5 ${tpl_file} > temp1.temp
+
+                    echo "${file_unedit}" >> temp1.temp
+                    echo '' >> temp1.temp
+                    echo '0   1' >> temp1.temp
+                    sed -n '3,100p' ../0_initial-coordinates/${file}.xyz >> temp1.temp
+
+                    mv temp1.temp ${file}.com
+
+                    sed -i '$s/$/\n/' ${file}.com
+
+                    sed -i '$s/$/\nD   1    8    5    17 F/' ${file}.com
+                    sed -i '$s/$/\nD   8    5   17    13 F/' ${file}.com
+                    sed -i '$s/$/\nD   5   17   13     9 F/' ${file}.com
+                    sed -i '$s/$/\nD  17   13    9     1 F/' ${file}.com
+                    sed -i '$s/$/\nD  13    9    1     8 F/' ${file}.com
+                    sed -i '$s/$/\nD   9    1    8     5 F/' ${file}.com
+
+                    sed -i '$s/$/\n/' ${file}.com
+
+                    cat ${dftb_ending} >> ${file}.com
+
+                    sed -i '$s/$/\n/' ${file}.com
+
+                    tail -n 5 ${tpl_file} >> ${file}.com
+
+                    sed -i '$d' ${file}.com
+
+                    cat ${dftb_ending} >> ${file}.com
+
+                    sed -i '$s/$/\n/' ${file}.com
+                    sed -i '$s/$/\n/' ${file}.com
+
+                    sed -i "s/\$memory/${total_memory}/g" ${file}.com
+                    sed -i "s/\$num_procs/${cores_per_node}/g" ${file}.com
+                    sed -i "s/\$folder_1/${folder}/g" ${file}.com
+                    sed -i "s/\$folder_new/${molecule_type}-freeze_${level_short}/g"  ${file}.com
+                    sed -i "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}.chk/g"  ${file}.com
+                    sed -i "s/\level_of_theory/${level_theory}/g" ${file}.com
+
+            elif [ "${job_type}" == 'optall' ] ; then
+
+                tpl_file=${tpl}/${template}
+
+
+
+            elif [ "${job_type}" == 'TS' ] ; then
+
+                tpl_file=${tpl}/${template}
+
             ######## The section below updates the Gaussian Input File
 
-                head -n 5 ${tpl_file} > temp1.temp
+                            tpl_file=${tpl}/${template}
 
-                echo "${file_unedit}" >> temp1.temp
-                echo '' >> temp1.temp
-                echo '0   1' >> temp1.temp
-                sed -n '3,100p' ../0_initial-coordinates/${file}.xyz >> temp1.temp
+            ######## The section below updates the Gaussian Input File
+
+                sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > temp1.temp
+                sed -i "s/\$num_procs/${cores_per_node}/g" temp1.temp
+                sed -i "s/\$folder_1/${folder}/g" temp1.temp
+                sed -i "s/\$folder_old/${molecule_type}-freeze_${level_short}/g" temp1.temp
+                sed -i "s/\$old_check/${molecule_type}-${file}-freeze_${level_short}.chk/g" temp1.temp
+                sed -i "s/\$folder_new/${molecule_type}-TS_${level_short}/g" temp1.temp
+                sed -i "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}-${job_type}_${level_short}.chk/g" temp1.temp
+                sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp
 
                 mv temp1.temp ${file}.com
 
-                sed -i '$s/$/\n/' ${file}.com
-
-                sed -i '$s/$/\nD   1    8    5    17 F/' ${file}.com
-                sed -i '$s/$/\nD   8    5   17    13 F/' ${file}.com
-                sed -i '$s/$/\nD   5   17   13     9 F/' ${file}.com
-                sed -i '$s/$/\nD  17   13    9     1 F/' ${file}.com
-                sed -i '$s/$/\nD  13    9    1     8 F/' ${file}.com
-                sed -i '$s/$/\nD   9    1    8     5 F/' ${file}.com
-
-                sed -i '$s/$/\n/' ${file}.com
-
-                cat ${dftb_ending} >> ${file}.com
-
-                sed -i '$s/$/\n/' ${file}.com
-
-                tail -n 5 ${tpl_file} >> ${file}.com
-
                 sed -i '$d' ${file}.com
+                sed -i "6r ${dftb_ending}" ${file}.com
+                sed -i '15s/$/\n/' ${file}.com
 
                 cat ${dftb_ending} >> ${file}.com
 
                 sed -i '$s/$/\n/' ${file}.com
                 sed -i '$s/$/\n/' ${file}.com
 
-                sed -i "s/\$memory/${total_memory}/g" ${file}.com
-                sed -i "s/\$num_procs/${cores_per_node}/g" ${file}.com
-                sed -i "s/\$folder_1/${folder}/g" ${file}.com
-                sed -i "s/\$folder_new/${molecule_type}-freeze_${level_short}/g"  ${file}.com
-                sed -i "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}.chk/g"  ${file}.com
-                sed -i "s/\level_of_theory/${level_theory}/g" ${file}.com
 
-           ######## The section below creates the Slurm file for submission on Bridges
-
-                sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/../gaussian_slurm_script.job > temp1.txt
-                sed -i "s/conform/${file}/g" temp1.txt
-                sed -i "s/gauss-log/${file}-freeze_${3}/g" temp1.txt
-                sed -i "s/\$molecule/${molecule_type}/g" temp1.txt
-                sed -i "s/\$test/${job_type}/g" temp1.txt
-                sed -i "s/\$level/${level_short}/g" temp1.txt
-                sed -i "s/\$hours/${hours}/g" temp1.txt
-                sed -i "s/\$minutes/${minutes}/g" temp1.txt
-                mv temp1.txt slurm-${file}.job
-
-            done
+        else
+            echo ""
+            echo "The type of job you are attemping to run is not recognized."
+            echo ""
+            echo "Running your job will fail."
         fi
+
+                       ######## The section below creates the Slurm file for submission on Bridges
+
+                    sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/../gaussian_slurm_script.job > temp1.txt
+                    sed -i "s/conform/${file}/g" temp1.txt
+                    sed -i "s/gauss-log/${file}-freeze_${3}/g" temp1.txt
+                    sed -i "s/\$molecule/${molecule_type}/g" temp1.txt
+                    sed -i "s/\$test/${job_type}/g" temp1.txt
+                    sed -i "s/\$level/${level_short}/g" temp1.txt
+                    sed -i "s/\$hours/${hours}/g" temp1.txt
+                    sed -i "s/\$minutes/${minutes}/g" temp1.txt
+                    mv temp1.txt slurm-${file}.job
+
+        done
     fi
 fi
