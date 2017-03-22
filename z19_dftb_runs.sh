@@ -276,7 +276,7 @@ elif [ ${status_build} == 0 ] ; then
 
                 echo '${file_unedit}' >> temp1.temp
                 echo '' >> temp1.temp
-                echo '0   1'
+                echo '0   1' >> temp1.temp
                 sed -n '3,16482p' ../0_initial-coordinates/${file}.xyz >> temp1.temp
 
                 mv temp1.temp ${file}.com
