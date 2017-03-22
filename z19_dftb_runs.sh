@@ -157,11 +157,9 @@ elif [ ${status_build} == 0 ] ; then
             sed -i '$s/$/\nD   6    1    2    3 F/' ${file}.com
             sed -i '$s/$/\n/' ${file}.com
 
-            cat ${dftb_ending} >> ${file}.com
+            sed -i "24r ${dftb_ending}" ${file}.com
 
             sed -i '$s/$/\n/' ${file}.com
-
-
             sed -i '$s/$/\n/' ${file}.com
 
 
