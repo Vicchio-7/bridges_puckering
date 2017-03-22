@@ -278,7 +278,6 @@ elif [ ${status_build} == 0 ] ; then
 
                 mv temp1.temp ${file}.com
 
-                sed -i '$d' ${file}.com
                 sed -i '$s/$/\nD   1    2    3    4 F/' ${file}.com
                 sed -i '$s/$/\nD   2    3    4    5 F/' ${file}.com
                 sed -i '$s/$/\nD   3    4    5    6 F/' ${file}.com
@@ -290,7 +289,7 @@ elif [ ${status_build} == 0 ] ; then
 
                 cat ${dftb_ending} >> ${file}.com
 
-                tail -n 6 ${tpl_file} >> ${file}.com
+                tail -n 5 ${tpl_file} >> ${file}.com
 
                 cat ${dftb_ending} >> ${file}.com
 
