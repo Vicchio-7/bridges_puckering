@@ -268,11 +268,12 @@ elif [ ${status_build} == 0 ] ; then
 
             for file_unedit in $( <$input_list); do
 
+                file=${file_unedit%.xyz}
 
             ######## The section below updates the Gaussian Input File
 
                 head -n 4 ${tpl_file} >> temp1.temp
-                tail -n 30 ../0_initial-coordinates/${file_unedit} >> temp1.temp
+                tail -n 30 ../0_initial-coordinates/${file}.xyz >> temp1.temp
 
                 mv temp1.temp ${file}.com
 
