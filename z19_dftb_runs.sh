@@ -287,15 +287,14 @@ elif [ ${status_build} == 0 ] ; then
 
             for file in ${input_list_irc}; do
 
+                echo ${file}
+
                 file1=${file%.log\"}
                 file2=${file1%.log}
                 file_org=${file2##\"}
+                old_check_file=${file_org}
+                echo ${old_check_file}
 
-                if [ ${molecule_type} == "oxane" ] ; then
-                    old_check_file=${file_org}
-
-                    echo ${old_check_file}
-                fi
             done
 
 
