@@ -66,7 +66,7 @@ fi
 if [ "${molecule_type}" == 'oxane' ] ; then
 
     if [ "${job_type}" == 'irc' ] ; then
-        echo "Currently missing!" #####################################################
+        status_build=0
     else
         echo ""
         echo "The type of job you are attemping to run is not recognized."
@@ -78,9 +78,9 @@ if [ "${molecule_type}" == 'oxane' ] ; then
 elif [ "${molecule_type}" == 'bxyl' ] ;  then
 
     if [ "${job_type}" == 'irc' ] ; then
-        echo "Currently missing!" #####################################################
+        status_build}= 0
     elif [ "${job_type}" == 'norm' ] ; then
-        echo "Currently missing!" #####################################################
+        status_build=2
     else
         echo ""
         echo "The type of job you are attemping to run is not recognized."
@@ -102,7 +102,6 @@ fi
 if [ ${status_build} == 1 ]; then
 	exit
 elif [ ${status_build} == 0 ] ; then
-
 
     level_theory=$(z02_level_replace_script.sh ${molecule_type} ${level_short})
 
@@ -235,6 +234,9 @@ elif [ ${status_build} == 0 ] ; then
             fi
          done
 
+elif [ ${status_build} == 0 ] ; then
+
+    echo 'Hi I am working on norm now!'
 
 
 fi
