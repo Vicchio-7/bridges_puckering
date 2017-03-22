@@ -272,8 +272,11 @@ elif [ ${status_build} == 0 ] ; then
 
             ######## The section below updates the Gaussian Input File
 
-                head -n 5 ${tpl_file} >> temp1.temp
+                head -n 5 ${tpl_file} > temp1.temp
 
+                echo '${file_unedit}' >> temp1.temp
+                echo '' >> temp1.temp
+                echo '0   1'
                 sed -n '3,16482p' ../0_initial-coordinates/${file}.xyz >> temp1.temp
 
                 mv temp1.temp ${file}.com
