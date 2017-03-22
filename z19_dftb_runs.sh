@@ -317,6 +317,27 @@ elif [ ${status_build} == 0 ] ; then
 
                 tpl_file=${tpl}/${template}
 
+                ######## The section below updates the Gaussian Input File
+
+                sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > temp1.temp
+                sed -i "s/\$num_procs/${cores_per_node}/g" temp1.temp
+                sed -i "s/\$folder_1/${folder}/g" temp1.temp
+                sed -i "s/\$folder_old/${molecule_type}-freeze_${level_short}/g" temp1.temp
+                sed -i "s/\$old_check/${molecule_type}-${file}-freeze_${level_short}.chk/g" temp1.temp
+                sed -i "s/\$folder_new/${molecule_type}-optall_${level_short}/g" temp1.temp
+                sed -i "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}-${job_type}_${level_short}.chk/g" temp1.temp
+                sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp
+
+                mv temp1.temp ${file}.com
+
+                sed -i '$d' ${file}.com
+                sed -i "6r ${dftb_ending}" ${file}.com
+                sed -i '15s/$/\n/' ${file}.com
+
+                cat ${dftb_ending} >> ${file}.com
+
+                sed -i '$s/$/\n/' ${file}.com
+                sed -i '$s/$/\n/' ${file}.com
 
 
             elif [ "${job_type}" == 'TS' ] ; then
