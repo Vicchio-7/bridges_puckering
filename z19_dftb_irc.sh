@@ -78,7 +78,7 @@ if [ "${molecule_type}" == 'oxane' ] ; then
 elif [ "${molecule_type}" == 'bxyl' ] ;  then
 
     if [ "${job_type}" == 'irc' ] ; then
-        status_build}= 0
+        status_build=0
     elif [ "${job_type}" == 'norm' ] ; then
         status_build=2
     else

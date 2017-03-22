@@ -114,7 +114,7 @@ elif [ ${status_build} == 0 ] ; then
 
 
     echo
-    echo 'Now running DIPOLE_CLUSTER!'
+    echo 'Now running XYZ_CLUSTER!'
     echo
 
     hartree cpsnap -d ${new_dir} > ${new_dir}/z_hartree_ring_pucker-unsorted-TS-${molecule_type}-${level_short}.csv
