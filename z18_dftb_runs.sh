@@ -276,36 +276,6 @@ elif [ ${status_build} == 0 ] ; then
             sed -i "s/\$minutes/${minutes}/g" temp1.txt
             mv temp1.txt slurm-${file}.job
 
-       elif [ "${job_type}" == 'irc' ] ; then
-
-            tpl_file=${tpl}/${template}
-
-            irc_file_list=${p2}/puckering/z_results/${folder}/${level_short}/z_cluster-sorted-TS-${molecule_type}-${level_short}.csv
-            input_list_irc=$( column -t -s ',' ${irc_file_list} | awk '{print $1}' )
-
-# WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK
-
-            for file in ${input_list_irc}; do
-
-                echo ${file}
-
-                file1=${file%.log\"}
-                file2=${file1%.log}
-                file_org=${file2##\"}
-                old_check_file=${file_org}
-                echo ${old_check_file}
-
-            done
-
-
-
-
-
-
-
-
-
-# WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK WORK
        else
             echo ""
             echo "The type of job you are attemping to run is not recognized."
@@ -314,6 +284,7 @@ elif [ ${status_build} == 0 ] ; then
        fi
 
        done
+
 
     else ###############################################################################################################
 
