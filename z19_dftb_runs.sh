@@ -266,37 +266,45 @@ elif [ ${status_build} == 0 ] ; then
 
             tpl_file=${tpl}/${template}
 
+            for file_unedit in $( <$input_list); do
+
+                echo ${file_unedit}
+
+            done
+
+
+
         ######## The section below updates the Gaussian Input File
-
-            head -n 4 ${tpl_file} >> temp1.temp
-            tail -n 30 ../0_initial-coordinates/${file}.xyz >> temp1.temp
-
-            mv temp1.temp ${file}.com
-
-            sed -i '$d' ${file}.com
-            sed -i '$s/$/\nD   1    2    3    4 F/' ${file}.com
-            sed -i '$s/$/\nD   2    3    4    5 F/' ${file}.com
-            sed -i '$s/$/\nD   3    4    5    6 F/' ${file}.com
-            sed -i '$s/$/\nD   4    5    6    1 F/' ${file}.com
-            sed -i '$s/$/\nD   5    6    1    2 F/' ${file}.com
-            sed -i '$s/$/\nD   6    1    2    3 F/' ${file}.com
-            sed -i '$s/$/\n/' ${file}.com
-
-            sed -i "32r ${dftb_ending}" ${file}.com
-
-            tail -n 6 ${tpl_file} >> ${file}.com
-
-            sed -i "46r ${dftb_ending}" ${file}.com
-
-            sed -i '$s/$/\n/' ${file}.com
-            sed -i '$s/$/\n/' ${file}.com
-
-            sed -i "s/\$memory/${total_memory}/g" ${file}.com
-            sed -i "s/\$num_procs/${cores_per_node}/g" ${file}.com
-            sed -i "s/\$folder_1/${folder}/g" ${file}.com
-            sed -i "s/\$folder_new/${molecule_type}-freeze_${level_short}/g"  ${file}.com
-            sed -i "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}.chk/g"  ${file}.com
-            sed -i "s/\level_of_theory/${level_theory}/g" ${file}.com
+#
+#            head -n 4 ${tpl_file} >> temp1.temp
+#            tail -n 30 ../0_initial-coordinates/${file}.xyz >> temp1.temp
+#
+#            mv temp1.temp ${file}.com
+#
+#            sed -i '$d' ${file}.com
+#            sed -i '$s/$/\nD   1    2    3    4 F/' ${file}.com
+#            sed -i '$s/$/\nD   2    3    4    5 F/' ${file}.com
+#            sed -i '$s/$/\nD   3    4    5    6 F/' ${file}.com
+#            sed -i '$s/$/\nD   4    5    6    1 F/' ${file}.com
+#            sed -i '$s/$/\nD   5    6    1    2 F/' ${file}.com
+#            sed -i '$s/$/\nD   6    1    2    3 F/' ${file}.com
+#            sed -i '$s/$/\n/' ${file}.com
+#
+#            sed -i "32r ${dftb_ending}" ${file}.com
+#
+#            tail -n 6 ${tpl_file} >> ${file}.com
+#
+#            sed -i "46r ${dftb_ending}" ${file}.com
+#
+#            sed -i '$s/$/\n/' ${file}.com
+#            sed -i '$s/$/\n/' ${file}.com
+#
+#            sed -i "s/\$memory/${total_memory}/g" ${file}.com
+#            sed -i "s/\$num_procs/${cores_per_node}/g" ${file}.com
+#            sed -i "s/\$folder_1/${folder}/g" ${file}.com
+#            sed -i "s/\$folder_new/${molecule_type}-freeze_${level_short}/g"  ${file}.com
+#            sed -i "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}.chk/g"  ${file}.com
+#            sed -i "s/\level_of_theory/${level_theory}/g" ${file}.com
         fi
     fi
 fi
