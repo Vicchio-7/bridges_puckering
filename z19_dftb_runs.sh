@@ -154,7 +154,7 @@ elif [ ${status_build} == 0 ] ; then
 
             tail -n 6 ${tpl_file} >> ${file}.com
 
-            sed -i "46r ${dftb_ending}" ${file}.com
+            sed -i "45r ${dftb_ending}" ${file}.com
 
             sed -i '$s/$/\n/' ${file}.com
             sed -i '$s/$/\n/' ${file}.com
