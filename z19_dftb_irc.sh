@@ -173,7 +173,7 @@ elif [ ${status_build} == 0 ] ; then
                 sed -i "10r ${dftb_ending}" temp1.temp
                 sed -i '15s/$/\n/' temp1.temp
                 sed -i "6r ${dftb_ending}" temp1.temp
-                sed -i '15s/$/\n/' temp1.temp
+#                sed -i '15s/$/\n/' temp1.temp
 
                 sed -i '$s/$/\n/' temp1.temp
                 sed -i '$s/$/\n/' temp1.temp
