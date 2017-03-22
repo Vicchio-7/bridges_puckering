@@ -89,7 +89,7 @@ elif [ "${molecule_type}" == 'bxyl' ] ;  then
     echo
     echo "Need to add bxyl information to scripts...." #####################################################
     echo
-    status_build=1
+    status_build=0
 else
 	echo
 	echo "The molecule type is not found in this script"
