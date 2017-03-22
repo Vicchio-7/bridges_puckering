@@ -139,13 +139,6 @@ elif [ ${status_build} == 0 ] ; then
             head -n 4 ${tpl_file} >> temp1.temp
             tail -n 22 ../0_initial-coordinates/${file}.com >> temp1.temp
 
-            sed -i "s/\$memory/${total_memory}/g" temp1.temp
-            sed -i "s/\$num_procs/${cores_per_node}/g" temp1.temp
-            sed -i "s/\$folder_1/${folder}/g" temp1.temp
-            sed -i "s/\$folder_new/${molecule_type}-freeze_${level_short}/g"  temp1.temp
-            sed -i "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}.chk/g"  temp1.temp
-            sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp
-
             mv temp1.temp ${file}.com
 
             sed -i '$d' ${file}.com
@@ -157,10 +150,19 @@ elif [ ${status_build} == 0 ] ; then
             sed -i '$s/$/\nD   6    1    2    3 F/' ${file}.com
             sed -i '$s/$/\n/' ${file}.com
 
-            sed -i "31r ${dftb_ending}" ${file}.com
+            sed -i "32r ${dftb_ending}" ${file}.com
+
+            tail -n 5 ${tpl_file} >> ${file}.com
 
             sed -i '$s/$/\n/' ${file}.com
             sed -i '$s/$/\n/' ${file}.com
+
+            sed -i "s/\$memory/${total_memory}/g" ${file}.com
+            sed -i "s/\$num_procs/${cores_per_node}/g" ${file}.com
+            sed -i "s/\$folder_1/${folder}/g" ${file}.com
+            sed -i "s/\$folder_new/${molecule_type}-freeze_${level_short}/g"  ${file}.com
+            sed -i "s/\$chkfile/${molecule_type}-${file}-freeze_${level_short}.chk/g"  ${file}.com
+            sed -i "s/\level_of_theory/${level_theory}/g" ${file}.com
 
 
        elif [ "${job_type}" == 'optall' ] ; then
