@@ -246,15 +246,15 @@ elif [ ${status_build} == 0 ] ; then
             mv temp1.txt slurm-${file}.job
        done
     else
-        echo 'YUP! THIS IS THE CORRECT SPOT FOR EVERYTHING ELSE'
-         if [ "${job_type}" == 'freeze' ] ; then
+
+        if [ "${job_type}" == 'freeze' ] ; then
 
             tpl_file=${tpl}/${template}
 
         ######## The section below updates the Gaussian Input File
 
             head -n 4 ${tpl_file} >> temp1.temp
-            tail -n 30 ../0_initial-coordinates/${file}.com >> temp1.temp
+            tail -n 30 ../0_initial-coordinates/${file}.xyz >> temp1.temp
 
             mv temp1.temp ${file}.com
 
