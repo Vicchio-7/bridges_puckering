@@ -234,7 +234,7 @@ elif [ ${status_build} == 0 ] ; then
             fi
          done
 
-elif [ ${status_build} == 0 ] ; then
+elif [ ${status_build} == 2 ] ; then
 
     echo 'Hi I am working on norm now!'
 
