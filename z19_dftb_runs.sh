@@ -295,7 +295,8 @@ elif [ ${status_build} == 0 ] ; then
                     old_check_file=${file_org}
 
                     echo ${old_check_file}
-
+                fi
+            done
 
 
 
