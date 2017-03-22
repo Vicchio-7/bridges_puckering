@@ -152,7 +152,7 @@ elif [ ${status_build} == 0 ] ; then
 
             sed -i "32r ${dftb_ending}" ${file}.com
 
-            tail -n 5 ${tpl_file} >> ${file}.com
+            tail -n 6 ${tpl_file} >> ${file}.com
 
             sed -i '$s/$/\n/' ${file}.com
             sed -i '$s/$/\n/' ${file}.com
