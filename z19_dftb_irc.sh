@@ -170,8 +170,8 @@ elif [ ${status_build} == 0 ] ; then
                 sed -i '$d' temp1.temp
                 cat ${dftb_ending} >> temp1.temp
 
-                sed -i "10r ${dftb_ending}" ${file}.com
-                sed -i "6r ${dftb_ending}" ${file}.com
+                sed -i "10r ${dftb_ending}" temp1.temp
+                sed -i "6r ${dftb_ending}" temp1.temp
 
                 mv temp1.temp ${new_filenamef}.com
 
@@ -204,8 +204,8 @@ elif [ ${status_build} == 0 ] ; then
                 sed -i '$d' temp1.temp
                 cat ${dftb_ending} >> temp1.temp
 
-                sed -i "10r ${dftb_ending}" ${file}.com
-                sed -i "6r ${dftb_ending}" ${file}.com
+                sed -i "10r ${dftb_ending}" temp1.temp
+                sed -i "6r ${dftb_ending}" temp1.temp
 
                 mv temp1.temp ${new_filenamer}.com
 
