@@ -264,6 +264,8 @@ elif [ ${status_build} == 2 ] ; then
 
        if [ "${file_org}" != "File" ]; then
 
+            echo ${file_org}
+
             tpl_file=${tpl}/${tpl_folder}/run_norm.tpl
 
             ######## The section below updates the Gaussian Input File
