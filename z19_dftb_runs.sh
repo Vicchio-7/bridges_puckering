@@ -85,11 +85,26 @@ if [ "${molecule_type}" == 'oxane' ] ; then
         echo "Running your job will fail."
     fi
 
+
 elif [ "${molecule_type}" == 'bxyl' ] ;  then
-    echo
-    echo "Need to add bxyl information to scripts...." #####################################################
-    echo
-    status_build=0
+    if [ "${job_type}" == 'freeze' ] ; then
+        template=run_oxane_freeze.tpl
+        folder_type=2_freeze
+    elif [ "${job_type}" == 'optall' ] ; then
+        template=run_oxane_optall-to-localmin.tpl
+    elif [ "${job_type}" == 'TS' ] ; then
+        template=run_oxane_optall-to-TS.tpl
+    elif [ "${job_type}" == 'irc' ] ; then
+        echo "Currently missing!" #####################################################
+    elif [ "${job_type}" == 'lmirc' ] ; then
+        echo "Currently missing!" #####################################################
+    else
+        echo ""
+        echo "The type of job you are attemping to run is not recognized."
+        echo ""
+        echo "Running your job will fail."
+    fi
+
 else
 	echo
 	echo "The molecule type is not found in this script"
