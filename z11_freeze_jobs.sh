@@ -145,7 +145,7 @@ elif [ ${status_build} == 0 ] ; then
 
             if [ "${job_type}" == 'freeze' ] ; then
 
-                tpl_file=${tpl}/${template}
+                tpl_file=${tpl}/run_bxyl_freeze.tpl
 
                 ######## The section below updates the Gaussian Input File
 

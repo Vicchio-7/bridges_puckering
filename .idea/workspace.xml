@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3d111d83-4a55-4981-bdc5-7b04daefecb7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z11_freeze_jobs.sh" afterPath="$PROJECT_DIR$/z11_freeze_jobs.sh" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,21 +29,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="z18_dftb_runs.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="z18_dftb_runs.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/z18_dftb_runs.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="862">
-              <caret line="350" column="50" lean-forward="true" selection-start-line="296" selection-start-column="15" selection-end-line="350" selection-end-column="50" />
+            <state relative-caret-position="487">
+              <caret line="90" column="8" lean-forward="false" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="z11_freeze_jobs.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="z11_freeze_jobs.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/z11_freeze_jobs.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="997">
-              <caret line="195" column="50" lean-forward="false" selection-start-line="141" selection-start-column="8" selection-end-line="195" selection-end-column="50" />
+            <state relative-caret-position="203">
+              <caret line="147" column="42" lean-forward="false" selection-start-line="147" selection-start-column="34" selection-end-line="147" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -130,6 +129,7 @@
       <find>folder_type</find>
       <find>file</find>
       <find>dftb_ending</find>
+      <find>template</find>
     </findStrings>
     <replaceStrings>
       <replace>file_unedit</replace>
@@ -738,12 +738,12 @@
       <workItem from="1489619231583" duration="464000" />
       <workItem from="1489640265846" duration="898000" />
       <workItem from="1490110326890" duration="3828000" />
-      <workItem from="1490142646594" duration="13993000" />
+      <workItem from="1490142646594" duration="14315000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="165458000" />
+    <option name="totallyTimeSpent" value="165780000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1177,18 +1177,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/z18_dftb_runs.sh">
+    <entry file="file://$PROJECT_DIR$/z11_freeze_jobs.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="862">
-          <caret line="350" column="50" lean-forward="true" selection-start-line="296" selection-start-column="15" selection-end-line="350" selection-end-column="50" />
+        <state relative-caret-position="203">
+          <caret line="147" column="42" lean-forward="false" selection-start-line="147" selection-start-column="34" selection-end-line="147" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/z11_freeze_jobs.sh">
+    <entry file="file://$PROJECT_DIR$/z18_dftb_runs.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="997">
-          <caret line="195" column="50" lean-forward="false" selection-start-line="141" selection-start-column="8" selection-end-line="195" selection-end-column="50" />
+        <state relative-caret-position="487">
+          <caret line="90" column="8" lean-forward="false" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="37" />
           <folding />
         </state>
       </provider>
