@@ -137,6 +137,7 @@ elif [ ${status_build} == 0 ] ; then
             sed -i "s/\$num_procs/${cores_per_node}/g" temp1.temp
             sed -i "s/\$folder_1/${folder}/g" temp1.temp
             sed -i "s/\$folder_new/${molecule_type}-TS_${level_short}/g" temp1.temp
+            sed -i "s/\$folder_old/${molecule_type}-freeze_${level_short}/g" temp1.temp
             sed -i "s/\$old_check/${molecule_type}-${file}-freeze_${level_short}.chk/g" temp1.temp
             sed -i "s/\$chkfile/${file}-${job_type}_${level_short}.chk/g" temp1.temp
             sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp
