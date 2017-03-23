@@ -145,7 +145,7 @@ elif [ ${status_build} == 0 ] ; then
 
             if [ "${job_type}" == 'freeze' ] ; then
 
-                tpl_file=${tpl}/run_bxyl_freeze.tpl
+                tpl_file=${tpl}/${tpl_folder}/run_bxyl_freeze.tpl
 
                 ######## The section below updates the Gaussian Input File
 
@@ -166,18 +166,6 @@ elif [ ${status_build} == 0 ] ; then
                     sed -i '$s/$/\nD  17   13    9     1 F/' ${file}.com
                     sed -i '$s/$/\nD  13    9    1     8 F/' ${file}.com
                     sed -i '$s/$/\nD   9    1    8     5 F/' ${file}.com
-
-                    sed -i '$s/$/\n/' ${file}.com
-
-                    cat ${dftb_ending} >> ${file}.com
-
-                    sed -i '$s/$/\n/' ${file}.com
-
-                    tail -n 5 ${tpl_file} >> ${file}.com
-
-                    sed -i '$d' ${file}.com
-
-                    cat ${dftb_ending} >> ${file}.com
 
                     sed -i '$s/$/\n/' ${file}.com
                     sed -i '$s/$/\n/' ${file}.com
