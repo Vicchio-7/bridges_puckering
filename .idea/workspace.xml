@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3d111d83-4a55-4981-bdc5-7b04daefecb7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z18_dftb_runs.sh" afterPath="$PROJECT_DIR$/z18_dftb_runs.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z11_freeze_jobs.sh" afterPath="$PROJECT_DIR$/z11_freeze_jobs.sh" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,11 +30,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="z18_dftb_runs.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="z18_dftb_runs.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/z18_dftb_runs.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="622">
-              <caret line="409" column="36" lean-forward="false" selection-start-line="409" selection-start-column="36" selection-end-line="409" selection-end-column="36" />
+            <state relative-caret-position="862">
+              <caret line="350" column="50" lean-forward="true" selection-start-line="296" selection-start-column="15" selection-end-line="350" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="z11_freeze_jobs.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/z11_freeze_jobs.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="997">
+              <caret line="195" column="50" lean-forward="false" selection-start-line="141" selection-start-column="8" selection-end-line="195" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -43,7 +53,7 @@
       <file leaf-file-name="z19_dftb_irc.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/z19_dftb_irc.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="1417">
               <caret line="164" column="38" lean-forward="false" selection-start-line="164" selection-start-column="38" selection-end-line="164" selection-end-column="38" />
               <folding />
             </state>
@@ -141,7 +151,6 @@
         <option value="$PROJECT_DIR$/z00_submit-batch.sh" />
         <option value="$PROJECT_DIR$/z04_check_normal_termination.sh" />
         <option value="$PROJECT_DIR$/z03_delete_jobs.sh" />
-        <option value="$PROJECT_DIR$/z11_freeze_jobs.sh" />
         <option value="$PROJECT_DIR$/z21_run_hartree_xyz_optall.sh" />
         <option value="$PROJECT_DIR$/z24_norm_analysis.py" />
         <option value="$PROJECT_DIR$/z25_run_hartree_xyz_lmirc.sh" />
@@ -160,6 +169,7 @@
         <option value="$PROJECT_DIR$/z24_norm_analysis.sh" />
         <option value="$PROJECT_DIR$/z19_dftb_irc.sh" />
         <option value="$PROJECT_DIR$/z18_dftb_runs.sh" />
+        <option value="$PROJECT_DIR$/z11_freeze_jobs.sh" />
       </list>
     </option>
   </component>
@@ -728,12 +738,12 @@
       <workItem from="1489619231583" duration="464000" />
       <workItem from="1489640265846" duration="898000" />
       <workItem from="1490110326890" duration="3828000" />
-      <workItem from="1490142646594" duration="12235000" />
+      <workItem from="1490142646594" duration="13993000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163700000" />
+    <option name="totallyTimeSpent" value="165458000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1061,13 +1071,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/z11_freeze_jobs.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-136">
-          <caret line="73" column="43" lean-forward="true" selection-start-line="73" selection-start-column="43" selection-end-line="73" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/z04_check_normal_termination.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
@@ -1168,7 +1171,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/z19_dftb_irc.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="1417">
           <caret line="164" column="38" lean-forward="false" selection-start-line="164" selection-start-column="38" selection-end-line="164" selection-end-column="38" />
           <folding />
         </state>
@@ -1176,8 +1179,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/z18_dftb_runs.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="622">
-          <caret line="409" column="36" lean-forward="false" selection-start-line="409" selection-start-column="36" selection-end-line="409" selection-end-column="36" />
+        <state relative-caret-position="862">
+          <caret line="350" column="50" lean-forward="true" selection-start-line="296" selection-start-column="15" selection-end-line="350" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/z11_freeze_jobs.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="997">
+          <caret line="195" column="50" lean-forward="false" selection-start-line="141" selection-start-column="8" selection-end-line="195" selection-end-column="50" />
           <folding />
         </state>
       </provider>
