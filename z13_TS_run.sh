@@ -133,16 +133,7 @@ elif [ ${status_build} == 0 ] ; then
 	        file=${file_unedit%.xyz}
 
         ######## The section below updates the Gaussian Input File
-            head -n 4 ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-TS.tpl > temp1.temp
-            echo >> temp1.temp
-            echo "From ${file_unedit}" >> temp1.temp
-            echo >> temp1.temp
-            echo "0  1" >> temp1.temp
-            cat ../0_initial-coordinates/${file_unedit} | sed '1,2d' >> temp1.temp
-            echo >> temp1.temp
-            tail -n 5 ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-TS.tpl >> temp1.temp
-
-            sed -i "s/\$memory/${total_memory}/g" temp1.temp
+            sed -e "s/\$memory/${total_memory}/g" ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-localmin.tpl > temp1.temp
             sed -i "s/\$num_procs/${cores_per_node}/g" temp1.temp
             sed -i "s/\$folder_1/${folder}/g" temp1.temp
             sed -i "s/\$folder_new/${molecule_type}-TS_${level_short}/g" temp1.temp
