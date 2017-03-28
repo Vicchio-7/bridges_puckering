@@ -43,7 +43,8 @@ if [ "${molecule_type}" == 'oxane' ] ; then
     tol=0.1
 	status_build=0
 elif [ "${molecule_type}" == 'bxyl' ] ;  then
-	folder=2_bxyl
+#	folder=2_bxyl
+	folder=2_bxyl-massive
     tol=0.01
 	ring_atoms='7,4,16,12,8,0'
 	status_build=0
