@@ -35,7 +35,7 @@ user=vicchio
 ## Additional Required Information ##
 # Additional information such as folder location that is required for the code to run properly.
 
-p1=/pylon1/${account}/${user}
+p1=/pylon5/${account}/${user}
 p2=/pylon2/${account}/${user}
 folder_type=2_freeze
 tpl=${p2}/puckering/y_tpl

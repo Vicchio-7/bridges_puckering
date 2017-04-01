@@ -28,7 +28,7 @@ user=vicchio
 ## Additional Required Information ##
 # Additional information such as folder location that is required for the code to run properly.
 
-p1=/pylon1/${account}/${user}
+p1=/pylon5/${account}/${user}
 p2=/pylon2/${account}/${user}
 folder_type=4_opt_localmin
 tpl=${p2}/puckering/y_tpl
@@ -43,8 +43,8 @@ if [ "${molecule_type}" == 'oxane' ] ; then
     tol=0.1
 	status_build=0
 elif [ "${molecule_type}" == 'bxyl' ] ;  then
-#	folder=2_bxyl
-	folder=2_bxyl-massive
+	folder=2_bxyl
+#	folder=2_bxyl-massive
     tol=0.01
 	ring_atoms='7,4,16,12,8,0'
 	status_build=0
