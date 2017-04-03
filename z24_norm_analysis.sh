@@ -42,8 +42,8 @@ failure=out-failure-${1}-${2}-${3}.status
 if [ "${molecule_type}" == 'oxane' ] ; then
     echo 'Why are you doing this?'
 elif [ "${molecule_type}" == 'bxyl' ] ;  then
-#	folder=2_bxyl
-	folder=2_bxyl-massive
+	folder=2_bxyl
+#	folder=2_bxyl-massive
     tol=0.01
 	ring_atoms='1,5,8,9,13,17'
 	status_build=0
