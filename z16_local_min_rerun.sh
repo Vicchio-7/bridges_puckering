@@ -78,15 +78,22 @@ elif [ ${status_build} == 0 ] ; then
         break
     fi
 
+    new_check_location=${p1}/puckering/${folder}/${1}-${2}_${3}
+
+    if [ ! -d ${new_check_location} ]; then
+        mkdir ${new_check_location}
+    fi
+
     new_folder=11_re-opt_lm
 
     if [ ! -d ${p2}/puckering/${folder}/${level_short}/${new_folder}/ ]; then
         mkdir ${p2}/puckering/${folder}/${level_short}/${new_folder}/
     fi
 
+    cd ${p2}/puckering/${folder}/${level_short}/${new_folder}/
+
     input_file_list=${p2}/puckering/z_results/${folder}/${level_short}/z_hartree-allunsorted-lm-${molecule_type}-${level_short}.csv
     input_list=$( column -t -s ',' ${input_file_list} | awk '{print $1}' )
-
 
     for file in ${input_list}; do
 #        file=${file_unedit%.log}
@@ -124,7 +131,7 @@ elif [ ${status_build} == 0 ] ; then
             sed -i "s/\$hours/${hours}/g" temp1.txt
             sed -i "s/\$minutes/${minutes}/g" temp1.txt
 
-            mv temp1.txt slurm-${file}.job
+            mv temp1.txt slurm-${file_org}.job
         fi
     done
 fi
