@@ -81,10 +81,12 @@ elif [ ${status_build} == 0 ] ; then
     new_folder=11_re-opt_lm
 
     if [ ! -d ${p2}/puckering/${folder}/${level_short}/${new_folder}/ ]; then
-        mkdir
+        mkdir ${p2}/puckering/${folder}/${level_short}/${new_folder}/
     fi
 
+    input_list=$(ls ${p2}/puckering/${folder}/${level_short}/9_all_lm_logs/*.log)
 
+    echo ${input_list}
 
 
 
