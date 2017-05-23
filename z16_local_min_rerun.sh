@@ -86,9 +86,7 @@ elif [ ${status_build} == 0 ] ; then
 
     input_list=$(ls ${p2}/puckering/${folder}/${level_short}/9_all_lm_logs/*.log)
 
-    echo ${input_list}
-
-    for file_unedit in $( <$input_list); do
+    for file_unedit in $( <${input_list}); do
 #        file=${file_unedit%.log}
 
         echo ${file_unedit}
