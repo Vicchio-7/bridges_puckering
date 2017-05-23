@@ -20,7 +20,7 @@ level_short=$3
 # The following information determines the numbers of cores and memory the jobs will require.
 cores_per_node=1
 memory_job=3800
-hours=30 #1, 2 ,3 ..... 10, 11, 12....
+hours=01 #1, 2 ,3 ..... 10, 11, 12....
 minutes=01 # number between 0 and 59
 
 total_memory=$(echo ${cores_per_node} ${memory_job} | awk '{ print $1*$2 }' )
@@ -79,10 +79,27 @@ elif [ ${status_build} == 0 ] ; then
     fi
 
     new_check_location=${p1}/puckering/${folder}/${1}-${2}_${3}
-
     if [ ! -d ${new_check_location} ]; then
         mkdir ${new_check_location}
     fi
+
+    temp_check_location=${p1}/puckering/${folder}/${1}-${2}_${3}-temp
+    if [ ! -d ${temp_check_location} ]; then
+        mkdir ${temp_check_location}
+    fi
+
+
+
+
+    irc_forward=${p1}/puckering/${folder}/${1}-irc_${3}-forward
+    irc_backward=${p1}/puckering/${folder}/${1}-irc_${3}-reverse
+    optall=${p1}/puckering/${folder}/${1}-optall_${3}
+
+    cp ${irc_forward}/*.chk ${temp_check_location}/.
+    cp ${irc_backward}/*.chk ${temp_check_location}/.
+    cp ${optall}/*.chk ${temp_check_location}/.
+
+
 
     new_folder=11_re-opt_lm
 
