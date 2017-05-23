@@ -33,8 +33,8 @@
       <file leaf-file-name="z15_irc_run.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/z15_irc_run.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="115" selection-end-column="29" />
+            <state relative-caret-position="300">
+              <caret line="123" column="12" lean-forward="false" selection-start-line="123" selection-start-column="12" selection-end-line="123" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -43,10 +43,10 @@
       <file leaf-file-name="z16_local_min_rerun.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/z16_local_min_rerun.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="97" column="23" lean-forward="false" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="23" />
+            <state relative-caret-position="701">
+              <caret line="124" column="34" lean-forward="false" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
               <folding>
-                <marker date="1495568809000" expanded="true" signature="2700:2732" ph="..." />
+                <marker date="1495568897000" expanded="true" signature="2700:2732" ph="..." />
               </folding>
             </state>
           </provider>
@@ -700,12 +700,12 @@
       <workItem from="1490993084585" duration="194000" />
       <workItem from="1491013682947" duration="2271000" />
       <workItem from="1491342706598" duration="13550000" />
-      <workItem from="1495473597055" duration="5016000" />
+      <workItem from="1495473597055" duration="5097000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219082000" />
+    <option name="totallyTimeSpent" value="219163000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1095,14 +1095,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/z15_irc_run.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="113" column="0" lean-forward="false" selection-start-line="113" selection-start-column="0" selection-end-line="115" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/z13_TS_run.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="521">
@@ -1111,12 +1103,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/z15_irc_run.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="123" column="12" lean-forward="false" selection-start-line="123" selection-start-column="12" selection-end-line="123" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/z16_local_min_rerun.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="97" column="23" lean-forward="false" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="23" />
+        <state relative-caret-position="701">
+          <caret line="124" column="34" lean-forward="false" selection-start-line="124" selection-start-column="34" selection-end-line="124" selection-end-column="34" />
           <folding>
-            <marker date="1495568809000" expanded="true" signature="2700:2732" ph="..." />
+            <marker date="1495568897000" expanded="true" signature="2700:2732" ph="..." />
           </folding>
         </state>
       </provider>
