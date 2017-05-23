@@ -88,7 +88,7 @@ elif [ ${status_build} == 0 ] ; then
     input_list=$( column -t -s ',' ${input_file_list} | awk '{print $1}' )
 
 
-    for file_unedit in $( <${input_list}); do
+    for file in ${input_list}; do
 #        file=${file_unedit%.log}
 
         echo ${file_unedit}
