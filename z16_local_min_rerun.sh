@@ -88,10 +88,14 @@ elif [ ${status_build} == 0 ] ; then
     input_list=$( column -t -s ',' ${input_file_list} | awk '{print $1}' )
 
 
-    for file_unedit in ${input_list}; do
-        file=${file_unedit%.log}
+    for file in ${input_list}; do
+#        file=${file_unedit%.log}
 
-        echo ${file}
+        file1=${file%.log\"}
+        file2=${file1%.log}
+        file_org=${file2##\"}
+
+        echo ${file_org}
 
 #    ######## The section below updates the Gaussian Input File
 #        sed -e "s/\$memory/${total_memory}/g" ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-TS.tpl > temp1.temp
