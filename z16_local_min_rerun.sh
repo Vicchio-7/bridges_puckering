@@ -84,14 +84,14 @@ elif [ ${status_build} == 0 ] ; then
         mkdir ${p2}/puckering/${folder}/${level_short}/${new_folder}/
     fi
 
-    input_list=$(ls ${p2}/puckering/${folder}/${level_short}/9_all_lm_logs/*.xyz)
+    input_list=$(ls ${p2}/puckering/${folder}/${level_short}/9_all_lm_logs/*.log)
 
     echo ${input_list}
 
     for file_unedit in $( <$input_list); do
-        file=${file_unedit%.xyz}
+#        file=${file_unedit%.log}
 
-        echo ${file}
+        echo ${file_unedit}
 
 #    ######## The section below updates the Gaussian Input File
 #        sed -e "s/\$memory/${total_memory}/g" ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-TS.tpl > temp1.temp
