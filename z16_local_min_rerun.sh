@@ -84,7 +84,9 @@ elif [ ${status_build} == 0 ] ; then
         mkdir ${p2}/puckering/${folder}/${level_short}/${new_folder}/
     fi
 
-    input_list=$(ls ${p2}/puckering/${folder}/${level_short}/9_all_lm_logs/*.log)
+    input_file_list=${p2}/puckering/z_results/${folder}/${level_short}/z_cluster-allunsorted-lm-${molecule_type}-${level_short}.csv
+    input_list=$( column -t -s ',' ${input_file_list} | awk '{print $1}' )
+
 
     for file_unedit in $( <${input_list}); do
 #        file=${file_unedit%.log}
