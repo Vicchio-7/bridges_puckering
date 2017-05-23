@@ -63,3 +63,30 @@ fi
 
 # --------------------------------------------------------------------------------------
 
+if [ ${status_build} == 1 ] ; then
+	exit
+elif [ ${status_build} == 0 ] ; then
+
+    level_theory=$(z02_level_replace_script.sh ${molecule_type} ${level_short})
+
+    if [ ${level_short} == 'ERROR' ] ; then
+        echo ''
+        echo 'The level of theory being studied is not found in z02_level_replace_script.sh'
+        echo ''
+        echo 'Please add the correct level of theory before restarting'
+        echo ''
+        break
+    fi
+
+    new_folder=11_re-opt_lm
+
+    if [ ! -d ${p2}/puckering/${folder}/${level_short}/${new_folder}/ ]; then
+        mkdir
+    fi
+
+
+
+
+
+fi
+
