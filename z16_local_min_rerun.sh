@@ -131,7 +131,8 @@ elif [ ${status_build} == 0 ] ; then
             echo "0   1" >>temp1.temp
 
             tail -n 20 ${p2}/puckering/${folder}/${level_short}/${new_folder}/xyz_coords/${file_org}.xyz >> temp1.temp
-
+            echo "" >> temp1.temp
+            echo "" >> temp1.temp
 
         ######## The section below updates the Gaussian Input File
             sed -i "s/\$memory/${total_memory}/g" temp1.temp
