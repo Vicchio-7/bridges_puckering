@@ -78,21 +78,15 @@ elif [ ${status_build} == 0 ] ; then
         break
     fi
 
-
-
-
-
-
-#    new_check_location=${p1}/puckering/${folder}/${1}-${2}_${3}
-#    if [ ! -d ${new_check_location} ]; then
-#        mkdir ${new_check_location}
-#    fi
+    new_check_location=${p1}/puckering/${folder}/${1}-${2}_${3}
+    if [ ! -d ${new_check_location} ]; then
+        mkdir ${new_check_location}
+    fi
 #
 #    temp_check_location=${p1}/puckering/${folder}/${1}-${2}_${3}-temp
 #    if [ ! -d ${temp_check_location} ]; then
 #        mkdir ${temp_check_location}
 #    fi
-
 
 #    irc_forward=${p1}/puckering/${folder}/${1}-irc_${3}-forward
 #    irc_backward=${p1}/puckering/${folder}/${1}-irc_${3}-reverse
@@ -128,11 +122,16 @@ elif [ ${status_build} == 0 ] ; then
 
             echo ${file_org}
 
+
+            head -n 4 ${tpl}/${tpl_folder}/run_bxyl_rerun.tpl > temp1.temp >> temp1.temp
+            tail -n 22 ${p2}/puckering/${folder}/${level_short}/${new_folder}/xyz_coords/${file_org} >> temp1.temp
+
+
         ######## The section below updates the Gaussian Input File
-            sed -e "s/\$memory/${total_memory}/g" ${tpl}/${tpl_folder}/run_bxyl_rerun.tpl > temp1.temp
+            sed -i "s/\$memory/${total_memory}/g" temp1.temp
             sed -i "s/\$num_procs/${cores_per_node}/g" temp1.temp
             sed -i "s/\$folder_1/${folder}/g" temp1.temp
-            sed -i "s/\$folder_new/${molecule_type}-TS_${level_short}/g" temp1.temp
+            sed -i "s/\$folder_new/${1}-${2}_${3}/g" temp1.temp
             sed -i "s/\$chkfile/${file_org}-${job_type}_${level_short}.chk/g" temp1.temp
             sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp
 
