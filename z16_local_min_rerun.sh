@@ -124,25 +124,20 @@ elif [ ${status_build} == 0 ] ; then
         file2=${file1%.log}
         file_org=${file2##\"}
 
-
-
         if [ "${file_org}" != "File" ]; then
 
             echo ${file_org}
 
+        ######## The section below updates the Gaussian Input File
+            sed -e "s/\$memory/${total_memory}/g" ${tpl}/${tpl_folder}/run_bxyl_rerun.tpl > temp1.temp
+            sed -i "s/\$num_procs/${cores_per_node}/g" temp1.temp
+            sed -i "s/\$folder_1/${folder}/g" temp1.temp
+            sed -i "s/\$folder_new/${molecule_type}-TS_${level_short}/g" temp1.temp
+            sed -i "s/\$chkfile/${file_org}-${job_type}_${level_short}.chk/g" temp1.temp
+            sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp
 
-    #    ######## The section below updates the Gaussian Input File
-    #        sed -e "s/\$memory/${total_memory}/g" ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-TS.tpl > temp1.temp
-    #        sed -i "s/\$num_procs/${cores_per_node}/g" temp1.temp
-    #        sed -i "s/\$folder_1/${folder}/g" temp1.temp
-    #        sed -i "s/\$folder_new/${molecule_type}-TS_${level_short}/g" temp1.temp
-    #        sed -i "s/\$folder_old/${molecule_type}-freeze_${level_short}/g" temp1.temp
-    #        sed -i "s/\$old_check/${file}-freeze_${level_short}.chk/g" temp1.temp
-    #        sed -i "s/\$chkfile/${file}-${job_type}_${level_short}.chk/g" temp1.temp
-    #        sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp
-    #
-    #        mv temp1.temp ${file}.com
-    #
+            mv temp1.temp ${file_org}.com
+
         ######## The section below creates the Slurm file for submission on Bridges
 #            sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
 #            sed -i "s/conform/${file_org}/g" temp1.txt
