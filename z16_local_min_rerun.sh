@@ -128,6 +128,7 @@ elif [ ${status_build} == 0 ] ; then
             echo "" >> temp1.temp
             echo ${file_org} >> temp1.temp
             echo "" >> temp1.temp
+            echo "0   1" >>temp1.temp
 
             tail -n 20 ${p2}/puckering/${folder}/${level_short}/${new_folder}/xyz_coords/${file_org}.xyz >> temp1.temp
 
