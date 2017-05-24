@@ -123,8 +123,13 @@ elif [ ${status_build} == 0 ] ; then
             echo ${file_org}
 
 
-            head -n 4 ${tpl}/${tpl_folder}/run_bxyl_rerun.tpl > temp1.temp >> temp1.temp
-            tail -n 22 ${p2}/puckering/${folder}/${level_short}/${new_folder}/xyz_coords/${file_org} >> temp1.temp
+            head -n 4 ${tpl}/${tpl_folder}/run_bxyl_rerun.tpl > temp1.temp
+
+            echo "" >> temp1.temp
+            echo ${file_org} >> temp1.temp
+            echo "" >> temp1.temp
+
+            tail -n 20 ${p2}/puckering/${folder}/${level_short}/${new_folder}/xyz_coords/${file_org}.xyz >> temp1.temp
 
 
         ######## The section below updates the Gaussian Input File

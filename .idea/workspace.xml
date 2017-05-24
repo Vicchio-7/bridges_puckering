@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d111d83-4a55-4981-bdc5-7b04daefecb7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z16_local_min_rerun.sh" afterPath="$PROJECT_DIR$/z16_local_min_rerun.sh" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -40,13 +39,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="z16_local_min_rerun.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="z16_local_min_rerun.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/z16_local_min_rerun.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="449">
-              <caret line="126" column="101" lean-forward="false" selection-start-line="126" selection-start-column="101" selection-end-line="126" selection-end-column="101" />
+              <caret line="126" column="22" lean-forward="false" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
               <folding>
-                <marker date="1495636542000" expanded="true" signature="3644:3676" ph="..." />
+                <marker date="1495638233000" expanded="true" signature="3644:3676" ph="..." />
               </folding>
             </state>
           </provider>
@@ -62,7 +61,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="z11_freeze_jobs.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="z11_freeze_jobs.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/z11_freeze_jobs.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
@@ -710,12 +709,12 @@
       <workItem from="1490993084585" duration="194000" />
       <workItem from="1491013682947" duration="2271000" />
       <workItem from="1491342706598" duration="13550000" />
-      <workItem from="1495473597055" duration="11934000" />
+      <workItem from="1495473597055" duration="12281000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="226000000" />
+    <option name="totallyTimeSpent" value="226347000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1113,21 +1112,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/z16_local_min_rerun.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="126" column="22" lean-forward="false" selection-start-line="126" selection-start-column="22" selection-end-line="126" selection-end-column="22" />
+          <folding>
+            <marker date="1495638233000" expanded="true" signature="3644:3676" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/z11_freeze_jobs.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="100" column="0" lean-forward="false" selection-start-line="100" selection-start-column="0" selection-end-line="101" selection-end-column="73" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/z16_local_min_rerun.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="126" column="101" lean-forward="false" selection-start-line="126" selection-start-column="101" selection-end-line="126" selection-end-column="101" />
-          <folding>
-            <marker date="1495636542000" expanded="true" signature="3644:3676" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
