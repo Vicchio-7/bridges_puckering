@@ -78,36 +78,41 @@ elif [ ${status_build} == 0 ] ; then
         break
     fi
 
-    new_check_location=${p1}/puckering/${folder}/${1}-${2}_${3}
-    if [ ! -d ${new_check_location} ]; then
-        mkdir ${new_check_location}
-    fi
-
-    temp_check_location=${p1}/puckering/${folder}/${1}-${2}_${3}-temp
-    if [ ! -d ${temp_check_location} ]; then
-        mkdir ${temp_check_location}
-    fi
 
 
 
 
-    irc_forward=${p1}/puckering/${folder}/${1}-irc_${3}-forward
-    irc_backward=${p1}/puckering/${folder}/${1}-irc_${3}-reverse
-    optall=${p1}/puckering/${folder}/${1}-optall_${3}
 
-    cp ${irc_forward}/*.chk ${temp_check_location}/.
-    cp ${irc_backward}/*.chk ${temp_check_location}/.
-    cp ${optall}/*.chk ${temp_check_location}/.
+#    new_check_location=${p1}/puckering/${folder}/${1}-${2}_${3}
+#    if [ ! -d ${new_check_location} ]; then
+#        mkdir ${new_check_location}
+#    fi
+#
+#    temp_check_location=${p1}/puckering/${folder}/${1}-${2}_${3}-temp
+#    if [ ! -d ${temp_check_location} ]; then
+#        mkdir ${temp_check_location}
+#    fi
 
 
-
+#    irc_forward=${p1}/puckering/${folder}/${1}-irc_${3}-forward
+#    irc_backward=${p1}/puckering/${folder}/${1}-irc_${3}-reverse
+#    optall=${p1}/puckering/${folder}/${1}-optall_${3}
+#
+#    cp ${irc_forward}/*.chk ${temp_check_location}/.
+#    cp ${irc_backward}/*.chk ${temp_check_location}/.
+#    cp ${optall}/*.chk ${temp_check_location}/.
+#
     new_folder=11_re-opt_lm
 
     if [ ! -d ${p2}/puckering/${folder}/${level_short}/${new_folder}/ ]; then
         mkdir ${p2}/puckering/${folder}/${level_short}/${new_folder}/
+        mkdir ${p2}/puckering/${folder}/${level_short}/${new_folder}/xyz_coords
     fi
 
     cd ${p2}/puckering/${folder}/${level_short}/${new_folder}/
+
+
+    cp ${p2}/puckering/${folder}/${level_short}/${new_folder}/xyz_coords/9_all_lm_logs/*.xyz ${p2}/puckering/${folder}/${level_short}/${new_folder}/xyz_coords
 
     input_file_list=${p2}/puckering/z_results/${folder}/${level_short}/z_hartree-allunsorted-lm-${molecule_type}-${level_short}.csv
     input_list=$( column -t -s ',' ${input_file_list} | awk '{print $1}' )
@@ -119,11 +124,11 @@ elif [ ${status_build} == 0 ] ; then
         file2=${file1%.log}
         file_org=${file2##\"}
 
-        echo ${file_org}
+
 
         if [ "${file_org}" != "File" ]; then
 
-
+            echo ${file_org}
 
 
     #    ######## The section below updates the Gaussian Input File
@@ -139,16 +144,16 @@ elif [ ${status_build} == 0 ] ; then
     #        mv temp1.temp ${file}.com
     #
         ######## The section below creates the Slurm file for submission on Bridges
-            sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
-            sed -i "s/conform/${file_org}/g" temp1.txt
-            sed -i "s/gauss-log/${file_org}-${2}_${3}/g" temp1.txt
-            sed -i "s/\$molecule/${molecule_type}/g" temp1.txt
-            sed -i "s/\$test/${job_type}/g" temp1.txt
-            sed -i "s/\$level/${level_short}/g" temp1.txt
-            sed -i "s/\$hours/${hours}/g" temp1.txt
-            sed -i "s/\$minutes/${minutes}/g" temp1.txt
-
-            mv temp1.txt slurm-${file_org}.job
+#            sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
+#            sed -i "s/conform/${file_org}/g" temp1.txt
+#            sed -i "s/gauss-log/${file_org}-${2}_${3}/g" temp1.txt
+#            sed -i "s/\$molecule/${molecule_type}/g" temp1.txt
+#            sed -i "s/\$test/${job_type}/g" temp1.txt
+#            sed -i "s/\$level/${level_short}/g" temp1.txt
+#            sed -i "s/\$hours/${hours}/g" temp1.txt
+#            sed -i "s/\$minutes/${minutes}/g" temp1.txt
+#
+#            mv temp1.txt slurm-${file_org}.job
         fi
     done
 fi

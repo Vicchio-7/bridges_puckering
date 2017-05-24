@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3d111d83-4a55-4981-bdc5-7b04daefecb7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z16_local_min_rerun.sh" afterPath="$PROJECT_DIR$/z16_local_min_rerun.sh" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,23 +30,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="z15_irc_run.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="z15_irc_run.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/z15_irc_run.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-841">
-              <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="86" selection-end-column="65" />
+            <state relative-caret-position="345">
+              <caret line="23" column="10" lean-forward="false" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="z16_local_min_rerun.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="z16_local_min_rerun.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/z16_local_min_rerun.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="99" column="47" lean-forward="false" selection-start-line="99" selection-start-column="47" selection-end-line="99" selection-end-column="47" />
+            <state relative-caret-position="599">
+              <caret line="114" column="72" lean-forward="false" selection-start-line="114" selection-start-column="72" selection-end-line="114" selection-end-column="72" />
               <folding>
-                <marker date="1495570809000" expanded="true" signature="3420:3452" ph="..." />
+                <marker date="1495635138000" expanded="true" signature="3659:3691" ph="..." />
               </folding>
             </state>
           </provider>
@@ -699,12 +700,12 @@
       <workItem from="1490993084585" duration="194000" />
       <workItem from="1491013682947" duration="2271000" />
       <workItem from="1491342706598" duration="13550000" />
-      <workItem from="1495473597055" duration="8817000" />
+      <workItem from="1495473597055" duration="9733000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222883000" />
+    <option name="totallyTimeSpent" value="223799000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1102,21 +1103,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/z16_local_min_rerun.sh">
+    <entry file="file://$PROJECT_DIR$/z15_irc_run.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="99" column="47" lean-forward="false" selection-start-line="99" selection-start-column="47" selection-end-line="99" selection-end-column="47" />
-          <folding>
-            <marker date="1495570809000" expanded="true" signature="3420:3452" ph="..." />
-          </folding>
+        <state relative-caret-position="345">
+          <caret line="23" column="10" lean-forward="false" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/z15_irc_run.sh">
+    <entry file="file://$PROJECT_DIR$/z16_local_min_rerun.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-841">
-          <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="86" selection-end-column="65" />
-          <folding />
+        <state relative-caret-position="599">
+          <caret line="114" column="72" lean-forward="false" selection-start-line="114" selection-start-column="72" selection-end-line="114" selection-end-column="72" />
+          <folding>
+            <marker date="1495635138000" expanded="true" signature="3659:3691" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
