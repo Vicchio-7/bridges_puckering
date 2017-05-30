@@ -71,13 +71,13 @@ elif [ ${status_build} == 0 ] ; then
 
     for file in ${list_convert}; do
 
-        echo ${file}
+        echo ${file%.log}
 
         echo
 
-        echo ${file} | tr -d 'log,'
-
-
+#        echo ${file} | tr -d '.log,' | tr -d "-${job_type}_${level_short}"
+#
+#%.log
 
     done
 
