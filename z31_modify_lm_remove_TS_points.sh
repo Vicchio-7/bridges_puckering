@@ -75,7 +75,7 @@ elif [ ${status_build} == 0 ] ; then
 
         echo
 
-        echo ${files} | tr -d 'log,'
+        echo ${file} | tr -d 'log,'
 
 
 
