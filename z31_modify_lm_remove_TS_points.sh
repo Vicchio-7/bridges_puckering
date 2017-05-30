@@ -67,10 +67,13 @@ if [ ${status_build} == 1 ]; then
 	exit
 elif [ ${status_build} == 0 ] ; then
 
-    ls ${front}*-${job_type}_${level_short}.log
+    files=$(ls  ${front}*-${job_type}_${level_short}.log)
 
+    for file_unedit in ${files}; do
 
+        echo ${file_unedit}
 
+    done
 
 fi
 
