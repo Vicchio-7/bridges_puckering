@@ -67,7 +67,7 @@ if [ ${status_build} == 1 ]; then
 	exit
 elif [ ${status_build} == 0 ] ; then
 
-    ls ${front}*-${job_type}_${b3lyp}.log
+    ls ${front}*-${job_type}_${level_short}.log
 
 
 
