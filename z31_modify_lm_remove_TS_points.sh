@@ -44,6 +44,7 @@ if [ "${molecule_type}" == 'oxane' ] ; then
 	input_list=../y0-input_list.txt
 elif [ "${molecule_type}" == 'bxyl' ] ;  then
 	folder=2_bxyl
+	front=beta-xylose
 	tpl_folder=2_bxyl_tpl
 	status_build=0
 	input_list=../y0-input_list.txt
@@ -61,6 +62,16 @@ fi
 
 # --------------------------------------------------------------------------------------
 
-ls beta-xylose*-optall_b3lyp.log
 
-echo ${job_type} ${level_short}
+if [ ${status_build} == 1 ]; then
+	exit
+elif [ ${status_build} == 0 ] ; then
+
+    ls ${front}*-${job_type}_${b3lyp}.log
+
+
+
+
+fi
+
+
