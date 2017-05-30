@@ -73,9 +73,9 @@ elif [ ${status_build} == 0 ] ; then
 
         file1=${file%-${job_type}_${level_short}.log}
 
-        echo ${file1#${front}}
+        job_number=${file1#${front}}
 
-        echo
+        echo ${job_number}
 
 #        echo ${file} | tr -d '.log,' | tr -d "-${job_type}_${level_short}"
 #
