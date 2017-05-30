@@ -72,7 +72,6 @@ elif [ ${status_build} == 0 ] ; then
     for file in ${list_convert}; do
         file1=${file%-${job_type}_${level_short}.log}
         job_number=${file1#${front}}
-        echo ${job_number}
 
         if (( ${job_number} < 27 )); then
             echo ${job_number}
