@@ -73,7 +73,7 @@ elif [ ${status_build} == 0 ] ; then
         job_number=${file1#${front}}
 
         if (( ${job_number} > ${number_lm} )); then
-            echo ${job_number}
+            rm ${file}
         fi
 
 
