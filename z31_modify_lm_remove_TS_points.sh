@@ -73,7 +73,7 @@ elif [ ${status_build} == 0 ] ; then
 
         file1=${file%-${job_type}_${level_short}.log}
 
-        echo ${file1}
+        echo ${file1#${front}}
 
         echo
 
