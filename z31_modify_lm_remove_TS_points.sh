@@ -67,11 +67,17 @@ if [ ${status_build} == 1 ]; then
 	exit
 elif [ ${status_build} == 0 ] ; then
 
-    files=$(ls  ${front}*-${job_type}_${level_short}.log)
+    list_convert=$(ls  ${front}*-${job_type}_${level_short}.log)
 
-    for file_unedit in ${files}; do
+    for file in ${list_convert}; do
 
-        echo ${file_unedit}
+        echo ${file}
+
+        echo
+
+        echo ${files} | tr -d 'log,'
+
+
 
     done
 
