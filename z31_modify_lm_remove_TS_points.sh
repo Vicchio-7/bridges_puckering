@@ -46,7 +46,7 @@ elif [ "${molecule_type}" == 'bxyl' ] ;  then
 	folder=2_bxyl
 	front=beta-xylose
 	status_build=0
-    number_lm= 26
+    number_lm=26
 elif [ "${molecule_type}" == 'bglc' ] ;  then
 	folder=3_betagluc
 	tpl_folder=2_bxyl_tpl
