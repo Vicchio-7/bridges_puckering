@@ -75,8 +75,8 @@
       <file leaf-file-name="z31_modify_lm_remove_TS_points.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/z31_modify_lm_remove_TS_points.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="583">
-              <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="1" selection-end-line="79" selection-end-column="6" />
+            <state relative-caret-position="523">
+              <caret line="73" column="51" lean-forward="false" selection-start-line="73" selection-start-column="51" selection-end-line="73" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -732,12 +732,12 @@
       <workItem from="1490993084585" duration="194000" />
       <workItem from="1491013682947" duration="2271000" />
       <workItem from="1491342706598" duration="13550000" />
-      <workItem from="1495473597055" duration="26530000" />
+      <workItem from="1495473597055" duration="26571000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240596000" />
+    <option name="totallyTimeSpent" value="240637000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1147,8 +1147,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/z31_modify_lm_remove_TS_points.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="583">
-          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="1" selection-end-line="79" selection-end-column="6" />
+        <state relative-caret-position="523">
+          <caret line="73" column="51" lean-forward="false" selection-start-line="73" selection-start-column="51" selection-end-line="73" selection-end-column="51" />
           <folding />
         </state>
       </provider>

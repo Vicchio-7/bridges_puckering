@@ -71,7 +71,9 @@ elif [ ${status_build} == 0 ] ; then
 
     for file in ${list_convert}; do
 
-        echo ${file%-${job_type}_${level_short}.log}
+        file1=${file%-${job_type}_${level_short}.log}
+
+        echo ${file1}
 
         echo
 
