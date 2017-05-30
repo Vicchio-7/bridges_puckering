@@ -70,16 +70,14 @@ elif [ ${status_build} == 0 ] ; then
     list_convert=$(ls  ${front}*-${job_type}_${level_short}.log)
 
     for file in ${list_convert}; do
-
         file1=${file%-${job_type}_${level_short}.log}
-
         job_number=${file1#${front}}
-
         echo ${job_number}
 
-#        echo ${file} | tr -d '.log,' | tr -d "-${job_type}_${level_short}"
-#
-#%.log
+        if (( ${job_number} < 27 )); then
+            echo ${job_number}
+        fi
+
 
     done
 
