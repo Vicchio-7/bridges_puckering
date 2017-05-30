@@ -45,9 +45,8 @@ if [ "${molecule_type}" == 'oxane' ] ; then
 elif [ "${molecule_type}" == 'bxyl' ] ;  then
 	folder=2_bxyl
 	front=beta-xylose
-	tpl_folder=2_bxyl_tpl
 	status_build=0
-	input_list=../y0-input_list.txt
+    number_lm= 26
 elif [ "${molecule_type}" == 'bglc' ] ;  then
 	folder=3_betagluc
 	tpl_folder=2_bxyl_tpl
@@ -73,7 +72,7 @@ elif [ ${status_build} == 0 ] ; then
         file1=${file%-${job_type}_${level_short}.log}
         job_number=${file1#${front}}
 
-        if (( ${job_number} < 27 )); then
+        if (( ${job_number} > ${number_lm} )); then
             echo ${job_number}
         fi
 
