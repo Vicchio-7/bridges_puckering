@@ -134,7 +134,7 @@ elif [ ${status_build} == 0 ] ; then
 	    for file_unedit in $( <$input_list); do
             file=${file_unedit%.xyz}
             job_number=${file#${remove_molecule}}
-            if (( ${job_number} => ${ts_number} )); then
+            if (( ${job_number} >= ${ts_number} )); then
                 echo ${job_number}
 
         ######## The section below updates the Gaussian Input File
