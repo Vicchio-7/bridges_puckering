@@ -142,8 +142,6 @@ elif [ ${status_build} == 0 ] ; then
 
     else
 
-        echo 'hi'
-
         for file_unedit in $( <$input_list); do
 
                 file=${file_unedit%.xyz}
