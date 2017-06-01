@@ -52,6 +52,8 @@ elif [ "${molecule_type}" == 'bxyl' ] ;  then
 	tpl_folder=2_bxyl_tpl
 	status_build=0
 	input_list=../y0-input_list.txt
+    lm_number=27
+    remove_molecule=beta-xylose
 elif [ "${molecule_type}" == 'bglc' ] ;  then
 	folder=3_betagluc
 	tpl_folder=2_bxyl_tpl
@@ -130,32 +132,35 @@ elif [ ${status_build} == 0 ] ; then
 
     else
 	    for file_unedit in $( <$input_list); do
-	        file=${file_unedit%.xyz}
+            file=${file_unedit%.xyz}
+            job_number=${file#${remove_molecule}}
+            if (( ${job_number} => ${ts_number} )); then
+                echo ${job_number}
 
         ######## The section below updates the Gaussian Input File
-            sed -e "s/\$memory/${total_memory}/g" ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-TS.tpl > temp1.temp
-            sed -i "s/\$num_procs/${cores_per_node}/g" temp1.temp
-            sed -i "s/\$folder_1/${folder}/g" temp1.temp
-            sed -i "s/\$folder_new/${molecule_type}-TS_${level_short}/g" temp1.temp
-            sed -i "s/\$folder_old/${molecule_type}-freeze_${level_short}/g" temp1.temp
-            sed -i "s/\$old_check/${file}-freeze_${level_short}.chk/g" temp1.temp
-            sed -i "s/\$chkfile/${file}-${job_type}_${level_short}.chk/g" temp1.temp
-            sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp
+                    sed -e "s/\$memory/${total_memory}/g" ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-TS.tpl > temp1.temp
+                    sed -i "s/\$num_procs/${cores_per_node}/g" temp1.temp
+                    sed -i "s/\$folder_1/${folder}/g" temp1.temp
+                    sed -i "s/\$folder_new/${molecule_type}-TS_${level_short}/g" temp1.temp
+                    sed -i "s/\$folder_old/${molecule_type}-freeze_${level_short}/g" temp1.temp
+                    sed -i "s/\$old_check/${file}-freeze_${level_short}.chk/g" temp1.temp
+                    sed -i "s/\$chkfile/${file}-${job_type}_${level_short}.chk/g" temp1.temp
+                    sed -i "s/\level_of_theory/${level_theory}/g" temp1.temp
 
-            mv temp1.temp ${file}.com
+                    mv temp1.temp ${file}.com
 
-        ######## The section below creates the Slurm file for submission on Bridges
-            sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
-            sed -i "s/conform/${file}/g" temp1.txt
-            sed -i "s/gauss-log/${file}-${2}_${3}/g" temp1.txt
-            sed -i "s/\$molecule/${molecule_type}/g" temp1.txt
-            sed -i "s/\$test/${job_type}/g" temp1.txt
-            sed -i "s/\$level/${level_short}/g" temp1.txt
-            sed -i "s/\$hours/${hours}/g" temp1.txt
-            sed -i "s/\$minutes/${minutes}/g" temp1.txt
+                ######## The section below creates the Slurm file for submission on Bridges
+                    sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
+                    sed -i "s/conform/${file}/g" temp1.txt
+                    sed -i "s/gauss-log/${file}-${2}_${3}/g" temp1.txt
+                    sed -i "s/\$molecule/${molecule_type}/g" temp1.txt
+                    sed -i "s/\$test/${job_type}/g" temp1.txt
+                    sed -i "s/\$level/${level_short}/g" temp1.txt
+                    sed -i "s/\$hours/${hours}/g" temp1.txt
+                    sed -i "s/\$minutes/${minutes}/g" temp1.txt
 
-            mv temp1.txt slurm-${file}.job
-
+                    mv temp1.txt slurm-${file}.job
+            fi
         done
     fi
 fi
