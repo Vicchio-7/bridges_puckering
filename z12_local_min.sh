@@ -138,7 +138,7 @@ elif [ ${status_build} == 0 ] ; then
             job_number=${file#${remove_molecule}}
             echo ${job_number}
             if (( ${job_number} -lt ${number_lm} )); then
-                echo${job_number}
+                echo ${job_number}
             fi
 
 
