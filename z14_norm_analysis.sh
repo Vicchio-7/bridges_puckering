@@ -22,7 +22,7 @@ level_short=$3
 cores_per_node=1
 memory_job=3800
 hours=0 #1, 2 ,3 ..... 10, 11, 12....
-minutes=10 # number between 0 and 59
+minutes=05 # number between 0 and 59
 
 total_memory=$(echo ${cores_per_node} ${memory_job} | awk '{ print $1*$2 }' )
 
