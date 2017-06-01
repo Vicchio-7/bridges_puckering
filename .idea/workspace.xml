@@ -42,8 +42,8 @@
       <file leaf-file-name="z12_local_min.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/z12_local_min.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="599">
-              <caret line="142" column="29" lean-forward="false" selection-start-line="142" selection-start-column="29" selection-end-line="142" selection-end-column="29" />
+            <state relative-caret-position="569">
+              <caret line="140" column="48" lean-forward="false" selection-start-line="140" selection-start-column="48" selection-end-line="140" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -701,12 +701,12 @@
       <workItem from="1491342706598" duration="13550000" />
       <workItem from="1495473597055" duration="28534000" />
       <workItem from="1496190635278" duration="1649000" />
-      <workItem from="1496251916940" duration="2846000" />
+      <workItem from="1496251916940" duration="2872000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247095000" />
+    <option name="totallyTimeSpent" value="247121000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1104,8 +1104,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/z12_local_min.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="599">
-          <caret line="142" column="29" lean-forward="false" selection-start-line="142" selection-start-column="29" selection-end-line="142" selection-end-column="29" />
+        <state relative-caret-position="569">
+          <caret line="140" column="48" lean-forward="false" selection-start-line="140" selection-start-column="48" selection-end-line="140" selection-end-column="48" />
           <folding />
         </state>
       </provider>

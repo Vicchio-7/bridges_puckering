@@ -134,14 +134,12 @@ elif [ ${status_build} == 0 ] ; then
 
     else
 	    for file_unedit in $( <$input_list); do
-	        file1=${file_unedit%.xyz}
-
-            echo ${file1}
-
-            job_number=${file1#${remove_molecule}}
-
+	        file=${file_unedit%.xyz}
+            job_number=${file#${remove_molecule}}
             echo ${job_number}
-
+            if (( ${job_number} > ${number_lm} )); then
+                rm ${file}
+            fi
 
 
 
