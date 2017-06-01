@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3d111d83-4a55-4981-bdc5-7b04daefecb7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z12_local_min.sh" afterPath="$PROJECT_DIR$/z12_local_min.sh" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,8 +43,8 @@
       <file leaf-file-name="z12_local_min.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/z12_local_min.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="54" column="16" lean-forward="false" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+            <state relative-caret-position="479">
+              <caret line="55" column="20" lean-forward="false" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -52,7 +53,7 @@
       <file leaf-file-name="z31_modify_lm_remove_TS_points.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/z31_modify_lm_remove_TS_points.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
+            <state relative-caret-position="-152">
               <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
               <folding />
             </state>
@@ -123,8 +124,8 @@
         <option value="$PROJECT_DIR$/z15_irc_run.sh" />
         <option value="$PROJECT_DIR$/z16_local_min_rerun.sh" />
         <option value="$PROJECT_DIR$/z31_modify_lm_remove_TS_points.sh" />
-        <option value="$PROJECT_DIR$/z12_local_min.sh" />
         <option value="$PROJECT_DIR$/z11_freeze_jobs.sh" />
+        <option value="$PROJECT_DIR$/z12_local_min.sh" />
       </list>
     </option>
   </component>
@@ -701,12 +702,12 @@
       <workItem from="1491342706598" duration="13550000" />
       <workItem from="1495473597055" duration="28534000" />
       <workItem from="1496190635278" duration="1649000" />
-      <workItem from="1496251916940" duration="2653000" />
+      <workItem from="1496251916940" duration="2780000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="246902000" />
+    <option name="totallyTimeSpent" value="247029000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1088,7 +1089,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/z31_modify_lm_remove_TS_points.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
+        <state relative-caret-position="-152">
           <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
           <folding />
         </state>
@@ -1104,8 +1105,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/z12_local_min.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="54" column="16" lean-forward="false" selection-start-line="54" selection-start-column="16" selection-end-line="54" selection-end-column="16" />
+        <state relative-caret-position="479">
+          <caret line="55" column="20" lean-forward="false" selection-start-line="55" selection-start-column="20" selection-end-line="55" selection-end-column="20" />
           <folding />
         </state>
       </provider>

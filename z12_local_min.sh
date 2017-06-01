@@ -53,6 +53,7 @@ elif [ "${molecule_type}" == 'bxyl' ] ;  then
 	status_build=0
 	input_list=../y0-input_list.txt
 	lm_number=26
+	remove_molecule=beta-xylose
 elif [ "${molecule_type}" == 'bglc' ] ;  then
 	folder=3_betagluc
 	tpl_folder=2_bxyl_tpl
@@ -136,6 +137,14 @@ elif [ ${status_build} == 0 ] ; then
 	        file1=${file_unedit%.xyz}
 
             echo ${file1}
+
+            job_number=${file1#${front}}
+
+            echo ${job_number}
+
+
+
+
         ######## The section below updates the Gaussian Input File
 
 #            sed -e "s/\$memory/${total_memory}/g" ${tpl}/${tpl_folder}/run_bxyl_prefrozen_optall-to-localmin.tpl > temp1.temp
