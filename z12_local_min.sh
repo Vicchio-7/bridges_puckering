@@ -53,7 +53,7 @@ elif [ "${molecule_type}" == 'bxyl' ] ;  then
 	status_build=0
 	input_list=../y0-input_list.txt
 	lm_number=26
-	remove_molecule=beta-xylose
+    remove_molecule=beta-xylose
 elif [ "${molecule_type}" == 'bglc' ] ;  then
 	folder=3_betagluc
 	tpl_folder=2_bxyl_tpl
@@ -137,7 +137,7 @@ elif [ ${status_build} == 0 ] ; then
 	        file=${file_unedit%.xyz}
             job_number=${file#${remove_molecule}}
             echo ${job_number}
-            if (( ${job_number} -lt ${lm_number} )); then
+            if (( ${job_number} -lt 26 )); then
                 echo ${job_number}
             fi
 
