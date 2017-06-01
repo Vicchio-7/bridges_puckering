@@ -137,8 +137,8 @@ elif [ ${status_build} == 0 ] ; then
 	        file=${file_unedit%.xyz}
             job_number=${file#${remove_molecule}}
             echo ${job_number}
-            if (( ${job_number} > ${number_lm} )); then
-                rm ${file}
+            if (( ${job_number} -lt ${number_lm} )); then
+                echo${job_number}
             fi
 
 
