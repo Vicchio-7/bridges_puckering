@@ -138,7 +138,7 @@ elif [ ${status_build} == 0 ] ; then
 
             echo ${file1}
 
-            job_number=${file1#${front}}
+            job_number=${file1#${remove_molecule}}
 
             echo ${job_number}
 
