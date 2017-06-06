@@ -191,6 +191,8 @@ elif [ ${status_build} == 0 ] ; then
                     sed -i "s/\$hours/${hours}/g" temp1.txt
                     sed -i "s/\$minutes/${minutes}/g" temp1.txt
                     mv temp1.txt slurm-${file}.job
+            fi
+        done
 
     elif [ ${molecule_type} == "bglc" ] ; then
 
