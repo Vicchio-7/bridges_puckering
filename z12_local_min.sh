@@ -59,6 +59,8 @@ elif [ "${molecule_type}" == 'bglc' ] ;  then
 	tpl_folder=2_bxyl_tpl
 	status_build=0
 	input_list=../y0-input_list.txt
+	lm_number=85
+    remove_molecule=beta-glucose
 else
 	echo
 	echo "The molecule type is not found in this script"

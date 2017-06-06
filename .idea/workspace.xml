@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3d111d83-4a55-4981-bdc5-7b04daefecb7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z14_norm_analysis.sh" afterPath="$PROJECT_DIR$/z14_norm_analysis.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z12_local_min.sh" afterPath="$PROJECT_DIR$/z12_local_min.sh" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,6 +30,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="z15_irc_run.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/z15_irc_run.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" column="10" lean-forward="false" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="z11_freeze_jobs.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/z11_freeze_jobs.sh">
           <provider selected="true" editor-type-id="text-editor">
@@ -40,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="z12_local_min.sh" pinned="false" current-in-tab="false">
+      <file leaf-file-name="z12_local_min.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/z12_local_min.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="55" selection-end-column="31" />
+            <state relative-caret-position="615">
+              <caret line="61" column="16" lean-forward="false" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -53,14 +63,14 @@
       <file leaf-file-name="z13_TS_run.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/z13_TS_run.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
+            <state relative-caret-position="299">
               <caret line="54" column="6" lean-forward="false" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="6" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="z14_norm_analysis.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="z14_norm_analysis.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/z14_norm_analysis.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
@@ -139,13 +149,13 @@
         <option value="$PROJECT_DIR$/z25_run_hartree_lmirc.sh" />
         <option value="$PROJECT_DIR$/z23_run_hartree_xyz_TS.sh" />
         <option value="$PROJECT_DIR$/z22_run_hartree_xyz_optall.sh" />
-        <option value="$PROJECT_DIR$/z15_irc_run.sh" />
         <option value="$PROJECT_DIR$/z16_local_min_rerun.sh" />
         <option value="$PROJECT_DIR$/z31_modify_lm_remove_TS_points.sh" />
         <option value="$PROJECT_DIR$/z11_freeze_jobs.sh" />
-        <option value="$PROJECT_DIR$/z12_local_min.sh" />
         <option value="$PROJECT_DIR$/z13_TS_run.sh" />
         <option value="$PROJECT_DIR$/z14_norm_analysis.sh" />
+        <option value="$PROJECT_DIR$/z15_irc_run.sh" />
+        <option value="$PROJECT_DIR$/z12_local_min.sh" />
       </list>
     </option>
   </component>
@@ -159,9 +169,9 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="960" />
+    <option name="x" value="376" />
     <option name="y" value="22" />
-    <option name="width" value="960" />
+    <option name="width" value="1544" />
     <option name="height" value="1130" />
   </component>
   <component name="ProjectView">
@@ -722,12 +732,12 @@
       <workItem from="1491342706598" duration="13550000" />
       <workItem from="1495473597055" duration="28534000" />
       <workItem from="1496190635278" duration="1649000" />
-      <workItem from="1496251916940" duration="4134000" />
+      <workItem from="1496251916940" duration="4750000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248383000" />
+    <option name="totallyTimeSpent" value="248999000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -739,7 +749,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="22" width="960" height="1130" extended-state="0" />
+    <frame x="376" y="22" width="1544" height="1130" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -750,7 +760,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26685935" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09259259" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1930759" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1084,14 +1094,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/z15_irc_run.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="114" column="21" lean-forward="false" selection-start-line="114" selection-start-column="21" selection-end-line="114" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/z11_freeze_jobs.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1108,26 +1110,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/z12_local_min.sh">
+    <entry file="file://$PROJECT_DIR$/z14_norm_analysis.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="55" selection-end-column="31" />
+        <state relative-caret-position="285">
+          <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/z15_irc_run.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="10" lean-forward="false" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/z13_TS_run.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
+        <state relative-caret-position="299">
           <caret line="54" column="6" lean-forward="false" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/z14_norm_analysis.sh">
+    <entry file="file://$PROJECT_DIR$/z12_local_min.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="24" column="10" lean-forward="false" selection-start-line="24" selection-start-column="10" selection-end-line="24" selection-end-column="10" />
+        <state relative-caret-position="615">
+          <caret line="61" column="16" lean-forward="false" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
           <folding />
         </state>
       </provider>
