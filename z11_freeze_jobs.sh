@@ -140,7 +140,7 @@ elif [ ${status_build} == 0 ] ; then
             mv temp1.txt slurm-${file}.job
         done
 
-    else
+    elif [ ${molecule_type} == "bxyl" ] ; then
 
         for file_unedit in $( <$input_list); do
 
@@ -169,6 +169,58 @@ elif [ ${status_build} == 0 ] ; then
                     sed -i '$s/$/\nD  17   13    9     1 F/' ${file}.com
                     sed -i '$s/$/\nD  13    9    1     8 F/' ${file}.com
                     sed -i '$s/$/\nD   9    1    8     5 F/' ${file}.com
+
+                    sed -i '$s/$/\n/' ${file}.com
+                    sed -i '$s/$/\n/' ${file}.com
+
+                    sed -i "s/\$memory/${total_memory}/g" ${file}.com
+                    sed -i "s/\$num_procs/${cores_per_node}/g" ${file}.com
+                    sed -i "s/\$folder_1/${folder}/g" ${file}.com
+                    sed -i "s/\$folder_new/${molecule_type}-freeze_${level_short}/g"  ${file}.com
+                    sed -i "s/\$chkfile/${file}-freeze_${level_short}.chk/g"  ${file}.com
+                    sed -i "s/\level_of_theory/${level_theory}/g" ${file}.com
+
+                ######## The section below creates the Slurm file for submission on Bridges
+
+                    sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > temp1.txt
+                    sed -i "s/conform/${file}/g" temp1.txt
+                    sed -i "s/gauss-log/${file}-freeze_${3}/g" temp1.txt
+                    sed -i "s/\$molecule/${molecule_type}/g" temp1.txt
+                    sed -i "s/\$test/${job_type}/g" temp1.txt
+                    sed -i "s/\$level/${level_short}/g" temp1.txt
+                    sed -i "s/\$hours/${hours}/g" temp1.txt
+                    sed -i "s/\$minutes/${minutes}/g" temp1.txt
+                    mv temp1.txt slurm-${file}.job
+
+    elif [ ${molecule_type} == "bglc" ] ; then
+
+        for file_unedit in $( <$input_list); do
+
+                file=${file_unedit%.xyz}
+
+            if [ "${job_type}" == 'freeze' ] ; then
+
+                tpl_file=${tpl}/${tpl_folder}/run_bxyl_freeze.tpl
+
+                ######## The section below updates the Gaussian Input File
+
+                    head -n 5 ${tpl_file} > temp1.temp
+
+                    echo "${file_unedit}" >> temp1.temp
+                    echo '' >> temp1.temp
+                    echo '0   1' >> temp1.temp
+                    sed -n '3,100p' ../0_initial-coordinates/${file}.xyz >> temp1.temp
+
+                    mv temp1.temp ${file}.com
+
+                    sed -i '$s/$/\n/' ${file}.com
+
+                    sed -i '$s/$/\nD   0    4    6     7 F/' ${file}.com
+                    sed -i '$s/$/\nD   4    6    7    11 F/' ${file}.com
+                    sed -i '$s/$/\nD   6    7   11    15 F/' ${file}.com
+                    sed -i '$s/$/\nD   7   11   15     0 F/' ${file}.com
+                    sed -i '$s/$/\nD  11   15    0     4 F/' ${file}.com
+                    sed -i '$s/$/\nD  15    0    4     6 F/' ${file}.com
 
                     sed -i '$s/$/\n/' ${file}.com
                     sed -i '$s/$/\n/' ${file}.com
