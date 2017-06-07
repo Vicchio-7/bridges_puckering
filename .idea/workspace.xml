@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3d111d83-4a55-4981-bdc5-7b04daefecb7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z11_freeze_jobs.sh" afterPath="$PROJECT_DIR$/z11_freeze_jobs.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z22_run_hartree_xyz_optall.sh" afterPath="$PROJECT_DIR$/z22_run_hartree_xyz_optall.sh" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,11 +40,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="z11_freeze_jobs.sh" pinned="false" current-in-tab="true">
+      <file leaf-file-name="z11_freeze_jobs.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/z11_freeze_jobs.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
-              <caret line="222" column="40" lean-forward="true" selection-start-line="222" selection-start-column="40" selection-end-line="222" selection-end-column="40" />
+            <state relative-caret-position="148">
+              <caret line="160" column="0" lean-forward="true" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="z22_run_hartree_xyz_optall.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/z22_run_hartree_xyz_optall.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="434">
+              <caret line="58" column="8" lean-forward="true" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -148,7 +158,6 @@
         <option value="$PROJECT_DIR$/z24_norm_analysis.sh" />
         <option value="$PROJECT_DIR$/z25_run_hartree_lmirc.sh" />
         <option value="$PROJECT_DIR$/z23_run_hartree_xyz_TS.sh" />
-        <option value="$PROJECT_DIR$/z22_run_hartree_xyz_optall.sh" />
         <option value="$PROJECT_DIR$/z16_local_min_rerun.sh" />
         <option value="$PROJECT_DIR$/z31_modify_lm_remove_TS_points.sh" />
         <option value="$PROJECT_DIR$/z14_norm_analysis.sh" />
@@ -156,6 +165,7 @@
         <option value="$PROJECT_DIR$/z12_local_min.sh" />
         <option value="$PROJECT_DIR$/z13_TS_run.sh" />
         <option value="$PROJECT_DIR$/z11_freeze_jobs.sh" />
+        <option value="$PROJECT_DIR$/z22_run_hartree_xyz_optall.sh" />
       </list>
     </option>
   </component>
@@ -169,9 +179,9 @@
     <treeState />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="960" />
+    <option name="x" value="389" />
     <option name="y" value="22" />
-    <option name="width" value="960" />
+    <option name="width" value="1531" />
     <option name="height" value="1130" />
   </component>
   <component name="ProjectView">
@@ -732,12 +742,12 @@
       <workItem from="1491342706598" duration="13550000" />
       <workItem from="1495473597055" duration="28534000" />
       <workItem from="1496190635278" duration="1649000" />
-      <workItem from="1496251916940" duration="5132000" />
+      <workItem from="1496251916940" duration="5716000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="249381000" />
+    <option name="totallyTimeSpent" value="249965000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -749,8 +759,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="22" width="960" height="1130" extended-state="0" />
-    <editor active="false" />
+    <frame x="389" y="22" width="1531" height="1130" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -758,9 +768,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26685935" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26685935" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31590414" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19476159" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1086,14 +1096,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/z22_run_hartree_xyz_optall.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="95" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/z31_modify_lm_remove_TS_points.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="508">
@@ -1136,8 +1138,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/z11_freeze_jobs.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="222" column="40" lean-forward="true" selection-start-line="222" selection-start-column="40" selection-end-line="222" selection-end-column="40" />
+        <state relative-caret-position="148">
+          <caret line="160" column="0" lean-forward="true" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/z22_run_hartree_xyz_optall.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="58" column="8" lean-forward="true" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
           <folding />
         </state>
       </provider>
