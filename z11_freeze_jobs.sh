@@ -79,6 +79,8 @@ if [ ${status_build} == 1 ]; then
 	exit
 elif [ ${status_build} == 0 ] ; then
 
+    echo 'I made it here'
+
     level_theory=$(z02_level_replace_script.sh ${molecule_type} ${level_short})
 
     if [ ${level_short} == 'ERROR' ] ; then
