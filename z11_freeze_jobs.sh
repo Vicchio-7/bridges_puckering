@@ -59,7 +59,7 @@ elif [ "${molecule_type}" == 'bglc' ] ;  then
 	tpl_folder=2_bxyl_tpl
 	status_build=0
 	input_list=../y0-input_list.txt
-elif [ "${molecule_type}" == 'bglc' ] ;  then
+elif [ "${molecule_type}" == 'aglc' ] ;  then
 	folder=4_alphagluc
 	tpl_folder=2_bxyl_tpl
 	status_build=0
