@@ -79,8 +79,6 @@ if [ ${status_build} == 1 ]; then
 	exit
 elif [ ${status_build} == 0 ] ; then
 
-    echo 'I made it here'
-
     level_theory=$(z02_level_replace_script.sh ${molecule_type} ${level_short})
 
     if [ ${level_short} == 'ERROR' ] ; then
@@ -224,12 +222,13 @@ elif [ ${status_build} == 0 ] ; then
 
                     sed -i '$s/$/\n/' ${file}.com
 
-                    sed -i '$s/$/\nD   0    4    6     7 F/' ${file}.com
-                    sed -i '$s/$/\nD   4    6    7    11 F/' ${file}.com
-                    sed -i '$s/$/\nD   6    7   11    15 F/' ${file}.com
-                    sed -i '$s/$/\nD   7   11   15     0 F/' ${file}.com
-                    sed -i '$s/$/\nD  11   15    0     4 F/' ${file}.com
-                    sed -i '$s/$/\nD  15    0    4     6 F/' ${file}.com
+
+                    sed -i '$s/$/\nD   1    5    7     8 F/' ${file}.com
+                    sed -i '$s/$/\nD   5    7    8    12 F/' ${file}.com
+                    sed -i '$s/$/\nD   7    8   12    16 F/' ${file}.com
+                    sed -i '$s/$/\nD   8   12   16     1 F/' ${file}.com
+                    sed -i '$s/$/\nD  12   16    1     5 F/' ${file}.com
+                    sed -i '$s/$/\nD  16    1    5     7 F/' ${file}.com
 
                     sed -i '$s/$/\n/' ${file}.com
                     sed -i '$s/$/\n/' ${file}.com
