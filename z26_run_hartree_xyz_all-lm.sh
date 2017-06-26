@@ -49,6 +49,11 @@ elif [ "${molecule_type}" == 'bxyl' ] ;  then
     tol=0.01
 	ring_atoms='7,4,16,12,8,0'
 	status_build=0
+elif [ "${molecule_type}" == 'bglc' ] ;  then
+    folder=3_betagluc
+    tol=0.05
+    ring_atoms='0,4,6,7,11,15'
+    status_build=0
 else
 	echo
 	echo "The molecule type is not found in this script"
