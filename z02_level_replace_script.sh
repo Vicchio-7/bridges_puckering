@@ -65,6 +65,8 @@ elif [ ${status_build} == 0 ] ; then
         echo 'm06l\/6-31+G(d,p)'
     elif [ ${level_short} == 'dftb3' ] ; then
         echo 'dftb'
+    elif [ ${level_short} == 'pm7' ] ; then
+        echo 'pm7'
     else
         echo "# # # ERROR # # #"
     fi
