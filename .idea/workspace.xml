@@ -93,8 +93,8 @@
       <file leaf-file-name="z04_check_normal_termination.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/z04_check_normal_termination.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="45" column="4" lean-forward="false" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+            <state relative-caret-position="470">
+              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -772,12 +772,12 @@
       <workItem from="1499978340086" duration="980000" />
       <workItem from="1500496431486" duration="15000" />
       <workItem from="1504541603323" duration="529000" />
-      <workItem from="1504624197371" duration="135000" />
+      <workItem from="1504624197371" duration="181000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="266028000" />
+    <option name="totallyTimeSpent" value="266074000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1178,8 +1178,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/z04_check_normal_termination.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="45" column="4" lean-forward="false" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+        <state relative-caret-position="470">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding />
         </state>
       </provider>
