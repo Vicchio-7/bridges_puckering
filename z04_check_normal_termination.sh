@@ -42,7 +42,8 @@ for log in $(find . -maxdepth 1 -type f -iname '*.log'); do
 	termination_status=$(tail -n 1 ${log%.*}.log | sed -e 's/ at.*//')
 
 
-	expect=' Normal termination of Gaussian 09'
+#	expect=' Normal termination of Gaussian 09'
+    expect=' Normal termination of Gaussian 16'
 
 	if [ "$termination_status" = "${expect}" ]; then
 		echo ${log%.*}.log >> $success
