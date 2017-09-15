@@ -62,7 +62,7 @@ fi
 
 if [ "${molecule_type}" == 'bglc' ] ;  then
     if [ "${job_type}" == 'freeze' ] ; then
-        template=run_oxane_freeze.tpl
+        template=bglc_freeze.tpl
         folder_type=2_freeze
     elif [ "${job_type}" == 'optall' ] ; then
         template=run_oxane_optall-to-localmin.tpl
@@ -114,13 +114,12 @@ elif [ ${status_build} == 0 ] ; then
     tpl_file=${tpl}/${template}
 
     for file_unedit in $( <$input_list); do
-
         file=${file_unedit%.xyz}
-
-
 
         if [ "${job_type}" == 'freeze' ] ; then
             echo ${file}
+
+            sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > ${file}.com
 
         elif [ "${job_type}" == 'optall' ] ; then
             echo ${file}
