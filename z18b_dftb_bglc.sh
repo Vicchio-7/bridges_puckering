@@ -115,7 +115,7 @@ elif [ ${status_build} == 0 ] ; then
 
     for file_unedit in $( <$input_list); do
 
-        file=${file_unedit%.${ext}}
+        file=${file_unedit%.xyz}
 
         echo ${file}
 
