@@ -156,7 +156,7 @@ elif [ ${status_build} == 0 ] ; then
         fi
 
 
-        sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/../gaussian_slurm_script.job > slurm-${file}.job
+        sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job-09 > slurm-${file}.job
         sed -i "s/conform/${file}/g" slurm-${file}.job
         sed -i "s/gauss-log/${file}-${job_type}_${level_short}/g" slurm-${file}.job
         sed -i "s/\$molecule/${molecule_type}/g" slurm-${file}.job
