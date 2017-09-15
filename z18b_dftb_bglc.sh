@@ -113,12 +113,19 @@ elif [ ${status_build} == 0 ] ; then
 
     tpl_file=${tpl}/${template}
 
-    if [ "${job_type}" == 'freeze' ] ; then
-          echo 'freeze'
-    elif [ "${job_type}" == 'optall' ] ; then
-        echo 'optall'
-    elif [ "${job_type}" == 'TS' ] ; then
-        echo 'TS'
-    fi
+    for file_unedit in $( <$input_list); do
 
+        file=${file_unedit%.${ext}}
+
+        echo ${file}
+
+        if [ "${job_type}" == 'freeze' ] ; then
+              echo 'freeze'
+        elif [ "${job_type}" == 'optall' ] ; then
+            echo 'optall'
+        elif [ "${job_type}" == 'TS' ] ; then
+            echo 'TS'
+        fi
+
+    done
 fi
