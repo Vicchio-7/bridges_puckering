@@ -54,6 +54,11 @@ elif [ "${molecule_type}" == 'bxyl' ] ;  then
 	status_build=0
 	input_list=../y0-input_list.txt
 	ext=.xyz
+elif [ "${molecule_type}" == 'bglc' ] ;  then
+	folder=3_bglc
+	status_build=0
+	input_list=../y0-input_list.txt
+	ext=.xyz
 else
 	echo
 	echo "The molecule type is not found in this script"
