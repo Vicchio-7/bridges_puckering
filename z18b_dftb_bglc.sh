@@ -124,7 +124,7 @@ elif [ ${status_build} == 0 ] ; then
             sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > ${file}.com
             sed -i "s/\$num_procs/${cores_per_node}/g" ${file}.com
             sed -i "s/\$folder_1/${folder}/g" ${file}.com
-            sed -i "s/\$old_check/${molecule_type}-${file}-freeze_${level_short}.chk/g" ${file}.com
+            sed -i "s/\$old_check/${file}-init_${level_short}.chk/g" ${file}.com
             sed -i "s/\$folder_new/${molecule_type}-${job_type}_${level_short}/g" ${file}.com
             sed -i "s/\$chkfile/${file}-${job_type}_${level_short}.chk/g" ${file}.com
 
@@ -132,10 +132,14 @@ elif [ ${status_build} == 0 ] ; then
         elif [ "${job_type}" == 'init' ] ; then
             echo ${file}
 
-            sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > ${file}.com
+            head -n 8 ${tpl_file} > ${file}.com
+
+            tail -n 22 ../0_initial-coordinates/${file}.com >> ${file.com}
+
+            sed -i "s/\$memory/${total_memory}/g" ${file}.com
             sed -i "s/\$num_procs/${cores_per_node}/g" ${file}.com
+            sed -i "s/\$structure/${file}/g" ${file}.com
             sed -i "s/\$folder_1/${folder}/g" ${file}.com
-            sed -i "s/\$old_check/${molecule_type}-${file}-freeze_${level_short}.chk/g" ${file}.com
             sed -i "s/\$folder_new/${molecule_type}-${job_type}_${level_short}/g" ${file}.com
             sed -i "s/\$chkfile/${file}-${job_type}_${level_short}.chk/g" ${file}.com
 
