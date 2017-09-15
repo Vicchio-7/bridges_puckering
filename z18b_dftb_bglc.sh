@@ -142,6 +142,7 @@ elif [ ${status_build} == 0 ] ; then
             sed -i "s/\$folder_1/${folder}/g" ${file}.com
             sed -i "s/\$folder_new/${molecule_type}-${job_type}_${level_short}/g" ${file}.com
             sed -i "s/\$chkfile/${file}-${job_type}_${level_short}.chk/g" ${file}.com
+            sed -i '$s/$/\n/' ${file}.com
 
 
         elif [ "${job_type}" == 'optall' ] ; then
