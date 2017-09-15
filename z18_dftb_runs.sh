@@ -137,9 +137,7 @@ elif [ ${status_build} == 0 ] ; then
     fi
 
     directory=${p2}/puckering/${folder}/${level_short}
-
     dir_job=${directory}/${folder_type}
-
     if [ ! -d ${p1}/puckering/${folder}/${molecule_type}-${job_type}_${level_short} ]; then
         mkdir ${p1}/puckering/${folder}/${molecule_type}-${job_type}_${level_short}
     fi
