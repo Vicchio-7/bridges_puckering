@@ -117,14 +117,17 @@ elif [ ${status_build} == 0 ] ; then
 
         file=${file_unedit%.xyz}
 
-        echo ${file}
+
 
         if [ "${job_type}" == 'freeze' ] ; then
-              echo 'freeze'
+            echo ${file}
+
         elif [ "${job_type}" == 'optall' ] ; then
-            echo 'optall'
+            echo ${file}
+
         elif [ "${job_type}" == 'TS' ] ; then
-            echo 'TS'
+            echo ${file}
+
         fi
 
     done
