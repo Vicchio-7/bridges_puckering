@@ -144,6 +144,8 @@ elif [ ${status_build} == 0 ] ; then
             sed -i "s/\$chkfile/${file}-${job_type}_${level_short}.chk/g" ${file}.com
             sed -i '$s/$/\n/' ${file}.com
 
+            tail -n 8 ${tpl_file} > ${file}.com
+
 
         elif [ "${job_type}" == 'optall' ] ; then
             echo ${file}
