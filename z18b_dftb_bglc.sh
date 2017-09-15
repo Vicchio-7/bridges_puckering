@@ -120,6 +120,13 @@ elif [ ${status_build} == 0 ] ; then
             echo ${file}
 
             sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > ${file}.com
+            sed -i "s/\$num_procs/${cores_per_node}/g" ${file}.com
+            sed -i "s/\$folder_1/${folder}/g" ${file}.com
+            sed -i "s/\$folder_old/${molecule_type}-freeze_${level_short}/g" ${file}.com
+            sed -i "s/\$old_check/${molecule_type}-${file}-freeze_${level_short}.chk/g" ${file}.com
+            sed -i "s/\$folder_new/${molecule_type}-optall_${level_short}/g" ${file}.com
+            sed -i "s/\$chkfile/${file}-freeze_${level_short}-${job_type}_${level_short}.chk/g" ${file}.com
+
 
         elif [ "${job_type}" == 'optall' ] ; then
             echo ${file}
