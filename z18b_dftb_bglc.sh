@@ -134,7 +134,7 @@ elif [ ${status_build} == 0 ] ; then
 
             head -n 8 ${tpl_file} > ${file}.com
 
-            tail -n 22 ../0_initial-coordinates/${file}.com >> ${file}.com
+            tail -n 22 ../0_initial-coordinates/${file}.xyz >> ${file}.com
 
             sed -i "s/\$memory/${total_memory}/g" ${file}.com
             sed -i "s/\$num_procs/${cores_per_node}/g" ${file}.com
