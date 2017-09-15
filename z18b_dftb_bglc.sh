@@ -68,6 +68,8 @@ if [ "${molecule_type}" == 'bglc' ] ;  then
         template=run_oxane_optall-to-localmin.tpl
     elif [ "${job_type}" == 'TS' ] ; then
         template=run_oxane_optall-to-TS.tpl
+    elif [ "${job_type}" == 'init' ] ; then
+        template=bglc_init.tpl
     elif [ "${job_type}" == 'irc' ] ; then
         echo "Currently missing!" #####################################################
     elif [ "${job_type}" == 'lmirc' ] ; then
@@ -117,6 +119,17 @@ elif [ ${status_build} == 0 ] ; then
         file=${file_unedit%.xyz}
 
         if [ "${job_type}" == 'freeze' ] ; then
+            echo ${file}
+
+            sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > ${file}.com
+            sed -i "s/\$num_procs/${cores_per_node}/g" ${file}.com
+            sed -i "s/\$folder_1/${folder}/g" ${file}.com
+            sed -i "s/\$old_check/${molecule_type}-${file}-freeze_${level_short}.chk/g" ${file}.com
+            sed -i "s/\$folder_new/${molecule_type}-${job_type}_${level_short}/g" ${file}.com
+            sed -i "s/\$chkfile/${file}-${job_type}_${level_short}.chk/g" ${file}.com
+
+
+        elif [ "${job_type}" == 'init' ] ; then
             echo ${file}
 
             sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > ${file}.com
