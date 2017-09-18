@@ -159,7 +159,6 @@ elif [ ${status_build} == 0 ] ; then
             fi
 
         elif [ "${job_type}" == 'TS' ] ; then
-            echo ${file}
             job_number=${file#${remove_molecule}}
             if (( ${job_number} >= ${ts_number} )); then
                 echo ${file}
