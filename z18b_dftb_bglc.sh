@@ -67,7 +67,7 @@ if [ "${molecule_type}" == 'bglc' ] ;  then
         template=bglc_freeze.tpl
         folder_type=2_freeze
     elif [ "${job_type}" == 'optall' ] ; then
-        template=run_oxane_optall-to-localmin.tpl
+        template=bglc_optall.tpl
     elif [ "${job_type}" == 'TS' ] ; then
         template=run_oxane_optall-to-TS.tpl
     elif [ "${job_type}" == 'init' ] ; then
