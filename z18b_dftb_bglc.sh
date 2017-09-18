@@ -136,6 +136,7 @@ elif [ ${status_build} == 0 ] ; then
             echo ${file}
             sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > ${file}.com
             sed -i "s/\$num_procs/${cores_per_node}/g" ${file}.com
+            sed -i "s/\$folder_old/${molecule_type}-init_${level_short}/g" temp1.temp
             sed -i "s/\$folder_1/${folder}/g" ${file}.com
             sed -i "s/\$old_check/${file}-init_${level_short}.chk/g" ${file}.com
             sed -i "s/\$folder_new/${molecule_type}-${job_type}_${level_short}/g" ${file}.com
