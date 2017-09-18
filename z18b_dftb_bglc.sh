@@ -118,8 +118,8 @@ elif [ ${status_build} == 0 ] ; then
     tpl_file=${tpl}/${template}
 
     for file_unedit in $( <$input_list); do
+        slurm_build=1
         file=${file_unedit%.xyz}
-
         if [ "${job_type}" == 'init' ] ; then
             echo ${file}
             head -n 8 ${tpl_file} > ${file}.com
