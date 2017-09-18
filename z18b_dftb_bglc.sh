@@ -73,6 +73,8 @@ if [ "${molecule_type}" == 'bglc' ] ;  then
         template=bglc_TS.tpl
     elif [ "${job_type}" == 'init' ] ; then
         template=bglc_init.tpl
+    elif [ "${job_type}" == 'norm' ] ; then
+        echo 'norm template'
     elif [ "${job_type}" == 'irc' ] ; then
         echo "Currently missing!" #####################################################
     elif [ "${job_type}" == 'lmirc' ] ; then
@@ -156,6 +158,7 @@ elif [ ${status_build} == 0 ] ; then
                 sed -i "s/\$folder_new/${molecule_type}-${job_type}_${level_short}/g" ${file}.com
                 sed -i "s/\$chkfile/${file}-${job_type}_${level_short}.chk/g" ${file}.com
                 slurm_build=0
+                log_id=${file}-freeze_dftb3-optall_dftb3
             fi
 
         elif [ "${job_type}" == 'TS' ] ; then
@@ -170,13 +173,19 @@ elif [ ${status_build} == 0 ] ; then
                 sed -i "s/\$folder_new/${molecule_type}-${job_type}_${level_short}/g" ${file}.com
                 sed -i "s/\$chkfile/${file}-${job_type}_${level_short}.chk/g" ${file}.com
                 slurm_build=0
+                log_id=${file}-freeze_dftb3-TS_dftb3
             fi
+        elif [ "${job_type}" == 'norm' ] ; then
+            echo 'norm'
+            log_id=${file}-freeze_dftb3-TS_dftb3
+        elif [ "${job_type}" == 'irc' ] ; then
+            echo 'irc'
         fi
 
         if [ ${slurm_build} == 0 ]; then
             sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job-09 > slurm-${file}.job
             sed -i "s/conform/${file}/g" slurm-${file}.job
-            sed -i "s/gauss-log/${file}-${job_type}_${level_short}/g" slurm-${file}.job
+            sed -i "s/gauss-log/${log_id}/g" slurm-${file}.job
             sed -i "s/\$molecule/${molecule_type}/g" slurm-${file}.job
             sed -i "s/\$test/${job_type}/g" slurm-${file}.job
             sed -i "s/\$level/${level_short}/g" slurm-${file}.job
