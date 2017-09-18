@@ -50,6 +50,7 @@ if [ "${molecule_type}" == 'bglc' ] ;  then
 	input_list=../y0-input_list.txt
 	ext=.xyz
     lm_number=85
+    ts_number=86
     remove_molecule=beta-glucose
 else
 	echo
@@ -159,7 +160,17 @@ elif [ ${status_build} == 0 ] ; then
 
         elif [ "${job_type}" == 'TS' ] ; then
             echo ${file}
-
+            if (( ${job_number} >= ${ts_number} )); then
+                echo ${file}
+                sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > ${file}.com
+                sed -i "s/\$num_procs/${cores_per_node}/g" ${file}.com
+                sed -i "s/\$folder_old/${molecule_type}-freeze_${level_short}/g" ${file}.com
+                sed -i "s/\$folder_1/${folder}/g" ${file}.com
+                sed -i "s/\$old_check/${file}-freeze_${level_short}.chk/g" ${file}.com
+                sed -i "s/\$folder_new/${molecule_type}-${job_type}_${level_short}/g" ${file}.com
+                sed -i "s/\$chkfile/${file}-${job_type}_${level_short}.chk/g" ${file}.com
+                slurm_build=0
+            fi
         fi
 
         if [ ${slurm_build} == 0 ]; then
