@@ -147,7 +147,7 @@ elif [ ${status_build} == 0 ] ; then
             job_number=${file#${remove_molecule}}
             echo ${job_number}
             if (( ${job_number} <= ${lm_number} )); then
-                echo ${job_number}
+                echo 'I MADE IT HERE'
 
             fi
 
