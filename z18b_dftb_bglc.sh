@@ -143,7 +143,12 @@ elif [ ${status_build} == 0 ] ; then
             sed -i "s/\$chkfile/${file}-${job_type}_${level_short}.chk/g" ${file}.com
 
         elif [ "${job_type}" == 'optall' ] ; then
-            echo ${file}
+            file=${file_unedit%.xyz}
+            job_number=${file#${remove_molecule}}
+            if (( ${job_number} <= ${lm_number} )); then
+                file=${file_unedit%.xyz}
+
+            fi
 
         elif [ "${job_type}" == 'TS' ] ; then
             echo ${file}
