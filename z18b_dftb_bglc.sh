@@ -145,9 +145,8 @@ elif [ ${status_build} == 0 ] ; then
 
         elif [ "${job_type}" == 'optall' ] ; then
             job_number=${file#${remove_molecule}}
-            echo ${job_number}
             if (( ${job_number} <= ${lm_number} )); then
-                echo 'I MADE IT HERE'
+                echo ${job_number}
 
             fi
 
