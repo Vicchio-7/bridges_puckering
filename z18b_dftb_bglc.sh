@@ -74,7 +74,7 @@ if [ "${molecule_type}" == 'bglc' ] ;  then
     elif [ "${job_type}" == 'init' ] ; then
         template=bglc_init.tpl
     elif [ "${job_type}" == 'norm' ] ; then
-        echo 'norm template'
+        template=bglc_norm.tpl
     elif [ "${job_type}" == 'irc' ] ; then
         echo "Currently missing!" #####################################################
     elif [ "${job_type}" == 'lmirc' ] ; then
@@ -176,8 +176,16 @@ elif [ ${status_build} == 0 ] ; then
                 log_id=${file}-freeze_dftb3-TS_dftb3
             fi
         elif [ "${job_type}" == 'norm' ] ; then
-            echo 'norm'
-            log_id=${file}-freeze_dftb3-TS_dftb3
+            echo ${file}
+            sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > ${file}.com
+            sed -i "s/\$num_procs/${cores_per_node}/g" ${file}.com
+            sed -i "s/\$folder_old/${molecule_type}-freeze_${level_short}/g" ${file}.com
+            sed -i "s/\$folder_1/${folder}/g" ${file}.com
+            sed -i "s/\$old_check/${file}-TS_${level_short}.chk/g" ${file}.com
+            sed -i "s/\$folder_new/${molecule_type}-${job_type}_${level_short}/g" ${file}.com
+            sed -i "s/\$chkfile/${file}-${job_type}_${level_short}.chk/g" ${file}.com
+            slurm_build=0
+            log_id=${file}-freeze_dftb3-TS_dftb3-norm_dftb3
         elif [ "${job_type}" == 'irc' ] ; then
             echo 'irc'
         fi
