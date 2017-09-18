@@ -120,7 +120,6 @@ elif [ ${status_build} == 0 ] ; then
     for file_unedit in $( <$input_list); do
         file=${file_unedit%.xyz}
 
-
         if [ "${job_type}" == 'init' ] ; then
             echo ${file}
             head -n 8 ${tpl_file} > ${file}.com
@@ -145,9 +144,8 @@ elif [ ${status_build} == 0 ] ; then
             sed -i "s/\$chkfile/${file}-${job_type}_${level_short}.chk/g" ${file}.com
 
         elif [ "${job_type}" == 'optall' ] ; then
-            echo 'made it here'
-            file=${file_unedit%.xyz}
             job_number=${file#${remove_molecule}}
+            echo ${job_number}
             if (( ${job_number} <= ${lm_number} )); then
                 file=${file_unedit%.xyz}
 
@@ -159,14 +157,14 @@ elif [ ${status_build} == 0 ] ; then
         fi
 
 
-        sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job-09 > slurm-${file}.job
-        sed -i "s/conform/${file}/g" slurm-${file}.job
-        sed -i "s/gauss-log/${file}-${job_type}_${level_short}/g" slurm-${file}.job
-        sed -i "s/\$molecule/${molecule_type}/g" slurm-${file}.job
-        sed -i "s/\$test/${job_type}/g" slurm-${file}.job
-        sed -i "s/\$level/${level_short}/g" slurm-${file}.job
-        sed -i "s/\$hours/${hours}/g" slurm-${file}.job
-        sed -i "s/\$minutes/${minutes}/g" slurm-${file}.job
+#        sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job-09 > slurm-${file}.job
+#        sed -i "s/conform/${file}/g" slurm-${file}.job
+#        sed -i "s/gauss-log/${file}-${job_type}_${level_short}/g" slurm-${file}.job
+#        sed -i "s/\$molecule/${molecule_type}/g" slurm-${file}.job
+#        sed -i "s/\$test/${job_type}/g" slurm-${file}.job
+#        sed -i "s/\$level/${level_short}/g" slurm-${file}.job
+#        sed -i "s/\$hours/${hours}/g" slurm-${file}.job
+#        sed -i "s/\$minutes/${minutes}/g" slurm-${file}.job
 
     done
 fi
