@@ -160,6 +160,7 @@ elif [ ${status_build} == 0 ] ; then
 
         elif [ "${job_type}" == 'TS' ] ; then
             echo ${file}
+            job_number=${file#${remove_molecule}}
             if (( ${job_number} >= ${ts_number} )); then
                 echo ${file}
                 sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > ${file}.com
