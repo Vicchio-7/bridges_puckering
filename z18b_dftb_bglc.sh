@@ -70,7 +70,7 @@ if [ "${molecule_type}" == 'bglc' ] ;  then
     elif [ "${job_type}" == 'optall' ] ; then
         template=bglc_optall.tpl
     elif [ "${job_type}" == 'TS' ] ; then
-        template=run_oxane_optall-to-TS.tpl
+        template=bglc_TS.tpl
     elif [ "${job_type}" == 'init' ] ; then
         template=bglc_init.tpl
     elif [ "${job_type}" == 'irc' ] ; then
