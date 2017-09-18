@@ -132,7 +132,7 @@ elif [ ${status_build} == 0 ] ; then
             sed -i "s/\$chkfile/${file}-${job_type}_${level_short}.chk/g" ${file}.com
             sed -i '$s/$/\n/' ${file}.com
             tail -n 11 ${tpl_file} >> ${file}.com
-
+            slurm_build=0
         elif [ "${job_type}" == 'freeze' ] ; then
             echo ${file}
             sed -e "s/\$memory/${total_memory}/g" ${tpl_file} > ${file}.com
@@ -142,7 +142,7 @@ elif [ ${status_build} == 0 ] ; then
             sed -i "s/\$old_check/${file}-init_${level_short}.chk/g" ${file}.com
             sed -i "s/\$folder_new/${molecule_type}-${job_type}_${level_short}/g" ${file}.com
             sed -i "s/\$chkfile/${file}-${job_type}_${level_short}.chk/g" ${file}.com
-
+            slurm_build=0
         elif [ "${job_type}" == 'optall' ] ; then
             job_number=${file#${remove_molecule}}
             if (( ${job_number} <= ${lm_number} )); then
@@ -154,7 +154,7 @@ elif [ ${status_build} == 0 ] ; then
                 sed -i "s/\$old_check/${file}-freeze_${level_short}.chk/g" ${file}.com
                 sed -i "s/\$folder_new/${molecule_type}-${job_type}_${level_short}/g" ${file}.com
                 sed -i "s/\$chkfile/${file}-${job_type}_${level_short}.chk/g" ${file}.com
-
+                slurm_build=0
             fi
 
         elif [ "${job_type}" == 'TS' ] ; then
@@ -162,15 +162,16 @@ elif [ ${status_build} == 0 ] ; then
 
         fi
 
-
-#        sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job-09 > slurm-${file}.job
-#        sed -i "s/conform/${file}/g" slurm-${file}.job
-#        sed -i "s/gauss-log/${file}-${job_type}_${level_short}/g" slurm-${file}.job
-#        sed -i "s/\$molecule/${molecule_type}/g" slurm-${file}.job
-#        sed -i "s/\$test/${job_type}/g" slurm-${file}.job
-#        sed -i "s/\$level/${level_short}/g" slurm-${file}.job
-#        sed -i "s/\$hours/${hours}/g" slurm-${file}.job
-#        sed -i "s/\$minutes/${minutes}/g" slurm-${file}.job
+        if [ ${slurm_build} == 0 ]; then
+            sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job-09 > slurm-${file}.job
+            sed -i "s/conform/${file}/g" slurm-${file}.job
+            sed -i "s/gauss-log/${file}-${job_type}_${level_short}/g" slurm-${file}.job
+            sed -i "s/\$molecule/${molecule_type}/g" slurm-${file}.job
+            sed -i "s/\$test/${job_type}/g" slurm-${file}.job
+            sed -i "s/\$level/${level_short}/g" slurm-${file}.job
+            sed -i "s/\$hours/${hours}/g" slurm-${file}.job
+            sed -i "s/\$minutes/${minutes}/g" slurm-${file}.job
+        fi
 
     done
 fi
