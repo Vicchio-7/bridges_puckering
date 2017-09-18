@@ -49,6 +49,8 @@ if [ "${molecule_type}" == 'bglc' ] ;  then
 	status_build=0
 	input_list=../y0-input_list.txt
 	ext=.xyz
+    lm_number=85
+    remove_molecule=beta-glucose
 else
 	echo
 	echo "The molecule type is not found in this script"
