@@ -61,4 +61,19 @@ fi
 
 ## Main Code ##
 
-echo ${status_build}
+if [ ${status_build} == 1 ]; then
+	exit
+elif [ ${status_build} == 0 ] ; then
+
+    z04_check_normal_termination.sh ${molecule_type} TS ${level_short}
+
+    if [ ! -f ${failure} ]; then
+        echo "No Files failed!"
+        echo
+        echo "Please wait a few minutes...."
+        echo
+    fi
+
+
+
+fi
