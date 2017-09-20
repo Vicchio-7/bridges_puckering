@@ -61,3 +61,4 @@ fi
 
 ## Main Code ##
 
+echo ${status_build}
