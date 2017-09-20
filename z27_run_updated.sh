@@ -77,6 +77,10 @@ elif [ ${status_build} == 0 ] ; then
         hartree norm -d ../6_norm_analysis/. -o ../6_norm_analysis
         ls *norm.txt > z_list_norm_files.txt
 
+        # Running Normal Analysis
+        norm_analysis -s z_list_norm_files.txt -r ${ring_atoms} -m ${molecule_type} -t ${tolerance}
+
+
 
 
 
