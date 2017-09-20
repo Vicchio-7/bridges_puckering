@@ -72,8 +72,13 @@ elif [ ${status_build} == 0 ] ; then
         echo
         echo "Please wait a few minutes...."
         echo
+
+        # Hartree Norm Analysis
+        hartree norm -d ../6_norm_analysis/. -o ../6_norm_analysis
+        ls *norm.txt > z_list_norm_files.txt
+
+
+
+
     fi
-
-
-
 fi
