@@ -191,8 +191,18 @@ elif [ ${status_build} == 0 ] ; then
              fi
         elif [ "${job_type}" == 'irc' ] ; then
             echo 'irc'
+            irc_file_list=${p2}/puckering/z_results/${folder}/${level_short}/z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv
+            column -t -s ',' ${irc_file_list} | awk '{print $1}' > my_list.txt
+
+#            if grep -Fxq "$FILENAME" my_list.txt ; then
+#               echo 'found'
+#            else
+#                echo 'not found'
+#            fi
+
         fi
 
+#### Slurm Creation for the file
         if [ ${slurm_build} == 0 ]; then
             sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job-09 > slurm-${file}.job
             sed -i "s/conform/${file}/g" slurm-${file}.job
@@ -202,6 +212,8 @@ elif [ ${status_build} == 0 ] ; then
             sed -i "s/\$level/${level_short}/g" slurm-${file}.job
             sed -i "s/\$hours/${hours}/g" slurm-${file}.job
             sed -i "s/\$minutes/${minutes}/g" slurm-${file}.job
+        elif [ ${slurm_build} == 1 ]; then
+            echo 'irc'
         fi
 
     done
