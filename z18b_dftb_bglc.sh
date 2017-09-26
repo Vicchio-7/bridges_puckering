@@ -76,7 +76,10 @@ if [ "${molecule_type}" == 'bglc' ] ;  then
     elif [ "${job_type}" == 'norm' ] ; then
         template=bglc_norm.tpl
     elif [ "${job_type}" == 'irc' ] ; then
-        echo "Currently missing!" #####################################################
+        irc_file_list=${p2}/puckering/z_results/${folder}/${level_short}/z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv
+        echo ${irc_file_list}
+        column -t -s ',' ${irc_file_list} | awk '{print $1}' > my_list.txt
+
     elif [ "${job_type}" == 'lmirc' ] ; then
         echo "Currently missing!" #####################################################
     else
@@ -191,8 +194,7 @@ elif [ ${status_build} == 0 ] ; then
              fi
         elif [ "${job_type}" == 'irc' ] ; then
             echo 'irc'
-            irc_file_list=${p2}/puckering/z_results/${folder}/${level_short}/z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv
-            column -t -s ',' ${irc_file_list} | awk '{print $1}' > my_list.txt
+
 
 #            if grep -Fxq "$FILENAME" my_list.txt ; then
 #               echo 'found'
