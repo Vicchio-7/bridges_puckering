@@ -230,7 +230,7 @@ elif [ ${status_build} == 2 ] ; then
                 sed -i "s/\$num_procs/${cores_per_node}/g" ${file_org}-for.com
                 sed -i "s/\$folder_old/${molecule_type}-TS_${level_short}/g" ${file_org}-for.com
                 sed -i "s/\$folder_1/${folder}/g" ${file_org}-for.com
-                sed -i "s/\$old_check/${file_chk}.chk/g" ${file_org}-for.com
+                sed -i "s/\$old_check/${file_org}-TS_${level_short}.chk/g" ${file_org}-for.com
                 sed -i "s/\$folder_new/${molecule_type}-${job_type}_${level_short}/g" ${file_org}-for.com
                 sed -i "s/\$chkfile/${file_chk}-ircf_${level_short}.chk/g" ${file_org}-for.com
 
@@ -238,7 +238,7 @@ elif [ ${status_build} == 2 ] ; then
                 sed -i "s/\$num_procs/${cores_per_node}/g" ${file_org}-rev.com
                 sed -i "s/\$folder_old/${molecule_type}-TS_${level_short}/g" ${file_org}-rev.com
                 sed -i "s/\$folder_1/${folder}/g" ${file_org}-rev.com
-                sed -i "s/\$old_check/${file_chk}.chk/g" ${file_org}-rev.com
+                sed -i "s/\$old_check/${file_org}-TS_${level_short}.chk/g" ${file_org}-rev.com
                 sed -i "s/\$folder_new/${molecule_type}-${job_type}_${level_short}/g" ${file_org}-rev.com
                 sed -i "s/\$chkfile/${file_chk}-ircr_${level_short}.chk/g" ${file_org}-rev.com
 
