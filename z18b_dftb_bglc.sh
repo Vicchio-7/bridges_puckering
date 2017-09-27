@@ -76,9 +76,8 @@ if [ "${molecule_type}" == 'bglc' ] ;  then
     elif [ "${job_type}" == 'norm' ] ; then
         template=bglc_norm.tpl
     elif [ "${job_type}" == 'irc' ] ; then
-        irc_file_list=${p2}/puckering/z_results/3_betagluc/${level_short}/z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv
-        echo ${irc_file_list}
-        column -t -s ',' ${irc_file_list} | awk '{print $1}' > my_list.txt
+
+        status_build=2
 
     elif [ "${job_type}" == 'lmirc' ] ; then
         echo "Currently missing!" #####################################################
@@ -192,16 +191,6 @@ elif [ ${status_build} == 0 ] ; then
                 slurm_build=0
                 log_id=${file}-freeze_dftb3-TS_dftb3-norm_dftb3
              fi
-        elif [ "${job_type}" == 'irc' ] ; then
-            echo 'irc'
-
-
-#            if grep -Fxq "$FILENAME" my_list.txt ; then
-#               echo 'found'
-#            else
-#                echo 'not found'
-#            fi
-
         fi
 
 #### Slurm Creation for the file
@@ -214,9 +203,18 @@ elif [ ${status_build} == 0 ] ; then
             sed -i "s/\$level/${level_short}/g" slurm-${file}.job
             sed -i "s/\$hours/${hours}/g" slurm-${file}.job
             sed -i "s/\$minutes/${minutes}/g" slurm-${file}.job
-        elif [ ${slurm_build} == 1 ]; then
-            echo 'irc'
         fi
 
     done
+
+elif [ ${status_build} == 2 ] ; then
+    if [ "${job_type}" == 'irc' ] ; then
+        echo 'irc'
+
+
+        irc_file_list=${p2}/puckering/z_results/3_betagluc/${level_short}/z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv
+        echo ${irc_file_list}
+        column -t -s ',' ${irc_file_list} | awk '{print $1}' > my_list.txt
+    fi
+
 fi
