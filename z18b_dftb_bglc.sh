@@ -214,7 +214,7 @@ elif [ ${status_build} == 2 ] ; then
         for file in ${input_list}; do
             if [ "${file}" != "File" ]; then
                 echo ${file}
-                file1=${file%.log\"}
+                file1=${file%-freeze_${level_short}-${TS}_${level_short}.log\"}
                 file2=${file1%.log}
                 file_org=${file2##\"}
 
@@ -222,7 +222,7 @@ elif [ ${status_build} == 2 ] ; then
                 echo ${file2}
                 echo ${file_org}
 
-                -freeze_dftb3-TS_dftb3
+
 
             fi
         done
