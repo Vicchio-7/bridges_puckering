@@ -261,7 +261,6 @@ elif [ ${status_build} == 2 ] ; then
                 sed -i "s/\$hours/${hours}/g" slurm-${file_org}-rev.job
                 sed -i "s/\$minutes/${minutes}/g" slurm-${file_org}-rev.job
 
-                mv temp1.txt slurm-${new_filenamer}.job
 
 
 

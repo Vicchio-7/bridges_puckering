@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3d111d83-4a55-4981-bdc5-7b04daefecb7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z18b_dftb_bglc.sh" afterPath="$PROJECT_DIR$/z18b_dftb_bglc.sh" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,8 +63,8 @@
       <file leaf-file-name="z18b_dftb_bglc.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/z18b_dftb_bglc.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="244" column="0" lean-forward="true" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
+            <state relative-caret-position="341">
+              <caret line="227" column="36" lean-forward="false" selection-start-line="227" selection-start-column="36" selection-end-line="227" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -822,12 +823,12 @@
       <workItem from="1504624197371" duration="621000" />
       <workItem from="1504657586672" duration="1451000" />
       <workItem from="1504820037975" duration="10220000" />
-      <workItem from="1505482324501" duration="20197000" />
+      <workItem from="1505482324501" duration="20245000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="298382000" />
+    <option name="totallyTimeSpent" value="298430000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1234,8 +1235,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/z18b_dftb_bglc.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="244" column="0" lean-forward="true" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
+        <state relative-caret-position="341">
+          <caret line="227" column="36" lean-forward="false" selection-start-line="227" selection-start-column="36" selection-end-line="227" selection-end-column="36" />
           <folding />
         </state>
       </provider>
