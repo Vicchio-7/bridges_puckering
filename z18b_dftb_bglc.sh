@@ -252,9 +252,18 @@ elif [ ${status_build} == 2 ] ; then
                 sed -i "s/\$chkfile/${file_org}-ircr_${level_short}.chk/g" ${file_org}-rev.com
 
 
+                sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job-09 > slurm-${file_org}-for.job
+                sed -i "s/conform/${file_org}-for/g" slurm-${file_org}-for.job
+                sed -i "s/gauss-log/${file3}-${job_type}f_${level_short}/g" slurm-${file_org}-for.job
+                sed -i "s/\$molecule/${molecule_type}/g" slurm-${file_org}-for.job
+                sed -i "s/\$test/${job_type}/g" slurm-${file_org}-for.job
+                sed -i "s/\$level/${level_short}/g" slurm-${file_org}-for.job
+                sed -i "s/\$hours/${hours}/g" slurm-${file_org}-for.job
+                sed -i "s/\$minutes/${minutes}/g" slurm-${file_org}-for.job
+
                 sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job-09 > slurm-${file_org}-rev.job
-                sed -i "s/conform/${file_org}-rev.com/g" slurm-${file_org}-rev.job
-                sed -i "s/gauss-log/${file3}-${job_type}_${level_short}/g" slurm-${file_org}-rev.job
+                sed -i "s/conform/${file_org}-rev/g" slurm-${file_org}-rev.job
+                sed -i "s/gauss-log/${file3}-${job_type}r_${level_short}/g" slurm-${file_org}-rev.job
                 sed -i "s/\$molecule/${molecule_type}/g" slurm-${file_org}-rev.job
                 sed -i "s/\$test/${job_type}/g" slurm-${file_org}-rev.job
                 sed -i "s/\$level/${level_short}/g" slurm-${file_org}-rev.job
