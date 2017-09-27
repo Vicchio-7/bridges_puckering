@@ -217,9 +217,10 @@ elif [ ${status_build} == 2 ] ; then
                 file2=${file1%.log}
                 file3=${file2##\"}
                 file_org=${file3%-freeze_${level_short}-TS_${level_short}}
+                file_chk=${file3}
 
                 echo ${file_org}
-
+                echo ${file3}
 
 
             fi
