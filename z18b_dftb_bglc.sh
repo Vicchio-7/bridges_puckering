@@ -214,6 +214,8 @@ elif [ ${status_build} == 2 ] ; then
         input_list=$( column -t -s ',' ${irc_file_list} | awk '{print $1}' )
 
 
+        echo ${input_list}
+
 
     fi
 
