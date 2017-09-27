@@ -215,12 +215,12 @@ elif [ ${status_build} == 2 ] ; then
             if [ "${file}" != "File" ]; then
                 echo ${file}
                 file1=${file%.log\"}
-                file2=${file1%-freeze_${level_short}-${TS}_${level_short}.log}
+                file2=${file1%.log}
                 file_org=${file2##\"}
 
                 echo ${file1}
                 echo ${file2}
-                echo ${file_org}
+                echo ${file_org%-freeze_${level_short}-${TS}_${level_short}}
 
 
 
