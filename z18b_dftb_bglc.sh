@@ -234,7 +234,6 @@ elif [ ${status_build} == 2 ] ; then
                 sed -i "s/\$folder_new/${molecule_type}-${job_type}_${level_short}/g" ${file_org}-for.com
                 sed -i "s/\$chkfile/${file_chk}-ircf_${level_short}.chk/g" ${file_org}-for.com
 
-
                 sed -e "s/\$memory/${total_memory}/g" ${tpl_file_rev} > ${file_org}-rev.com
                 sed -i "s/\$num_procs/${cores_per_node}/g" ${file_org}-rev.com
                 sed -i "s/\$folder_old/${molecule_type}-TS_${level_short}/g" ${file_org}-rev.com
