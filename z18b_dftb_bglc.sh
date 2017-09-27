@@ -213,7 +213,6 @@ elif [ ${status_build} == 2 ] ; then
 
         for file in ${input_list}; do
             if [ "${file}" != "File" ]; then
-                echo ${file}
                 file1=${file%.log\"}
                 file2=${file1%.log}
                 file3=${file2##\"}
