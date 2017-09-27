@@ -226,13 +226,13 @@ elif [ ${status_build} == 2 ] ; then
                 file_org=${file3%-freeze_${level_short}-TS_${level_short}}
                 file_chk=${file3}
 
-
                 sed -e "s/\$memory/${total_memory}/g" ${tpl_file_for} > ${file_org}-for.com
                 sed -i "s/\$num_procs/${cores_per_node}/g" ${file_org}-for.com
                 sed -i "s/\$folder_old/${molecule_type}-TS_${level_short}/g" ${file_org}-for.com
                 sed -i "s/\$folder_1/${folder}/g" ${file_org}-for.com
                 sed -i "s/\$old_check/${file_chk}.chk/g" ${file_org}-for.com
-
+                sed -i "s/\$folder_new/${molecule_type}-${job_type}_${level_short}/g" ${file_org}-for.com
+                sed -i "s/\$chkfile/${file_chk}-ircf_${level_short}.chk/g" ${file_org}-for.com
 
 
                 sed -e "s/\$memory/${total_memory}/g" ${tpl_file_rev} > ${file_org}-rev.com
@@ -240,6 +240,10 @@ elif [ ${status_build} == 2 ] ; then
                 sed -i "s/\$folder_old/${molecule_type}-TS_${level_short}/g" ${file_org}-rev.com
                 sed -i "s/\$folder_1/${folder}/g" ${file_org}-rev.com
                 sed -i "s/\$old_check/${file_chk}.chk/g" ${file_org}-rev.com
+                sed -i "s/\$folder_new/${molecule_type}-${job_type}_${level_short}/g" ${file_org}-rev.com
+                sed -i "s/\$chkfile/${file_chk}-ircr_${level_short}.chk/g" ${file_org}-rev.com
+
+
 
             fi
         done
