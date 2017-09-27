@@ -221,6 +221,7 @@ elif [ ${status_build} == 2 ] ; then
                 echo ${file1}
                 echo ${file2}
                 echo ${file_org%-freeze_${level_short}-${TS}_${level_short}}
+                echo '-freeze_${level_short}-${TS}_${level_short}'
 
 
 
