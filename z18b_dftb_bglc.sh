@@ -77,7 +77,8 @@ if [ "${molecule_type}" == 'bglc' ] ;  then
         template=bglc_norm.tpl
     elif [ "${job_type}" == 'irc' ] ; then
         status_build=2
-
+        temp_for=bglc_irc_forward.tpl
+        temp_rev=bglc_irc_reverse.tpl
     elif [ "${job_type}" == 'lmirc' ] ; then
         echo "Currently missing!" #####################################################
     else
@@ -208,6 +209,12 @@ elif [ ${status_build} == 0 ] ; then
 
 elif [ ${status_build} == 2 ] ; then
     if [ "${job_type}" == 'irc' ] ; then
+
+
+        tpl_file_for=${tpl}/${temp_for}
+        tpl_file_rev=${tpl}/${temp_rev}
+
+
         irc_file_list=${p2}/puckering/z_results/3_betagluc/${level_short}/z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv
         input_list=$( column -t -s ',' ${irc_file_list} | awk '{print $1}' )
 
@@ -219,9 +226,10 @@ elif [ ${status_build} == 2 ] ; then
                 file_org=${file3%-freeze_${level_short}-TS_${level_short}}
                 file_chk=${file3}
 
-                echo ${file_org}
-                echo ${file3}
 
+                sed -e "s/\$memory/${total_memory}/g" ${tpl_file_for} > ${file_org}-for.com
+
+                sed -e "s/\$memory/${total_memory}/g" ${tpl_file_rev} > ${file_org}-rev.com
 
             fi
         done
