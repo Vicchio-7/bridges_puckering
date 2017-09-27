@@ -214,8 +214,8 @@ elif [ ${status_build} == 2 ] ; then
         for file in ${input_list}; do
             if [ "${file}" != "File" ]; then
                 echo ${file}
-                file1=${file%-freeze_${level_short}-${TS}_${level_short}.log\"}
-                file2=${file1%.log}
+                file1=${file%.log\"}
+                file2=${file1%-freeze_${level_short}-${TS}_${level_short}.log}
                 file_org=${file2##\"}
 
                 echo ${file1}
