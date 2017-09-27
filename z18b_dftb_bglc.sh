@@ -228,8 +228,18 @@ elif [ ${status_build} == 2 ] ; then
 
 
                 sed -e "s/\$memory/${total_memory}/g" ${tpl_file_for} > ${file_org}-for.com
+                sed -i "s/\$num_procs/${cores_per_node}/g" ${file}.com
+                sed -i "s/\$folder_old/${molecule_type}-TS_${level_short}/g" ${file}.com
+                sed -i "s/\$folder_1/${folder}/g" ${file}.com
+                sed -i "s/\$old_check/${file_chk}.chk/g" ${file}.com
+
+
 
                 sed -e "s/\$memory/${total_memory}/g" ${tpl_file_rev} > ${file_org}-rev.com
+                sed -i "s/\$num_procs/${cores_per_node}/g" ${file_org}-rev.com
+                sed -i "s/\$folder_old/${molecule_type}-TS_${level_short}/g" ${file_org}-rev.com
+                sed -i "s/\$folder_1/${folder}/g" ${file_org}-rev.com
+                sed -i "s/\$old_check/${file_chk}.chk/g" ${file_org}-rev.com
 
             fi
         done
