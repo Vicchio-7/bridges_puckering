@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3d111d83-4a55-4981-bdc5-7b04daefecb7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z18b_dftb_bglc.sh" afterPath="$PROJECT_DIR$/z18b_dftb_bglc.sh" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -823,12 +822,12 @@
       <workItem from="1504624197371" duration="621000" />
       <workItem from="1504657586672" duration="1451000" />
       <workItem from="1504820037975" duration="10220000" />
-      <workItem from="1505482324501" duration="17671000" />
+      <workItem from="1505482324501" duration="17694000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="295856000" />
+    <option name="totallyTimeSpent" value="295879000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
