@@ -225,13 +225,12 @@ elif [ ${status_build} == 2 ] ; then
         irc_file_list=${p2}/puckering/z_results/3_betagluc/${level_short}/z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv
         input_list=$( column -t -s ',' ${irc_file_list} | awk '{print $1}' )
         for file in ${input_list}; do
-            echo ${file} "File"
-            if [ "${file}" != "File" ]; then
-                file1=${file%.log\"}
-                file2=${file1%.log}
-                file3=${file2##\"}
-                file_org=${file3%-freeze_${level_short}-TS_${level_short}}
-                file_chk=${file3}
+            file1=${file%.log\"}
+            file2=${file1%.log}
+            file3=${file2##\"}
+            file_org=${file3%-freeze_${level_short}-TS_${level_short}}
+            file_chk=${file3}
+            if [ "${file_org}" != "File" ]; then
 
                 sed -e "s/\$memory/${total_memory}/g" ${tpl_file_for} > ${file_org}-for.com
                 sed -i "s/\$num_procs/${cores_per_node}/g" ${file_org}-for.com
