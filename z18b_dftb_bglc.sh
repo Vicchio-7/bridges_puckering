@@ -76,7 +76,6 @@ if [ "${molecule_type}" == 'bglc' ] ;  then
     elif [ "${job_type}" == 'norm' ] ; then
         template=bglc_norm.tpl
     elif [ "${job_type}" == 'irc' ] ; then
-
         status_build=2
 
     elif [ "${job_type}" == 'lmirc' ] ; then
@@ -211,10 +210,10 @@ elif [ ${status_build} == 2 ] ; then
     if [ "${job_type}" == 'irc' ] ; then
         echo 'irc'
 
+        irc_file_list=${p2}/puckering/z_results/${folder}/${level_short}/z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv
+        input_list=$( column -t -s ',' ${irc_file_list} | awk '{print $1}' )
 
-        irc_file_list=${p2}/puckering/z_results/3_betagluc/${level_short}/z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv
-        echo ${irc_file_list}
-        column -t -s ',' ${irc_file_list} | awk '{print $1}' > my_list.txt
+        echo ${input_list}
     fi
 
 fi
