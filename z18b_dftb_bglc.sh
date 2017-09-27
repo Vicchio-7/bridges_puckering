@@ -217,7 +217,12 @@ elif [ ${status_build} == 2 ] ; then
                 file1=${file%.log\"}
                 file2=${file1%.log}
                 file_org=${file2##\"}
+
+                echo ${file1}
+                echo ${file2}
                 echo ${file_org}
+
+                -freeze_dftb3-TS_dftb3
 
             fi
         done
