@@ -209,10 +209,8 @@ elif [ ${status_build} == 0 ] ; then
 
 elif [ ${status_build} == 2 ] ; then
     if [ "${job_type}" == 'irc' ] ; then
-
         irc_forward=${p1}/puckering/${folder}/${1}-${2}_${3}-forward
-        irc_backward=${p1}/puckering/${folder}/${1}-${2}_${3}-reverse
-
+        irc_backward=${p1}/puckering/${folder}/${1}-${2}_${3}-revers
         if [ ! -d ${irc_forward} ]; then
             mkdir ${irc_forward}
         fi
@@ -226,7 +224,6 @@ elif [ ${status_build} == 2 ] ; then
 
         irc_file_list=${p2}/puckering/z_results/3_betagluc/${level_short}/z_cluster_ring_pucker-sorted-TS-${molecule_type}-${level_short}.csv
         input_list=$( column -t -s ',' ${irc_file_list} | awk '{print $1}' )
-
         for file in ${input_list}; do
             if [ "${file}" != "File" ]; then
                 file1=${file%.log\"}
@@ -243,6 +240,9 @@ elif [ ${status_build} == 2 ] ; then
                 sed -i "s/\$folder_new/${molecule_type}-${job_type}_${level_short}/g" ${file_org}-for.com
                 sed -i "s/\$chkfile/${file_org}-ircf_${level_short}.chk/g" ${file_org}-for.com
 
+
+
+
                 sed -e "s/\$memory/${total_memory}/g" ${tpl_file_rev} > ${file_org}-rev.com
                 sed -i "s/\$num_procs/${cores_per_node}/g" ${file_org}-rev.com
                 sed -i "s/\$folder_old/${molecule_type}-TS_${level_short}/g" ${file_org}-rev.com
@@ -250,6 +250,18 @@ elif [ ${status_build} == 2 ] ; then
                 sed -i "s/\$old_check/${file_org}-TS_${level_short}.chk/g" ${file_org}-rev.com
                 sed -i "s/\$folder_new/${molecule_type}-${job_type}_${level_short}/g" ${file_org}-rev.com
                 sed -i "s/\$chkfile/${file_org}-ircr_${level_short}.chk/g" ${file_org}-rev.com
+
+
+                sed -e "s/\$num_proc/${cores_per_node}/g" ${tpl}/gaussian_slurm_script.job > slurm-${file_org}-rev.job
+                sed -i "s/conform/${file_org}-rev.com/g" slurm-${file_org}-rev.job
+                sed -i "s/gauss-log/${file3}-${job_type}_${level_short}/g" slurm-${file_org}-rev.job
+                sed -i "s/\$molecule/${molecule_type}/g" slurm-${file_org}-rev.job
+                sed -i "s/\$test/${job_type}/g" slurm-${file_org}-rev.job
+                sed -i "s/\$level/${level_short}/g" slurm-${file_org}-rev.job
+                sed -i "s/\$hours/${hours}/g" slurm-${file_org}-rev.job
+                sed -i "s/\$minutes/${minutes}/g" slurm-${file_org}-rev.job
+
+                mv temp1.txt slurm-${new_filenamer}.job
 
 
 
