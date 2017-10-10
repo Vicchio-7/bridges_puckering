@@ -124,7 +124,6 @@ elif [ ${status_build} == 0 ] ; then
             if [ "${file_org}" != "File" ]; then
 
                 echo ${file_org}
-                echo ${old_check_file}
 
                 ##### IRC - Forward Direction! #####
 
