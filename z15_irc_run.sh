@@ -116,7 +116,7 @@ elif [ ${status_build} == 0 ] ; then
         file_org=${file2##\"}
 
         if [ ${molecule_type} == "oxane" ] ; then
-            old_check_file=${file_org}
+            old_check_file=${file_org}.chk
         else
             old_check_file=${file_org%-norm_${level_short}}.chk
         fi
