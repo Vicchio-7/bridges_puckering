@@ -139,7 +139,7 @@ elif [ ${status_build} == 2 ] ; then
 
     fi
 
-    raw_coords=${main}/${folder}/z_folder_raw-coordinates
+    raw_coords=${p2}/puckering/${folder}/z_folder_raw-coordinates
 
     coordinate_directory=${directory}/0_initial-coordinates
 
