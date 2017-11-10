@@ -117,7 +117,7 @@ elif [ ${status_build} == 0 ] ; then
 
 elif [ ${status_build} == 2 ] ; then
 
-    directory=${main}/${folder}/${level_short}
+    directory=${p2}/puckering/${folder}/${level_short}
 
     if [ -d ${directory} ] ; then
 		echo

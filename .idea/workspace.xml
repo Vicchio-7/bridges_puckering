@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3d111d83-4a55-4981-bdc5-7b04daefecb7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/z01_create-directory.sh" afterPath="$PROJECT_DIR$/z01_create-directory.sh" />
-    </list>
+    <list default="true" id="3d111d83-4a55-4981-bdc5-7b04daefecb7" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -845,12 +843,12 @@
       <workItem from="1504820037975" duration="10220000" />
       <workItem from="1505482324501" duration="28572000" />
       <workItem from="1507650332688" duration="3350000" />
-      <workItem from="1510328620474" duration="653000" />
+      <workItem from="1510328620474" duration="870000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="310760000" />
+    <option name="totallyTimeSpent" value="310977000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
