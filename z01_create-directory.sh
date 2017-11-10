@@ -46,6 +46,18 @@ elif [ "${molecule_type}" == 'aglc' ] ;  then
 	folder=4_alphagluc
 	status_build=0
 	ext=.xyz
+elif [ "${molecule_type}" == 'levo' ] ;  then
+	folder=7_levo
+	status_build=2
+	ext=.xyz
+elif [ "${molecule_type}" == 'dehy' ] ;  then
+	folder=8_dehy
+	status_build=2
+	ext=.xyz
+elif [ "${molecule_type}" == 'tsglc' ] ;  then
+	folder=9_tsglc
+	status_build=2
+	ext=.xyz
 else
 	echo
 	echo "The molecule type is not found in this script"
@@ -91,6 +103,43 @@ elif [ ${status_build} == 0 ] ; then
     fi
 
     raw_coords=${p2}/puckering/${folder}/z_folder_raw-coordinates
+
+    coordinate_directory=${directory}/0_initial-coordinates
+
+    if [ -n "$(find ${coordinate_directory} -prune -empty)" ] ; then
+
+		cp ${raw_coords}/*${ext} ${directory}/0_initial-coordinates/.
+
+		cd ${directory}/0_initial-coordinates/
+		ls *${ext} > ../y0-input_list.txt
+
+	fi
+
+elif [ ${status_build} == 2 ] ; then
+
+    directory=${main}/${folder}/${level_short}
+
+    if [ -d ${directory} ] ; then
+		echo
+		echo "This directory already exists for ${level_short} in ${folder}..."
+		echo
+	else
+	    echo
+	    echo "The following directory is being made for $level_short in $molecule_type"
+	    echo
+
+	    mkdir $directory
+
+	    cd ${directory}
+
+	    mkdir 0_initial-coordinates
+	    mkdir 1_sample-files
+	    mkdir 2_TS_method
+	    mkdir 3_irc_localmin
+
+    fi
+
+    raw_coords=${main}/${folder}/z_folder_raw-coordinates
 
     coordinate_directory=${directory}/0_initial-coordinates
 
